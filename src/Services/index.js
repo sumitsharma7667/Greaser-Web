@@ -180,8 +180,7 @@ const CreateService =()=>{
             <select className="form-control" value={mode} onChange={(e)=>{SetMode(e.target.value)}}>
                 <option value="">choose mode...</option>
                 <option value="Paid">Paid</option>
-                <option value="Free">Free</option>
-              
+                <option value="Free">Free</option>              
             </select>
             {/* <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> */}
            </div>
@@ -219,10 +218,8 @@ const CreateService =()=>{
             </div>
            <div class="col-lg-12 form-group">
            <label >Features</label>
-           <CKEditor activeClass="editor" content={features} onChange={(e)=>{SetFeatures(e.target.value)}} />
-            </div>
-          
-       
+           <CKEditor activeClass="editor" content={features} onChange={(e)=>{SetFeatures(e.editor.getData())}} />
+            </div>       
             <div class="col-lg-6 form-group"  >
             <label for="input-2">Status</label>
                     <select className="form-control" onChange={(e)=>{SetStatus(e.target.value)}}>
