@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 const CreateBrands =()=>{
     const[name,SetName]=useState()
     const[image,SetImage]=useState()
-    const[status,SetStatus]=useState()
+    const[status,SetStatus]=useState(0)
     const[AllBrand,SetAllBrand]=useState([])
 
     useEffect(()=>{
@@ -15,7 +15,7 @@ const CreateBrands =()=>{
         data.append('name', name)
         data.append('image',image)
         data.append('status',status)
-        const url = "http://192.168.43.123:3031/StoreBrand"
+        const url = "http://192.168.43.49:3031/StoreBrand"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -30,7 +30,7 @@ const CreateBrands =()=>{
     }
 
     const GetBrand = () => {
-        fetch("http://192.168.43.123:3031/GetBrand")
+        fetch("http://192.168.43.49:3031/GetBrand")
             .then(res => res.json())
             .then(data => {
                 console.log("Brands "+data)
