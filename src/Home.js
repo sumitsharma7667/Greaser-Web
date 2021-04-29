@@ -1,4 +1,6 @@
 import React ,{useEffect}from 'react';
+import Header from './Header';
+import Footer from './Footer';
 import $ from 'jquery'; 
 import './homepage.css';
 import './widget.css';
@@ -78,14 +80,18 @@ function Home(props) {
             
             });
     },[])
+
+
+    
   return (
 <>
+<Header />
         <section className="FirstSection">
-        <div className="row">
-            <div className="col-5">
+        <div className="row" style={{display:"contents"}}>
+            <div className="col-7">
             <h1></h1>
             </div>
-            <div className="col-7">
+            <div className="col-5">
            
   <div class="row d-flex justify-content-center">
     <div class="col-12 col-md-11 col-lg-10 col-xl-9">
@@ -97,30 +103,32 @@ function Home(props) {
                 <p class="prev text-danger" id="back"><span class="fa fa-long-arrow-left"> Go Back</span></p>
                 <h3 class="mt-4">Get instant quotes for your car service</h3>
               </div>
-              <div class="d-flex flex-md-row px-3 mt-4 flex-column-reverse">
-                <div class="col-md-6">
-                  <div class="card1">
-                    <ul id="progressbar" class="text-center">
+              <div class=" px-3 mt-4 flex-column-reverse">
+                <div class="col-md-12">
+                  <div class="card1 d-flex">
+                    <ul id="progressbar" class="text-center d-flex">
                       <li class="active step0"></li>
-                      <li class="step0"></li>
-                      <li class="step0"></li>
-                      <li class="step0"></li>
+                      <li class="step0 pl"></li>
+                      <li class="step0 pl"></li>
+                      {/* <li class="step0 pl"></li> */}
                     </ul>
-                    <h6 class="mb-5">Choose Manufacturer</h6>
-                    <h6 class="mb-5">Choose Model</h6>
-                    <h6 class="mb-5">Select Type</h6>
+                    </div>
+                    <div class="card1 d-flex ml-0 pt-5">
+                    <h6 class="mb-5 ">Manufacturer</h6>
+                    <h6 class="mb-5 pleft"> Model</h6>
+                    <h6 class="mb-5 pleft">Type</h6>
                   </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-12">
                   <div class="card2 first-screen show ml-2">
-                    <div class="row text-center px-3 mr-2">
+                    {/* <div class="row text-center px-3 mr-2">
                       <div class="mb-2 col-4"> <span class="fa fa-reddit social"></span> </div>
                       <div class="mb-2 col-4"> <span class="fa fa-facebook social"></span> </div>
                       <div class="mb-2 col-4"> <span class="fa fa-linkedin social"></span> </div>
-                      {/* <div class="mb-2 col-2"> <span class="fa fa-google-plus social"></span> </div>
+                      <div class="mb-2 col-2"> <span class="fa fa-google-plus social"></span> </div>
                       <div class="mb-2 col-2"> <span class="fa fa-twitter social"></span> </div>
-                      <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div> */}
-                    </div>
+                      <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
+                    </div> */}
                     <div class="row px-3 mt-4">
                       <div class="form-group mt-1 mb-1"> 
                       {/* <input type="text" id="email" class="form-control" required />  */}
@@ -135,9 +143,9 @@ function Home(props) {
                       </div>
                       <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                     </div>
-                    <div class="row px-3 mt-1 mb-5">
+                    {/* <div class="row px-3 mt-1 mb-5">
                       <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input" /> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
-                    </div>
+                    </div> */}
                   </div>
                   <div class="card2 ml-2">
                     <div class="row px-3 mt-3">
@@ -153,7 +161,7 @@ function Home(props) {
                        </div>
                       <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                           <div class="col-12">
-                        <p class="mb-1">Password must contain</p>
+                        {/* <p class="mb-1">Password must contain</p> */}
                         <div class="row">
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Safe</div>
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Quality</div>
@@ -170,15 +178,19 @@ function Home(props) {
                   </div>
                   <div class="card2 ml-2">
                     <div class="row px-3 mt-3">
-                      <p class="mb-0 w-100">Select your Country</p>
+                      {/* <p class="mb-0 w-100">Select your Country</p> */}
                       <div class="form-group mt-3 mb-4">
-                        <div class="select mb-3"> <select name="account" class="form-control custom-select">
-                            <option>India</option>
-                            <option>USA</option>
-                            <option>Germany</option>
-                            <option>Mexico</option>
-                          </select> </div>
+                      <select className="form-control">
+                          <option value="">Choose Type..</option>
+                          <option value="">Choose Model..</option>
+                          <option value="">Choose Model..</option>
+                          <option value="">Choose Model..</option>
+                      </select>
                       </div>
+                      <div class="form-group mt-3 mb-4">
+                       <input type="mobile" placeholder="Enter your mobile number" class="form-control" required /> 
+                      </div>
+                      
                       <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                     </div>
                   </div>
@@ -186,7 +198,7 @@ function Home(props) {
                     <div class="row px-3 mt-2 mb-4 text-center">
                       <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
                       <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif" /></div>
-                      <h6 class="col-12 mt-2"><i>...Enjoy COOKIES...</i></h6>
+                      <h6 class="col-12 mt-2"><i>...we will notify you...</i></h6>
                     </div>
                   </div>
                 </div>
@@ -194,7 +206,8 @@ function Home(props) {
             </div>
             <div class="col-12">
               <div class="row px-3">
-                <h2 class="text-muted get-bonus mt-4 mb-5">Get Bonus <span class="text-danger">666</span> cookies</h2> <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png" />
+                <h2 class="text-muted get-bonus mt-4 mb-5"> <span class="text-white">Greaser</span> Anytime Anywhere</h2>
+                 {/* <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png" /> */}
               </div>
             </div>
           </div>
@@ -304,6 +317,69 @@ function Home(props) {
             </div>
           </div>
         </section>
+
+
+
+        <section style={{backgroundColor:"#dededede"}} className="pb-5 features-section">
+          <div className="row">
+            <div className="col-12 text-center p-5">
+             <h1 className="Features-heading">Features</h1>
+            </div>
+          </div>
+        <main>
+  <ul class="cards-container">
+    <li class="cyan-feature-card">
+      <h2>Pickup</h2>
+      <p>
+      Free Doorstep Pick-up and Drop
+      <br/>No more unnecessary workshop visits!
+      </p>
+      <div className="row featurecardbackground">
+        <div className="col-12">
+        </div>
+      </div>
+    </li>
+
+    <li class="red-feature-card">
+      <h2>Pricing</h2>
+      <p>
+      Upfront & Competitive Pricing<br/>
+      Save Upto 40% on your car’s service
+      </p>
+      <div className="row featurecardbackground">
+        <div className="col-12">
+        </div>
+      </div>
+    </li>
+
+    <li class="orange-feature-card">
+      <h2>Warranty</h2>
+      <p>
+      Network Warranty on Car Service<br/>
+      1 Month/1000kms unconditional warranty on car service. No questions asked!
+      </p>
+      <div className="row featurecardbackground">
+        <div className="col-12">
+        </div>
+      </div>
+    </li>
+
+    <li class="blue-feature-card">
+      <h2>Spare Parts</h2>
+      <p>
+      100% Genuine Spare Parts<br/>
+      Only OEM/OES spare parts used. Quality Assured!
+      </p>
+      <div className="row featurecardbackground">
+        <div className="col-12">
+        </div>
+      </div>
+    </li>
+  </ul>
+</main>
+
+        </section>
+       <Footer />
       </>
   )
 }

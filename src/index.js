@@ -9,7 +9,10 @@ import CreateBrands from './Brands';
 import Vehicle from './Brands/Vehicle';
 import CreateService from './Services';
 import Home from './Home';
+import Login from './Login';
 import SericeType from './Services/ServiceType';
+import Services from './Service-packages';
+
 const AppRoute = ({component:Component,layout:Layout, ...rest})=>(
   <Route {...rest} render ={props=>(
     <Layout><Component {...props}> </Component></Layout>
@@ -24,6 +27,12 @@ ReactDOM.render(
       <AppRoute path ="/service-type" layout={App} component={SericeType} />
       <AppRoute path ="/vehicle" layout={App} component={Vehicle} />
       <AppRoute path ="/dashboard" layout={App} component={Dashboard} />
+      <Route path="/Login"> 
+          <Login />
+        </Route>
+      <Route path="/services-packages"> 
+          <Services />
+        </Route>
       <Route path="/"> 
           <Home />
         </Route>

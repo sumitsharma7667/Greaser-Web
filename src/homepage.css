@@ -1,23 +1,28 @@
-/* @font-face {
+@font-face {
     font-family: TransRobotics;
-    src: url(./fonts/SF TransRobotics.ttf);
-  } */
+    src: url(../src/SF\ TransRobotics.ttf);
+  }
  body{
      overflow-x: hidden;
+     background-color: #1A1A1A;
  }
 .FirstSection{
     height: 100vh;
-    background-image: url('./Images/auto-mechanic-checking-car.jpg');
+    background-image: url('./Images/home-screen.jpeg');
     background-size: 100% 100%;
+
+    display: flex;
+    align-items: center;
+
 }
 .SecondSection{
     /* height: 80vh; */
     padding:30px 80px;
-    background-color: #1A1A1A;
+    background-color: #dededede;
 }
 .servicesHeading{
     font-weight: unset;
-    color: white;
+    color: #1c1c1c;
     text-align: center;
     font-size: 60px;
     margin: 0px;
@@ -27,6 +32,12 @@
     max-width: 20%;
     padding: 20px;
 }
+.ServiceFeaturesCard{
+  height: 300px;
+  max-width: 20%;
+  padding: 20px;
+}
+
 .card{
 background: rgb(255,0,238);
 background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
@@ -41,6 +52,40 @@ height: 100%;
     width: 50%; 
     margin: auto;
 }
+
+.servicesHeading_in_service_feature{
+  font-weight: unset;
+  color: #1c1c1c;
+  text-align: center;
+  font-size: 60px;
+  margin: 0px;
+  padding: 15px;
+}
+.service_card{
+  /* background: rgb(255,0,238); */
+background: linear-gradient(
+    180deg
+    , rgb(227 1 212) -120%, rgb(50 33 112) 64%);;
+  color: black !important;
+  text-align: center;
+  padding: 30px 15px 0px 15px;
+  height: 100%;
+}
+
+.service_card img{
+  object-fit: contain;
+  filter: invert(1);
+  height: 60%;
+  width: 50%; 
+  margin: auto;
+}
+.service_card h6{
+  padding-top: 30px;
+  color: white;
+  font-family: 'TransRobotics';
+  font-size: 25px;
+  }
+
 .SecondSection h2{
 font-family: 'TransRobotics';
 }
@@ -81,12 +126,506 @@ color:white
     
     z-index: 10;
 }
-.ThirdSection .col-2 {
-    background-image: url('./Images/gratis.png');
-    background-position-x: 400px;    
+.ThirdSection .col-2 img{
+    height: 500px;
+    /* background-image: url('./Images/gratis.png');
+    background-position-x: 400px;     */
    
     opacity: 0.3;
     background-size: contain;
 }
 
 
+/* footer css */
+footer ul {
+    margin: 0px;
+    padding: 0px;
+}
+.footer-section {
+  background: #151414;
+  position: relative;
+}
+.footer-cta {
+  border-bottom: 1px solid #373636;
+}
+.single-cta i {
+  color:#6b36aa;
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+}
+.cta-text {
+  padding-left: 15px;
+  display: inline-block;
+}
+.cta-text h4 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.cta-text span {
+  color: #757575;
+  font-size: 15px;
+}
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+.footer-logo {
+  margin-bottom: 30px;
+}
+.footer-logo img {
+    max-width: 200px;
+}
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+      color: #7e7e7e;
+  line-height: 28px;
+}
+.footer-social-icon span {
+  color: #fff;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
+}
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 38px;
+  border-radius: 50%;
+}
+.facebook-bg{
+  background: #3B5998;
+}
+.twitter-bg{
+  background: #55ACEE;
+}
+.google-bg{
+  background: #DD4B39;
+}
+.footer-widget-heading h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background:#6b36aa;
+}
+.footer-widget ul li {
+  display: inline-block;
+  float: left;
+  width: 50%;
+  margin-bottom: 12px;
+}
+.footer-widget ul li a:hover{
+  color:#6b36aa;
+}
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+}
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  background: #2E2E2E;
+  border: 1px solid #2E2E2E;
+  color: #fff;
+}
+.subscribe-form button {
+    position: absolute;
+    right: 0;
+    background:#6b36aa;
+    padding: 13px 20px;
+    border: 1px solid#6b36aa;
+    top: 0;
+}
+.subscribe-form button i {
+  color: #fff;
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+.copyright-area{
+  background: #202020;
+  padding: 25px 0;
+}
+.copyright-text p {
+  margin: 0;
+  font-size: 14px;
+  color: #878787;
+}
+.copyright-text p a{
+  color:#6b36aa;
+}
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+.footer-menu li:hover a{
+  color:#6b36aa;
+}
+.footer-menu li a {
+  font-size: 14px;
+  color: #878787;
+}
+/* end ooter css */
+
+
+/* Header Css */
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.9);
+  overflow-x: hidden;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: center;
+  margin-top: 30px;
+}
+
+.overlay a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px;
+  top: 15px;
+  right: 35px;
+  }
+}
+<
+/* End Header Css */
+.service-heading div{
+  padding: 0px;
+}
+.service-heading p{
+    font-size: 40px;
+    padding-left: 20px;
+    font-family: 'TransRobotics';
+    color: white !important;
+    background-color: #6809AA;
+}
+.services-div{
+    background-color: #d4cfcf;
+}
+.services-div p,.services-div h4{
+    text-align: justify;
+    color: black;
+}
+.services-div span{
+    color: white;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+
+
+/* Features card */
+
+.cards-container {
+    /* List Styling Clean-Up */
+    list-style: none;
+    padding: 0; margin: 0;
+  
+    /* Alignment */
+    margin: auto;
+  }
+
+@media (min-width: 788px) {
+    .cards-container { 
+      width: 728px;
+    }
+    /* Clear Fix */
+    .cards-container::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }
+  
+  @media (min-width: 1166px) {
+    .cards-container {
+      width: 1106px;
+    }
+  }
+  
+  /*
+   * ## Feature Card Class
+   */
+  
+
+  [class$='feature-card'] {
+    /* Positioning and Sizing */
+    position: relative;
+    box-sizing: border-box;
+    width: 350px; height: 250px;
+  
+    /* Alignment */
+    margin: 0;
+    padding: 32px;
+  
+    /* Box Details */
+    border-radius: 10px;
+    border-top: solid 5px black;
+    /* box-shadow: 2px 5px 20px rgb(0,0,0,0.1); */
+    box-shadow: 2px 5px 15px 11px rgb(0 0 0 / 10%);
+
+
+
+  }
+   
+  /*
+   * ### Inner Elements
+   */
+  
+  [class$='feature-card'] h2, [class$='feature-card'] p { color: #1d1d1d;;margin: 0; font-family: TransRobotics; }
+  
+  [class$='feature-card'] img {
+    position: absolute;
+    bottom: 32px;
+    right: 0px;
+    height: 75px;
+  }
+  
+  /*
+   * ### Top Border Colors Rules
+   */
+  
+  [class$='feature-card'][class*='cyan'] {
+    border-color: hsl(180, 62%, 55%);
+  }
+  
+  [class$='feature-card'][class*='red'] {
+    border-color: hsl(0, 78%, 62%);
+  }
+  
+  [class$='feature-card'][class*='orange'] {
+    border-color: hsl(34, 97%, 64%);
+  }
+  
+  [class$='feature-card'][class*='blue'] {
+    border-color: hsl(212, 86%, 64%);
+  }
+
+
+  @media (min-width: 788px) {
+    [class$='feature-card'] {
+      float: left;
+    }
+  
+    @media (min-width: 1166px) {
+      
+      [class$='feature-card']:first-child {
+        margin: 140px 0;
+      }
+     
+      [class$='feature-card']:nth-child(2),
+      [class$='feature-card']:nth-child(3) {
+        margin: 0 22px;
+      }
+  
+      [class$='feature-card']:last-child {
+        margin-top: -110px;
+      }
+  
+      [class$='feature-card']:nth-child(3) {
+        margin-top: 30px;
+      }
+    }
+  
+    @media (max-width: 1165px) {
+  
+      [class$='feature-card']:nth-child(3),
+      [class$='feature-card']:nth-child(4) {
+        margin-top: 30px;
+      }
+  
+      [class$='feature-card']:nth-child(2),
+      [class$='feature-card']:nth-child(4) {
+        margin-left: 28px;
+      }
+    }
+  }
+  
+  @media (max-width: 787px) {
+  
+    [class$='feature-card'] {
+      width: 300px; height: 220px;
+      margin: auto;
+    }
+  
+    [class$='feature-card']:not(:first-child) {
+      margin-top: 22px;
+    }
+  }
+  .cards-container li {
+      background-color:  #f4f1f7d6;
+      
+  }
+  .featurecardbackground .col-12{
+    height: 100px;
+  }
+  .featurecardbackground{
+    background-image: url("./Images/spray-gun.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-left: 162px;
+
+
+  }
+/* End Features Card */
+
+.Features-heading{
+    font-weight: unset;
+    color: #1c1c1c;
+    /* color: white; */
+    text-align: center;
+    font-size: 60px;
+    margin: 0px;
+    padding: 15px;
+    font-family: TransRobotics;
+}
+.features-section{
+  /* background-image: url("./Images/features.jpeg");
+  background-size: cover; */
+}
+.first_servicesCarousel{
+  background-color: #6b36aa;
+}
+.thumbs-wrapper {
+  display: none;
+}
+
+
+
+/* service carousel */
+
+/* @import url('pick a font'); */
+
+
+main {
+	margin-top: 4.5em;
+}
+#section1 {
+	height: 45em;
+}
+
+
+
+/* Carousel cards */
+
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.row-equal.carousel-inner>.active, 
+.row-equal.carousel-inner>.next, 
+.row-equal.carousel-inner>.prev {
+    display: flex;
+}
+
+.row-equal.carousel-inner .next        { left:  33%; }
+.row-equal.carousel-inner .prev        { left: -33%; }
+
+.carousel,
+.carousel-inner,
+.carousel-inner > .item {
+    overflow: hidden;
+}
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow: hidden;
+}
+
+
+
+
+
+/* using a container causes multiple alerts to stack. */
+.alerts-container {
+	position: fixed;
+	top: 1em;
+	right: 2em;
+	z-index: 9999;
+}
+.alert {
+	position: relative;
+	min-width: 15em;
+	text-align: center;
+	display: none;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+	-webkit-box-shadow: 0px 6px 20px 0px rgba(0,0,0,0.2);
+	-moz-box-shadow: 0px 6px 20px 0px rgba(0,0,0,0.2);
+	box-shadow: 0px 6px 20px 0px rgba(0,0,0,0.2);
+}
+
+
+/* end service carousel */

@@ -3,7 +3,7 @@ import React,{useState,useEffect} from 'react';
 const CreateBrands =()=>{
     const[name,SetName]=useState()
     const[image,SetImage]=useState()
-    const[status,SetStatus]=useState()
+    const[status,SetStatus]=useState(0)
     const[AllBrand,SetAllBrand]=useState([])
 
     useEffect(()=>{
