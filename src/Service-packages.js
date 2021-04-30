@@ -4,66 +4,50 @@ import Footer from './Footer';
 import $ from 'jquery'; 
 import logo from './logo.svg';
 import {Link} from "react-router-dom";
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
+const responsive = {
+  desktop: {
+    breakpoint: { max: 3000, min: 1024 },
+    items: 4,
+    slidesToSlide: 4 // optional, default to 1.
+  },
+  tablet: {
+    breakpoint: { max: 1024, min: 464 },
+    items: 2,
+    slidesToSlide: 2 // optional, default to 1.
+  },
+  mobile: {
+    breakpoint: { max: 464, min: 0 },
+    items: 1,
+    slidesToSlide: 1 // optional, default to 1.
+  }
+};
 function Services(props) {
   useEffect(()=>{
-    $(document).ready(function() {	
+    // $('#myCarousel').carousel({
+    //   interval:   4000
+    // });
 	
-      // Random Alert shown for the fun of it
-      function randomAlert() {
-        var min = 5,
-          max = 20;
-        var rand = Math.floor(Math.random() * (max - min + 1) + min); //Generate Random number between 5 - 20
-        // post time in a <span> tag in the Alert
-        $("#time").html('Next alert in ' + rand + ' seconds');
-        $('#timed-alert').fadeIn(500).delay(3000).fadeOut(500);
-        setTimeout(randomAlert, rand * 1000);
-      };
-      randomAlert();
-    });
-    
-    /* Use 'data-target=' to show link text in Alert popup */
-    $('.btn').click(function(event) {
-        event.preventDefault();
-        var target = $(this).data('target');
-      // console.log('#'+target);
-      $('#click-alert').html('data-target= ' + target).fadeIn(50).delay(3000).fadeOut(1000);
-      
-    });
-    
-    
-    /* Carousel cards */
-    $(document).ready(function() {	
-        "use strict";
-    
-        // manual carousel controls
-        $('.next').click(function(){ $('.carousel').carousel('next');return false; });
-        $('.prev').click(function(){ $('.carousel').carousel('prev');return false; });
-        
-      // append each Card to one before it
-        $('.carousel .carousel-item').each(function(){
-          var next = $(this).next();
-          if (!next.length) {
-            next = $(this).siblings(':first');
-          }
-          next.children(':first-child').clone().appendTo($(this));
-          
-          if (next.next().length>0) {
-            next.next().children(':first-child').clone().appendTo($(this));
-          }
-          else {
-            $(this).siblings(':first').children(':first-child').clone().appendTo($(this));
-          }
-        });
-        
-      });
     
     
   },[])
   return (
     <>
     <Header />
+    <section id="about" class="section-large-text_insrvice_features">
+      <div class="service_overlay">
+        <div class="section-large-text-inner">
+          <h3>We provide you our best</h3>
+          <h2>You are in right place to book your service</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
+            repudiandae laboriosam quia, error tempore porro ducimus voluptate
+            laborum nostrum iure.
+          </p>
+        </div>
+      </div>
+    </section>
     <section className="SecondSection" style={{backgroundColor:"#dededede"}}>
         <div className="row">
         <div className="col-12 ">
@@ -143,112 +127,206 @@ function Services(props) {
         </section>
         <section className="first_servicesCarousel">
           <div className="row " >
-          <div className="col-12 text-center p-5">
-            <h2>Top Serices</h2>
-            <h4>Trending services around you</h4>
-            </div>
-            <div className="col-12 pl-5 pr-5 pb-5">
-            
-
-<main class="content" role="content">
-	
-	<section class="container-fluid" id="section1">
-
-	<div class="container m-2">
-        <div class="row">
-            <div class="col-xs-12">
-                <a class="btn btn-outline-secondary prev" href="" title="go back" data-target="Previous Slide"><i class="fa fa-lg fa-chevron-left"></i></a>
-                <a class="btn btn-outline-secondary next" href="" title="more" data-target="Next Slide"><i class="fa fa-lg fa-chevron-right"></i></a>
-            </div>
-        </div>
-    </div>
-    <div class="carousel slide" data-ride="carousel" id="postsCarousel">
-        <div class="row row-equal carousel-inner">
-            <div class="carousel-item active">
-                <div class="col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://picsum.photos/460/?random" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://picsum.photos/461/?random" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://picsum.photos/462/?random" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://picsum.photos/460/?random" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="col-md-3">
-					<div class="card">
-						<img class="card-img-top" src="https://picsum.photos/461/?random" alt="Card image cap" />
-						<div class="card-body">
-							<h5 class="card-title">Card title</h5>
-							<p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-							<p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-						</div>
-					</div>
-                </div>
-            </div>
-        </div>
-    </div>
-	</section>
-
-</main> 
-	
-
-
-<div class="alerts-container">
-	
-	<div class="row">
-		<div id="timed-alert" class="alert alert-info animated tada" role="alert">
-			<span id="time"></span>
-		</div>
-	</div>
-	
-	<div class="row">
-		<div id="click-alert" class="alert alert-warning" role="alert">
-		</div>
-	</div>
-	
-</div>
+              <div className="col-12 text-center p-5">
+                <h2 className="servicesHeading_in_service_feature" >Top Services</h2>
+                <h4 className="text-dark">Trending services around you</h4>
               </div>
-            </div>
+              <div className="col-12 pl-5 pr-5 pb-5">
+            
+  <Carousel
+  swipeable={false}
+  draggable={false}
+  showDots={true}
+  responsive={responsive}
+  ssr={true} // means to render carousel on server-side.
+  infinite={true}
+  autoPlay={true} 
+  autoPlaySpeed={2000}
+  keyBoardControl={true}
+  customTransition="all .5"
+  transitionDuration={500}
+  containerClass="carousel-container"
+  removeArrowOnDeviceType={["tablet", "mobile"]}
+  // deviceType={this.props.deviceType}
+  dotListClass="custom-dot-list-style"
+  itemClass="carousel-item-padding-40-px"
+>
+  <div >
+  <Link to="/Services-detail">
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Dainting & Paintin</h3>
+          <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+
+
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+    </Link>
+  </div>
+  <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Car Wash</h3>
+    
+    <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p> </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  
+   <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Great Service</h3>
+        <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  
+   <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Great Service</h3>
+        <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  
+
+
+
+
+
+
+
+  <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Dummy & Painting</h3>
+        <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+
+
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Car Wash</h3>
+    
+    <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p> </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  
+   <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Great Service</h3>
+        <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+  
+   <div >
+    <div className="row ">
+    <div className="col-1">
+      </div>
+    <div className="col-10 carouselcardService">
+    <div className="row ">
+      <div className="col-12 text-center">
+        <img src={require('./Images/features.jpeg').default} style={{height:"200px"}} />
+      </div>
+      <div className="col-12 text-center pt-4">
+        <h3>Dummy</h3>
+     
+     <p>this is dummy data for service description. description may be longer than 50 words or more. rhis is only for dummy purpose</p>
+     </div>
+     </div>
+     </div>
+     <div className="col-1">
+      </div>
+    </div>
+  </div>
+</Carousel>
+               </div>
+          </div>
         </section>
+        
     <Footer />
     </>
   )

@@ -12,6 +12,8 @@ import Home from './Home';
 import Login from './Login';
 import SericeType from './Services/ServiceType';
 import Services from './Service-packages';
+import ServicesDetail from './Service-detail';
+import Cart from './Cart';
 
 const AppRoute = ({component:Component,layout:Layout, ...rest})=>(
   <Route {...rest} render ={props=>(
@@ -27,6 +29,14 @@ ReactDOM.render(
       <AppRoute path ="/service-type" layout={App} component={SericeType} />
       <AppRoute path ="/vehicle" layout={App} component={Vehicle} />
       <AppRoute path ="/dashboard" layout={App} component={Dashboard} />
+
+      <Route path="/Cart"> 
+          <Cart />
+        </Route>
+      
+      <Route path="/Services-detail"> 
+          <ServicesDetail />
+        </Route>
       <Route path="/Login"> 
           <Login />
         </Route>

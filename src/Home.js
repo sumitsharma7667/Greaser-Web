@@ -1,4 +1,4 @@
-import React ,{useEffect}from 'react';
+import React ,{useEffect,useState}from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import $ from 'jquery'; 
@@ -8,7 +8,20 @@ import logo from './logo.svg';
 import {Link} from "react-router-dom";
 
 function Home(props) {
+
+  const[AllBrand,SetAllBrand]=useState([])
+  const[AllModal,SetAllVehicle]=useState([])
+
+  const[Brand,SetBrand]=useState([])
+  const[Modal,SetModal]=useState([])
+  const[Type,SetType]=useState([])
+  
+
     useEffect(()=>{
+
+
+
+
         $(document).ready(function(){
     
             var current_fs, next_fs, previous_fs;
@@ -79,9 +92,32 @@ function Home(props) {
             });
             
             });
+
+
+        GetBrand()
+        GetVehicle()
     },[])
 
+    const GetBrand = async() => {       
+      await fetch("http://144.91.110.221:3032/GetBrand")
+          .then(res => res.json())
+          .then(data => {
+              console.log("Brands "+data)
+              SetAllBrand(data)           
+          })
+          .then(err => console.log(err))
+  }
 
+  const GetVehicle = async() => {
+    // brandid=await AsyncStorage.getItem('vehiclebrand')    
+    fetch("http://144.91.110.221:3032/GetVehicle")
+      .then(res => res.json())
+      .then(data => {
+        console.log("Brands " + data)
+        SetAllVehicle(data)
+      })
+      .then(err => console.log(err))
+  }
     
   return (
 <>
@@ -132,12 +168,14 @@ function Home(props) {
                     <div class="row px-3 mt-4">
                       <div class="form-group mt-1 mb-1"> 
                       {/* <input type="text" id="email" class="form-control" required />  */}
-                      <select className="form-control">
+                      <select className="form-control" onChange={(e)=>{SetBrand(e.target.value)}}>
                           <option value="">Manufacturer...</option>
-                          <option value="">Manufacturer...</option>
-                          <option value="">Manufacturer...</option>
-                          <option value="">Manufacturer...</option>
-                          <option value="">Manufacturer...</option>
+                          {AllBrand.map((item,index)=>{
+                            return(
+                              <option value={item.name}>{item.name}</option>
+                            )
+                          })}
+                          
                       </select>
                       {/* <label class="ml-3 form-control-placeholder" for="email" >Email</label>  */}
                       </div>
@@ -151,25 +189,28 @@ function Home(props) {
                     <div class="row px-3 mt-3">
                       <div class="form-group mt-1 mb-1"> 
                       {/* <input type="password" id="pwd" class="form-control" required />  */}
-                      <select className="form-control">
+                      <select className="form-control" onChange={(e)=>{SetModal(e.target.value)}}>
                           <option value="">Choose Model..</option>
-                          <option value="">Choose Model..</option>
-                          <option value="">Choose Model..</option>
-                          <option value="">Choose Model..</option>
+                          {AllModal.map((item,index)=>{
+                            if(item.manufacturer.name == Brand)
+                            return(
+                              <option value={item.name}>{item.name}</option>
+                            )
+                          })}
                       </select>
                       {/* <label class="ml-3 form-control-placeholder" for="pwd" >Password</label> */}
                        </div>
                       <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                           <div class="col-12">
                         {/* <p class="mb-1">Password must contain</p> */}
-                        <div class="row">
+                        {/* <div class="row">
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Safe</div>
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Quality</div>
                         </div>
                         <div class="row">
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Easy</div>
                           <div class="col-6"><span class="fa fa-circle text-danger"></span> Reliabe</div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                     <div class="row mt-3 mb-5">
@@ -180,16 +221,17 @@ function Home(props) {
                     <div class="row px-3 mt-3">
                       {/* <p class="mb-0 w-100">Select your Country</p> */}
                       <div class="form-group mt-3 mb-4">
-                      <select className="form-control">
+                      <select className="form-control" onChange={(e)=>{SetType(e.target.value)}}>
                           <option value="">Choose Type..</option>
-                          <option value="">Choose Model..</option>
-                          <option value="">Choose Model..</option>
-                          <option value="">Choose Model..</option>
+                          <option value="Petrol">Petrol</option>
+                          <option value="Deisel">Deisel</option>
+                          <option value="CNG">CNG</option>
+                          <option value="Electric">Electric</option>
                       </select>
                       </div>
-                      <div class="form-group mt-3 mb-4">
+                      {/* <div class="form-group mt-3 mb-4">
                        <input type="mobile" placeholder="Enter your mobile number" class="form-control" required /> 
-                      </div>
+                      </div> */}
                       
                       <div class="next-button text-center mt-3 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                     </div>
@@ -205,7 +247,7 @@ function Home(props) {
               </div>
             </div>
             <div class="col-12">
-              <div class="row px-3">
+              <div class="row px-3 text-center">
                 <h2 class="text-muted get-bonus mt-4 mb-5"> <span class="text-white">Greaser</span> Anytime Anywhere</h2>
                  {/* <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png" /> */}
               </div>
@@ -226,34 +268,34 @@ function Home(props) {
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/car.svg').default} />
-            <h6>Servicing</h6>
+            <h6 className="homeservicecard-subheading">Servicing</h6>
             </div>
           </div>
 
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/spray-gun.svg').default} />
-            <h6>Denting & Painting</h6>
+            <h6 className="homeservicecard-subheading">Denting & Painting</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/customization.svg').default} />
-            <h6>Custamization</h6>
+            <h6 className="homeservicecard-subheading">Custamization</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/accessories.svg').default} />
-            <h6>Accesories</h6>
+            <h6 className="homeservicecard-subheading">Accesories</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/wash.svg').default} />
-            <h6>Car Cleaning</h6>
+            <h6 className="homeservicecard-subheading">Car Cleaning</h6>
             </div>
           </div>
         </div>
@@ -261,34 +303,34 @@ function Home(props) {
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/insurance.svg').default} />
-            <h6>Claim Ypur Insurance</h6>
+            <h6 className="homeservicecard-subheading">Claim Ypur Insurance</h6>
             </div>
           </div>
 
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/battery.svg').default} />
-            <h6>Batteries</h6>
+            <h6 className="homeservicecard-subheading">Batteries</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/windshield.svg').default} />
-            <h6>Glasses &<br/> Windshield</h6>
+            <h6 className="homeservicecard-subheading">Glasses &<br/> Windshield</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/tyre.svg').default} />
-            <h6>Wheels & Tyres</h6>
+            <h6 className="homeservicecard-subheading">Wheels & Tyres</h6>
             </div>
           </div>
           <div className="SecondSectionCard">
-            <div className="card">
+            <div className="homepage-card">
             <img src={require('../src/Images/headlights.svg').default} />
-            <h6>Lights</h6>
+            <h6 className="homeservicecard-subheading">Lights</h6>
             </div>
           </div>
         </div>
@@ -320,7 +362,7 @@ function Home(props) {
 
 
 
-        <section style={{backgroundColor:"#dededede"}} className="pb-5 features-section">
+        <section style={{backgroundColor:"#fefefe"}} className="pb-5 features-section">
           <div className="row">
             <div className="col-12 text-center p-5">
              <h1 className="Features-heading">Features</h1>
@@ -356,7 +398,7 @@ function Home(props) {
       <h2>Warranty</h2>
       <p>
       Network Warranty on Car Service<br/>
-      1 Month/1000kms unconditional warranty on car service. No questions asked!
+      1 Month/1000kms unconditional warranty on car service.
       </p>
       <div className="row featurecardbackground">
         <div className="col-12">

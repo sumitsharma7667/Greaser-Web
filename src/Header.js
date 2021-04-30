@@ -11,7 +11,7 @@ function Header(props) {
     document.getElementById("myNav").style.width = "0%";
   }
   return (
-    <nav style={{position:"absolute"}} className="w-100">
+    <nav style={{position:"absolute",zIndex:10}} className="w-100">
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onClick={()=>{closeNav()}}>&times;</a>
   <div class="overlay-content">
@@ -21,7 +21,7 @@ function Header(props) {
     <a href="#">Contact</a>
   </div>
 </div>
-<span style={{fontSize:"50px",cursor:"pointer"}} className="pl-5 text-dark" onClick={()=>{openNav()}}>&#9776;</span>
+<span style={{fontSize:"50px",cursor:"pointer"}} className="pl-5 text-white" onClick={()=>{openNav()}}>&#9776;</span>
 </nav>
   );
 }
