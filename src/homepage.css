@@ -1902,3 +1902,212 @@ input:focus + label, input:valid + label{
   font-size: 30px;
   margin: 20px;
 }
+
+/* Features Home */
+.FeatWrap{
+  perspective: 800;
+  -webkit-perspective: 800;
+  perspective-origin: 50% 90px;
+  -webkit-perspective-origin: 50% 90px;
+  margin: 150px auto 0 auto;
+  width: 600px;
+  transition: 1s;
+}
+.FeatWrap:hover{
+  perspective-origin: 50% -100px;
+  -webkit-perspective-origin: 50% -100px;
+}
+.HomeCard_conatainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  width: auto;
+}
+.FeatureSEct_card{
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 400px;
+  display: flex;
+  margin-bottom: 60px;
+  transition: 0.4s;
+}
+/* .FeatureSEct_card{
+    position: relative;
+    height: 400px;
+    margin: 0px 20px
+    dis
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 60px;
+    transition: 0.4s;
+} */
+.FeatureSEct_card::before {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 50px;
+  border-radius: 10px;
+  transform: skewx(15deg);
+  transition: 0.4s;
+}
+
+.FeatureSEct_card::after {
+  content: "";
+  position: absolute;
+  background: white;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 50px;
+  border-radius: 10px;
+  transform: skewx(15deg);
+  transition: 0.4s;
+  filter: blur(30px);
+}
+
+.FeatureSEct_card:hover::before,
+.FeatureSEct_card:hover::after {
+  transform: skewx(0);
+  left: 40px;
+  width: calc(100% - 80px);
+}
+
+.FeatureSEct_card:nth-child(1)::before,
+.FeatureSEct_card:nth-child(1)::after {
+  background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+}
+
+.FeatureSEct_card:nth-child(2)::before,
+.FeatureSEct_card:nth-child(2)::after {
+  background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+}
+
+.FeatureSEct_card:nth-child(3)::before,
+.FeatureSEct_card:nth-child(3)::after {
+  background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+}
+
+.FeatureSEct_card span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.FeatureSEct_card span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.FeatureSEct_card:hover span::before {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  left: 50px;
+  top: -50px;
+  animation: swing 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.FeatureSEct_card span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 10px;
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.FeatureSEct_card:hover span::after {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  right: 50px;
+  bottom: -50px;
+  animation: swing 2s ease-in-out infinite;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  animation-delay: -1s;
+}
+
+.content {
+  z-index: 1;
+  position: relative;
+  left: 0;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  padding: 20px 50px;
+  transition: 0.4s;
+  color: white;
+}
+
+.FeatureSEct_card:hover .content {
+  left: -25px;
+  padding: 40px 50px;
+}
+
+.FeatureSEct_card h2 {
+  font-size: 1.9em;
+  margin-bottom: 10px;
+}
+
+.FeatureSEct_card p {
+  font-size: 0.95em;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.FeatureSEct_card a {
+  display: inline-block;
+  text-decoration: none;
+  background: white;
+  color: #222;
+  font-size: 1.1em;
+  font-weight: 500;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+@keyframes swing {
+  0% {
+    transform: translatey(10px);
+  }
+
+  50% {
+    transform: translatey(-10px);
+  }
+
+  100% {
+    transform: translatey(10px);
+  }
+}

@@ -397,7 +397,7 @@ function Home(props) {
 
                 <div class="listar-feature-item-title listar-feature-counter-added">
                   <span><span>01</span>
-                    Services </span>
+                    Customers </span>
                 </div>
 
                 <div class="listar-feature-item-excerpt">
@@ -432,7 +432,7 @@ function Home(props) {
 
                 <div class="listar-feature-item-title listar-feature-counter-added">
                   <span><span>02</span>
-                    Customers </span>
+                    Service</span>
                 </div>
 
                 <div class="listar-feature-item-excerpt">
@@ -487,7 +487,7 @@ function Home(props) {
 
 
 
-        <section className="ThirdSection">
+      <section className="ThirdSection">
           <div className="row d-flex">
             <div className="col-6">
             <h3>Download the app</h3>
@@ -509,66 +509,74 @@ function Home(props) {
             </div>
           </div>
         </section>
+        
 
-
-
-        <section  className="pb-5 features-section">
-          <div className="row">
-            <div className="col-12 text-center p-5">
+      <section className=" features-section">
+        <div className="container-fluid HomeCard_conatainer">
+          <div className="col-12 text-center p-3">
              <h1 className="Features-heading">Features</h1>
             </div>
+          <div className="row">
+            <div className="col-3">
+               <div class="card FeatureSEct_card a">
+                  <span></span>
+                  <div class="content">
+                     <h2>Pickup</h2>
+                         <p>
+                          Free Doorstep Pick-up and Drop
+                          <br/>No more unnecessary workshop visits!
+                          </p>
+                       <a href="#">Read More</a>
+                  </div>
+                </div>
+            </div>
+            <div className="col-3">
+              <div class="card FeatureSEct_card a">
+                  <span></span>
+                  <div class="content">
+                     <h2>Pricing</h2>
+                          <p>Upfront & Competitive Pricing<br/>
+                           Save Upto 40% on your car’s service</p>
+                       <a href="#">Read More</a>
+                  </div>
+                </div>
+            </div>
+            <div className="col-3">
+              <div class="card FeatureSEct_card a">
+                  <span></span>
+                  <div class="content">
+                     <h2>Warranty</h2>
+                          <p> Network Warranty on Car Service<br/>
+                             1 Month/1000kms unconditional warranty on car service.</p>
+                       <a href="#">Read More</a>
+                  </div>
+                </div>
+            </div>
+             <div className="col-3">
+              <div class="card FeatureSEct_card a">
+                  <span></span>
+                  <div class="content">
+                     <h2>Spare Parts</h2>
+                          <p> 100% Genuine Spare Parts<br/>
+                          Only OEM/OES spare parts used. Quality Assured!</p>
+                       <a href="#">Read More</a>
+                  </div>
+                </div>
+            </div>
           </div>
-        <main>
-  <ul class="cards-container">
-    <li class="cyan-feature-card">
-      <h2>Pickup</h2>
-      <p>
-      Free Doorstep Pick-up and Drop
-      <br/>No more unnecessary workshop visits!
-      </p>
-      <div className="row featurecardbackground">
-        <div className="col-12">
-        </div>
-      </div>
-    </li>
+            </div>
 
-    <li class="red-feature-card">
-      <h2>Pricing</h2>
-      <p>
-      Upfront & Competitive Pricing<br/>
-      Save Upto 40% on your car’s service
-      </p>
-      <div className="row featurecardbackground">
-        <div className="col-12">
-        </div>
-      </div>
-    </li>
 
-    <li class="orange-feature-card">
-      <h2>Warranty</h2>
-      <p>
-      Network Warranty on Car Service<br/>
-      1 Month/1000kms unconditional warranty on car service.
-      </p>
-      <div className="row featurecardbackground">
-        <div className="col-12">
-        </div>
-      </div>
-    </li>
 
-    <li class="blue-feature-card">
-      <h2>Spare Parts</h2>
-      <p>
-      100% Genuine Spare Parts<br/>
-      Only OEM/OES spare parts used. Quality Assured!
-      </p>
-      <div className="row featurecardbackground">
-        <div className="col-12">
-        </div>
-      </div>
-    </li>
-  </ul>
-</main>
+
+
+
+
+
+
+
+
+         
 
         </section>
        <Footer />
