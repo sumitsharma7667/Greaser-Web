@@ -19,136 +19,143 @@ function ServiceDetail(props) {
         </div>
       </div>
     </section>
-    <section className="p-5 " style={{backgroundColor:"#dedede"}}>
-     
-
-     <div className="row mt-3 pb-5 pt-5 bg-white pl-4 pr-5" style={{boxShadow: "rgb(130 127 127) 0px 4px 17px" ,borderRadius:"10px"}}>
-       <div className="col-3 text-center">
-         <img src={require('./Images/logo.png').default} className="pt-4" style={{height:"150px"}}/>
-         <h4 className="text-dark pt-3"> Rs  ₹499</h4>
-       </div>
-       <div className="col-9">
-       <div className="row">
-       <div className="col-12">
-         <h3 className="text-dark pt-4 pb-4">Dickey Shocker replacement <span  style={{float:"right"}}className="badge badge-secondary"><span><img src={require("./Images/clock.png").default} style={{height:"20px"}} className="pr-2"/></span>Take 2 Hour</span></h3>
-         
-       </div>
-       <div className="col-6 p-2">
-         <li className="text-dark">1 Month warranty</li>
-         <li className="text-dark">Dickey Shocker OES replacement (set of 2)</li>
-         <li className="text-dark">Dickey Shocker new replacement (set of 4)</li>
-         
-       </div>
-       <div className="col-6 ">
-       <li className="text-dark">Opening and fitting  Dickey Shocker</li>
-         <li className="text-dark">Free Pickup and Drop</li>
-         <Link to="/Cart" class="btn btn-primary btn-sm mt-3" style={{float:"right"}}>Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
-       </div>
-       </div>
-       </div>
-     </div>
-
-     <div className="row mt-3 pb-5 pt-5 bg-white pl-4 pr-5" style={{boxShadow: "rgb(130 127 127) 0px 4px 17px" ,borderRadius:"10px"}}>
-       <div className="col-3 text-center">
-         <img src={require('./Images/carousel1.jpeg').default} className="pt-4" style={{height:"150px"}}/>
-         <h4 className="text-dark pt-3"> Rs  ₹499</h4>
-       </div>
-       <div className="col-9">
-       <div className="row">
-       <div className="col-12">
-         <h3 className="text-dark pt-4 pb-4">Dickey Shocker replacement <span  style={{float:"right"}}className="badge badge-secondary"><span><img src={require("./Images/clock.png").default} style={{height:"20px"}} className="pr-2"/></span>Take 2 Hour</span></h3>
-         
-       </div>
-       <div className="col-6 p-2">
-         <li className="text-dark">1 Month warranty</li>
-         <li className="text-dark">Dickey Shocker OES replacement (set of 2)</li>
-         <li className="text-dark">Dickey Shocker new replacement (set of 4)</li>
-         
-       </div>
-       <div className="col-6 ">
-       <li className="text-dark">Opening and fitting  Dickey Shocker</li>
-         <li className="text-dark">Free Pickup and Drop</li>
-         <Link to="/Cart" class="btn btn-primary btn-sm mt-3" style={{float:"right"}}>Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
-       </div>
-       </div>
-       </div>
-     </div>
-     <div className="row mt-3 pb-5 pt-5 bg-white pl-4 pr-5" style={{boxShadow: "rgb(130 127 127) 0px 4px 17px" ,borderRadius:"10px"}}>
-       <div className="col-3 text-center">
-         <img src={require('./Images/carousel1.jpeg').default} className="pt-4" style={{height:"150px"}}/>
-         <h4 className="text-dark pt-3"> Rs  ₹499</h4>
-       </div>
-       <div className="col-9">
-       <div className="row">
-       <div className="col-12">
-         <h3 className="text-dark pt-4 pb-4">Dickey Shocker replacement <span  style={{float:"right"}}className="badge badge-secondary"><span><img src={require("./Images/clock.png").default} style={{height:"20px"}} className="pr-2"/></span>Take 2 Hour</span></h3>
-         
-       </div>
-       <div className="col-6 p-2">
-         <li className="text-dark">1 Month warranty</li>
-         <li className="text-dark">Dickey Shocker OES replacement (set of 2)</li>
-         <li className="text-dark">Dickey Shocker new replacement (set of 4)</li>
-         
-       </div>
-       <div className="col-6 ">
-       <li className="text-dark">Opening and fitting  Dickey Shocker</li>
-         <li className="text-dark">Free Pickup and Drop</li>
-         <Link to="/Cart" class="btn btn-primary btn-sm mt-3" style={{float:"right"}}>Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
-       </div>
-       </div>
-       </div>
-     </div>
-     <div className="row mt-3 pb-5 pt-5 bg-white pl-4 pr-5" style={{boxShadow: "rgb(130 127 127) 0px 4px 17px" ,borderRadius:"10px"}}>
-       <div className="col-3 text-center">
-         <img src={require('./Images/carousel1.jpeg').default} className="pt-4" style={{height:"150px"}}/>
-         <h4 className="text-dark pt-3"> Rs  ₹499</h4>
-       </div>
-       <div className="col-9">
-       <div className="row">
-       <div className="col-12">
-         <h3 className="text-dark pt-4 pb-4">Dickey Shocker replacement <span  style={{float:"right"}}className="badge badge-secondary"><span><img src={require("./Images/clock.png").default} style={{height:"20px"}} className="pr-2"/></span>Take 2 Hour</span></h3>
-         
-       </div>
-       <div className="col-6 p-2">
-         <li className="text-dark">1 Month warranty</li>
-         <li className="text-dark">Dickey Shocker OES replacement (set of 2)</li>
-         <li className="text-dark">Dickey Shocker new replacement (set of 4)</li>
-         
-       </div>
-       <div className="col-6 ">
-       <li className="text-dark">Opening and fitting  Dickey Shocker</li>
-         <li className="text-dark">Free Pickup and Drop</li>
-         <Link to="/Cart" class="btn btn-primary btn-sm mt-3" style={{float:"right"}}>Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
-       </div>
-       </div>
-       </div>
-     </div>
-     <div className="row mt-3 pb-5 pt-5 bg-white pl-4 pr-5" style={{boxShadow: "rgb(130 127 127) 0px 4px 17px" ,borderRadius:"10px"}}>
-       <div className="col-3 text-center">
-         <img src={require('./Images/carousel1.jpeg').default} className="pt-4" style={{height:"150px"}}/>
-         <h4 className="text-dark pt-3"> Rs  ₹499</h4>
-       </div>
-       <div className="col-9">
-       <div className="row">
-       <div className="col-12">
-         <h3 className="text-dark pt-4 pb-4">Dickey Shocker replacement <span  style={{float:"right"}}className="badge badge-secondary"><span><img src={require("./Images/clock.png").default} style={{height:"20px"}} className="pr-2"/></span>Take 2 Hour</span></h3>
-         
-       </div>
-       <div className="col-6 p-2">
-         <li className="text-dark">1 Month warranty</li>
-         <li className="text-dark">Dickey Shocker OES replacement (set of 2)</li>
-         <li className="text-dark">Dickey Shocker new replacement (set of 4)</li>
-         
-       </div>
-       <div className="col-6 ">
-       <li className="text-dark">Opening and fitting  Dickey Shocker</li>
-         <li className="text-dark">Free Pickup and Drop</li>
-         <Link to="/Cart" class="btn btn-primary btn-sm mt-3" style={{float:"right"}}>Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
-       </div>
-       </div>
-       </div>
-     </div>
-     
+    {/* Card Section */}
+      <section className="p-4 " style={{ backgroundColor: "#dedede" }}>
+        <div class="contianer">
+          <div class="row">
+            <div class="col-3">
+              <div class="card card_cont" id='container'>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>
+                        Dickey Shocker replacement
+                      </h4>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                  <img class="service_itemImg" src={require("./Images/carousel1.jpeg").default} alt=""/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>$120/-</h4>
+                   </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                     <Link to="/Cart">
+                  <button id='button' class='Add_ToCart' type="button" name="button">ADD TO CART</button>
+                 </Link>
+                  </div>
+                </div>
+                 
+                    </div>
+                </div>
+             <div class="col-3">
+                    <div class="card card_cont" id='container'>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>
+                        Dickey Shocker replacement
+                      </h4>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                  <img class="service_itemImg" src={require("./Images/carousel1.jpeg").default} alt=""/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>$120/-</h4>
+                   </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                     <Link to="/Cart">
+                  <button id='button' class='Add_ToCart' type="button" name="button">ADD TO CART</button>
+                 </Link>
+                  </div>
+                </div>
+                 
+                    </div>
+            </div>
+             <div class="col-3">
+                    <div class="card card_cont" id='container'>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>
+                        Dickey Shocker replacement
+                      </h4>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                  <img class="service_itemImg" src={require("./Images/carousel1.jpeg").default} alt=""/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>$120/-</h4>
+                   </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                     <Link to="/Cart">
+                  <button id='button' class='Add_ToCart' type="button" name="button">ADD TO CART</button>
+                 </Link>
+                  </div>
+                </div>
+                 
+                    </div>
+            </div>
+             <div class="col-3">
+                    <div class="card card_cont" id='container'>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>
+                        Dickey Shocker replacement
+                      </h4>
+                  </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                  <img class="service_itemImg" src={require("./Images/carousel1.jpeg").default} alt=""/>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="Heading_ServiceItem">
+                      <h4>$120/-</h4>
+                   </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-12">
+                     <Link to="/Cart">
+                  <button id='button' class='Add_ToCart' type="button" name="button">ADD TO CART</button>
+                 </Link>
+                  </div>
+                </div>
+                    </div> 
+            </div>
+          </div>
+        </div>
    </section>
     <section id="home" class="section-showcase">
       <div class="container">
@@ -170,7 +177,7 @@ function ServiceDetail(props) {
           
         
         
-        <Link to="/Cart" class="btn">Add to cart<span> <img src={require('./Images/cart-logo.png').default} style={{height:"30px"}}/></span></Link>
+       
         </div>
         <div>
         <img src={require("./Images/carousel1.jpeg").default} style={{height:"300px",boxShadow:"2px 10px 30px #2d2b2b"}} alt="" />

@@ -252,7 +252,7 @@ footer ul {
 }
 .footer-widget ul li {
   display: inline-block;
-  float: left;
+  /* float: left; */
   width: 50%;
   margin-bottom: 12px;
 }
@@ -364,7 +364,7 @@ footer ul {
   right: 35px;
   }
 }
-<
+
 /* End Header Css */
 .service-heading div{
   padding: 0px;
@@ -558,15 +558,8 @@ footer ul {
     padding: 15px;
     font-family: TransRobotics;
 }
-.features-section{
-  /* background-image: url("./Images/features.jpeg");
-  background-size: cover; */
-}
+
 .first_servicesCarousel{
-/* background: linear-gradient( 
-    180deg
-     , rgb(227 1 212) -120%, rgb(50 33 112) 64%);
-} */
 background-color: #fefefe;
 }
 .thumbs-wrapper {
@@ -1137,13 +1130,193 @@ a:hover {
 .container h1,.container h2,.container h3{
   color: black;
 }
-.cartBackground{
-  /* background-color: #eee; */
+/* .cartBackground{
+  background-color: #eee;
   background-image: url('./Images/cart-background.jpeg');
   background-repeat: no-repeat;
   background-size: contain;
-}
+} */
+
 #cart{
   padding: 40px;
 }
 /* End cart css */
+
+
+/* Service_detail Page Css Start */
+
+
+
+
+.card_cont {
+	position: relative;
+	left: 0;
+	right: 0;
+	width: 300px;
+	height: 400px;
+	border-radius: 5px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+	overflow: hidden;
+	
+	/* box-shadow: 0px 0px 136px 3px #6d74d6; */
+}
+
+.service_itemImg{
+  height: 100%;
+  width: 100%;
+  padding: 15px;
+}
+.Heading_ServiceItem{
+  text-align: center;
+  padding: 15px;
+}
+.Add_ToCart {
+	background: #000;
+	width: 167px;
+	height: 45px;
+	border-radius: 53px;
+	position: absolute;
+	left: 0;
+	color: #fff;
+	right: 0;
+	border: none;
+	margin-left: auto;
+	margin-right: auto;
+	font-family: 'Roboto', sans-serif;
+	transition: .5s;
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.68);
+	-moz-box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.68);
+	box-shadow: 0px 0px 50px 1px rgba(0, 0, 0, 0.68);
+}
+.Add_ToCart:hover{
+  background: #69168F;
+  color: #fff;
+}
+.Cart_page_sect{
+  
+  background: #EFF2F3;
+  color: #000;
+}
+.Card_CartSect{
+  background: #fff;
+}
+.Item_card{
+  
+  background: #fff !important;
+  border-radius: 25px;
+}
+.Child_card_shop{
+  background: #fff !important;
+  box-shadow: 0px 5px 5px 0px rgb(0 0 0 / 68%)
+}
+.headin_shopCart{
+  color: #000 !important;
+  font-size: 18px;
+}
+/* Service_detail Page Css end */
+.pos_negTIveIcon{
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Cart_itemImg{
+  height: 100%;
+  width: 100%;
+}
+.cart_CenterROw{
+  align-items: center;
+  margin: 20px;
+}
+.Head_yourShop{
+  text-align: center;
+}
+.Secon_colCard{
+  border-radius: 15px;  
+  background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+}
+/* form Css Cart page  */
+.formfield{
+  position: relative;
+  box-sizing: border-box;
+  float: left;
+  margin: auto;
+  padding: 0px;
+  border: 0px;
+  font-size: 1em;
+}
+.formfield *{
+  box-sizing: border-box;
+}
+#firstnamefield, #lastnamefield{
+  width: 50%;
+ 
+}
+#addressfield{
+  width: 100%;
+}
+#zipcodefield{
+  width: 25%;
+}
+#cityfield{
+  width: 75%;
+}
+.formfield>input, .formfield>label{
+  padding: 0.8em;
+  margin: 0.5em;
+  width: 100%;
+}
+.formfield>input{
+  border: 1px solid #fdfdfd;
+  border-radius: 1.5em;
+  outline: none;
+  color: #fff;
+  background: rgba(255, 255, 255, 0);
+}
+.formfield>label{
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  color: #ccc;
+}
+input:focus + label, input:valid + label{
+  color: #fff;
+  font-size: 0.8em;
+  width: auto;
+  height: 1.3em;
+  padding: 0px 0.5em 0px 0.5em;
+  margin: 0px;
+  /*outline: 1px solid red; /*for debugigng purposes only*/
+  transition: 0.2s ease-in-out;
+  top: 0em;
+  left: 2em;
+}
+.Your_detailHead{
+  position: relative;
+  top: 10px;
+}
+.CheckOut_CONT{
+  width: auto;
+}
+.CheckOutBtn{
+  background: #4251da !important;
+  border: #80c7dd !important;
+}
+.fa-plus-square, .fa-minus-square{
+  font-size: 30px;
+  margin: 35px;
+}
+.fa-trash{
+  font-size: 30px;
+  margin: 20px;
+}
