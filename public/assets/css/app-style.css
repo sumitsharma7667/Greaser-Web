@@ -659,6 +659,8 @@ body.bg-theme15 {
 
 .logo-icon{
     width: 55%;
+    height: 100%;
+    object-fit: contain;
     margin-right: 5px;
 }
 

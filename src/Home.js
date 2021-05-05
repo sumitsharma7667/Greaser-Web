@@ -248,7 +248,7 @@ function Home(props) {
             </div>
             <div class="col-12">
               <div class="row px-3 text-center">
-                <h2 class="text-muted get-bonus mt-4 mb-5"> <span class="text-white">Greaser</span> Anytime Anywhere</h2>
+                <h2 class=" get-bonus mt-4 mb-5" style={{color:"#bdbdbd"}}> <span class="text-white" style={{fontFamily:"TransRobotics",fontSize:"50px"}}>Greaser</span> Anytime Anywhere</h2>
                  {/* <img class="pic ml-auto mr-3" src="https://i.imgur.com/NFodZjZ.png" /> */}
               </div>
             </div>
@@ -267,76 +267,226 @@ function Home(props) {
         </div>
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
+          
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/car.svg').default} />
             <h6 className="homeservicecard-subheading">Servicing</h6>
             </div>
+            </Link>
           </div>
 
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/spray-gun.svg').default} />
             <h6 className="homeservicecard-subheading">Denting & Painting</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/customization.svg').default} />
             <h6 className="homeservicecard-subheading">Custamization</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/accessories.svg').default} />
             <h6 className="homeservicecard-subheading">Accesories</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/wash.svg').default} />
             <h6 className="homeservicecard-subheading">Car Cleaning</h6>
             </div>
+            </Link>
           </div>
         </div>
         </div>
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/insurance.svg').default} />
             <h6 className="homeservicecard-subheading">Claim Ypur Insurance</h6>
             </div>
+            </Link>
           </div>
 
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/battery.svg').default} />
             <h6 className="homeservicecard-subheading">Batteries</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/windshield.svg').default} />
             <h6 className="homeservicecard-subheading">Glasses &<br/> Windshield</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/tyre.svg').default} />
             <h6 className="homeservicecard-subheading">Wheels & Tyres</h6>
             </div>
+            </Link>
           </div>
           <div className="SecondSectionCard">
+            <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/headlights.svg').default} />
             <h6 className="homeservicecard-subheading">Lights</h6>
             </div>
+            </Link>
           </div>
         </div>
         </div>
         </div>
         </section>
+
+
+<section className="howItWork-section">
+<header class="header-design">
+  <div class="listar-map-button">
+    <div class="listar-map-button-text" style={{display:"inline-block", opacity: 1}}>
+      <span class="icon-map2">
+        How it Works? </span>
+    </div>
+  </div>
+
+  <div class="footer-wave"></div>
+</header>
+<div class="pset">
+  <div class="container">
+    <div class="row listar-feature-items">
+
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed" data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <a href="#" ></a>
+
+          <div class="listar-feature-item-inner">
+
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img alt="Businesses" class="listar-image-icon" src="https://image.flaticon.com/icons/svg/1899/1899582.svg" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper" style={{paddingTop: "0px"}}>
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>01</span>
+                    Services </span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Start publish listings to show everyone the details and goodies of your establishment. </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed" data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <a href="#/" target="_blank"></a>
+
+          <div class="listar-feature-item-inner">
+
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img alt="Customers" class="listar-image-icon" src="https://image.flaticon.com/icons/svg/1899/1899506.svg" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper" style={{paddingTop: "0px"}}>
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>02</span>
+                    Customers </span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Easily find interesting places by local experts, save time by checking listing features. </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+      </div>
+
+      <div class="col-xs-12 col-sm-6 col-md-4 listar-feature-item-wrapper listar-feature-with-image listar-height-changed" data-aos="fade-zoom-in" data-aos-group="features" data-line-height="25.2px">
+        <div class="listar-feature-item listar-feature-has-link">
+
+          <a href="#" ></a>
+
+          <div class="listar-feature-item-inner">
+
+            <div class="listar-feature-right-border"></div>
+
+            <div class="listar-feature-block-content-wrapper">
+              <div class="listar-feature-icon-wrapper">
+                <div class="listar-feature-icon-inner">
+                  <div>
+                    <img alt="Feedback" class="listar-image-icon" src="https://image.flaticon.com/icons/svg/1899/1899604.svg" />
+                  </div>
+                </div>
+              </div>
+
+              <div class="listar-feature-content-wrapper" style={{paddingTop: "0px"}}>
+
+                <div class="listar-feature-item-title listar-feature-counter-added">
+                  <span><span>03</span>
+                    Feedback </span>
+                </div>
+
+                <div class="listar-feature-item-excerpt">
+                  Visitors discuss listings to share experiences, so businesses get reputation consolidated. </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="listar-feature-fix-bottom-padding listar-fix-feature-arrow-button-height"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
         <section className="ThirdSection">
           <div className="row d-flex">
             <div className="col-6">
@@ -362,7 +512,7 @@ function Home(props) {
 
 
 
-        <section style={{backgroundColor:"#fefefe"}} className="pb-5 features-section">
+        <section  className="pb-5 features-section">
           <div className="row">
             <div className="col-12 text-center p-5">
              <h1 className="Features-heading">Features</h1>
