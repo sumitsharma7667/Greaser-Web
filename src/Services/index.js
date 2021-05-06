@@ -22,7 +22,7 @@ const CreateService =()=>{
     },[])
 
     const GetServiceType = () => {
-        fetch("http://192.168.43.123:3031/GetServiceType")
+        fetch("http://http://144.91.110.221:3032/GetServiceType")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -31,7 +31,7 @@ const CreateService =()=>{
             .then(err => console.log(err))
     }
     const StoreService = () => {
-        // if (this.checkValidation()) {
+        if (this.checkValidation()) {
         const data = new FormData()
         data.append('name', name)
         data.append('mode', mode)
@@ -43,7 +43,7 @@ const CreateService =()=>{
         data.append('features', features)
         data.append('status', status)
         data.append('image',image)
-        const url = "http://192.168.43.123:3031/StoreService"
+        const url = "http://144.91.110.221:3032/StoreService"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -54,11 +54,11 @@ const CreateService =()=>{
                 GetServices()               
             })
             .then(err => {})
-        // }
+        }
     }
 
     const GetServices = () => {
-        fetch("http://192.168.43.123:3031/GetServices")
+        fetch("http://http://144.91.110.221:3032/GetServices")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -95,7 +95,7 @@ const CreateService =()=>{
         data.append('features', features)
         data.append('status', status)
         data.append('image',image)
-        const url="http://192.168.43.123:3031/UpdateService"
+        const url="http://http://144.91.110.221:3032/UpdateService"
                 fetch(url,
                     {
                     method:'put',
@@ -111,7 +111,7 @@ const CreateService =()=>{
       }
 
       const DeleteService = (id) => {
-        const apiUrl = 'http://192.168.43.123:3031/DeleteService';
+        const apiUrl = 'http://http://144.91.110.221:3032/DeleteService';
         fetch(apiUrl, {
           headers : { 
             'Content-Type': 'application/json',
@@ -127,6 +127,12 @@ const CreateService =()=>{
           
         })
         
+      }
+
+     function onChange(evt){
+        console.log("onChange fired with event info: ", evt);
+        var newContent = evt.editor.getData();
+        SetFeatures(newContent)
       }
 
     // data table
@@ -218,7 +224,9 @@ const CreateService =()=>{
             </div>
            <div class="col-lg-12 form-group">
            <label >Features</label>
-           <CKEditor activeClass="editor" content={features} onChange={(e)=>{SetFeatures(e.editor.getData())}} />
+           <CKEditor activeClass="editor" content={features}   events={{
+                "change": onChange
+              }} />
             </div>       
             <div class="col-lg-6 form-group"  >
             <label for="input-2">Status</label>

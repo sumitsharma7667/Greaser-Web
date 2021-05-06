@@ -2,11 +2,12 @@
 .FirstSection .card{
     height: auto !important;
     padding: 30px 0px 0px 0px;
+    background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
 }
 .FirstSection .card img {
     filter: invert(1);
-    height: 50%;
-    width: 15%;
+    height: 100px;
+    width: 100px;
     margin: auto;
 }
 .FirstSection .form-group{
@@ -25,7 +26,7 @@
 .card1 {
     margin-left: 50px;
     z-index: 0;
-    border-right: 1px solid #F5F5F5
+    /* border-right: 1px solid #F5F5F5 */
 }
 
 .card2 {
@@ -110,12 +111,12 @@
 }
 
 .next-button:hover {
-    background-color: #E53935;
+    background-color: #1b1b1b;
     color: #fff
 }
 
 .get-bonus {
-    margin-left: 154px
+    margin-left: 0px
 }
 
 .pic {
@@ -153,7 +154,7 @@
     display: block;
     font-size: 20px;
     background: #fff;
-    border: 2px solid #E53935;
+    border: 2px solid #5b4d8d;
     border-radius: 50%;
     margin: auto
 }
@@ -164,27 +165,43 @@
 }
 
 #progressbar li:after {
-    content: '';
+    /* content: '';
     width: 3px;
     height: 66px;
     background: #BDBDBD;
     position: absolute;
     left: 58px;
     top: 15px;
-    z-index: -1
+    z-index: -1 */
+
+    content: '';
+    width: 122px;
+    height: 3px;
+    background: #BDBDBD;
+    position: unset;
+    left: 60px;
+    top: 15px !important;
+    z-index: -1;
+
 }
 
 #progressbar li:last-child:after {
-    top: 147px;
-    height: 132px
+    /* top: 147px;
+    height: 3px;
+    position: absolute;
+    left: 215px; */
 }
 
 #progressbar li:nth-child(3):after {
-    top: 81px
+    /* top: 81px;
+    position: absolute;
+    left: 200px; */
 }
 
 #progressbar li:nth-child(2):after {
-    top: 0px
+    top: 81px;
+    position: absolute;
+    left: 180px;
 }
 
 #progressbar li:first-child:after {
@@ -193,11 +210,12 @@
 }
 
 #progressbar li.active:after {
-    background: #E53935
+    background: black
 }
 
 #progressbar li.active:before {
-    background: #E53935;
+    /* background: #E53935; */
+    background-color: #1b1b1b;
     font-family: FontAwesome;
     content: "\f00c"
 }
@@ -250,4 +268,13 @@
     #progressbar {
         left: -25px
     }
+}
+#progressbar .pl{
+ padding-left: 6rem;
+}
+.card1 .pleft{
+    padding-left: 50px ;
+}
+.card1 .pleft:last-child{
+    padding-left: 94px !important;
 }
