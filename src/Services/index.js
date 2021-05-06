@@ -31,7 +31,7 @@ const CreateService =()=>{
             .then(err => console.log(err))
     }
     const StoreService = () => {
-        if (this.checkValidation()) {
+        // if (this.checkValidation()) {
         const data = new FormData()
         data.append('name', name)
         data.append('mode', mode)
@@ -55,7 +55,7 @@ const CreateService =()=>{
             })
             .then(err => {})
         }
-    }
+    // }
 
     const GetServices = () => {
         fetch("http://144.91.110.221:3032/GetServices")
