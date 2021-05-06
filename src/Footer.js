@@ -12,7 +12,7 @@ function Header(props) {
                         <i class="fas fa-map-marker-alt"></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
-                            <span>1010 Avenue, Ballupur Chowk, Dehradun</span>
+                            <span>Ballupur Chowk, Dehradun</span>
                         </div>
                     </div>
                 </div>
@@ -58,7 +58,7 @@ function Header(props) {
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-30">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Useful Links</h3>
+                            <h3 className="text-white">Useful Links</h3>
                         </div>
                         <ul>
                             <li><a href="#">Home</a></li>
@@ -77,7 +77,7 @@ function Header(props) {
                 <div class="col-xl-4 col-lg-4 col-md-6 mb-50">
                     <div class="footer-widget">
                         <div class="footer-widget-heading">
-                            <h3>Subscribe</h3>
+                            <h3 className="text-white">Subscribe</h3>
                         </div>
                         <div class="footer-text mb-25">
                             <p>Don’t miss to subscribe to our new feeds, kindly fill the form below.</p>

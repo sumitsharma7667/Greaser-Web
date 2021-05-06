@@ -26,7 +26,7 @@
   <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
   <!-- Custom Style-->
   <link href="assets/css/app-style.css" rel="stylesheet"/>
-  
+ 
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -511,6 +511,15 @@
  
   <!-- Index js -->
   <script src="assets/js/index.js"></script>
+  <script>
+     $('.btn').on('click', function() {
+    var $this = $(this);
+  $this.button('loading');
+    setTimeout(function() {
+       $this.button('reset');
+   }, 8000);
+});
+  </script>
 
   
 </body>
