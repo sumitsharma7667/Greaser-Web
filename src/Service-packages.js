@@ -35,7 +35,7 @@ function Services(props) {
   return (
     <>
     <Header />
-    <section id="about" class="section-large-text_insrvice_features">
+    <section id="about" class="section-large-text_insrvice_features">      
       <div class="service_overlay">
         <div class="section-large-text-inner">
           <h3>We provide you our best</h3>
@@ -48,7 +48,7 @@ function Services(props) {
         </div>
       </div>
     </section>
-    <section className="SecondSection" style={{backgroundColor:"#dededede"}}>
+    <section className="SecondSection">
         <div className="row">
         <div className="col-12 ">
          <h2 className="servicesHeading_in_service_feature">Services</h2>
@@ -56,76 +56,99 @@ function Services(props) {
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/car.svg').default} />
             <h6>Servicing</h6>
             </div>
+            </Link>
           </div>
 
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/spray-gun.svg').default} />
             <h6>Denting & Painting</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/customization.svg').default} />
             <h6>Custamization</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/accessories.svg').default} />
             <h6>Accesories</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/wash.svg').default} />
             <h6>Car Cleaning</h6>
             </div>
+            </Link>
           </div>
         </div>
         </div>
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/insurance.svg').default} />
             <h6>Claim Ypur Insurance</h6>
             </div>
+            </Link>
           </div>
 
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/battery.svg').default} />
             <h6>Batteries</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/windshield.svg').default} />
             <h6>Glasses &<br/> Windshield</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/tyre.svg').default} />
             <h6>Wheels & Tyres</h6>
             </div>
+            </Link>
           </div>
           <div className="ServiceFeaturesCard">
+            <Link to="/Services-detail"> 
             <div className="service_card">
             <img src={require('../src/Images/headlights.svg').default} />
             <h6>Lights</h6>
             </div>
+            </Link>
           </div>
         </div>
         </div>
         </div>
         </section>
         <section className="first_servicesCarousel">
+        <header class="header-design">
+           <div class="footer-wave"></div>
+        </header>
           <div className="row " >
               <div className="col-12 text-center p-5">
                 <h2 className="servicesHeading_in_service_feature" >Top Services</h2>

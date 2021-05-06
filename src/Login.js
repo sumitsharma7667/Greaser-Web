@@ -7,11 +7,11 @@ function Login(props) {
   return (
     <>
     <Header />
-<div class="card card-authentication1 mx-auto my-5">
+<div class="homepage-card card-authentication1 mx-auto my-5">
 		<div class="card-body">
 		 <div class="card-content p-2">
 		 	<div class="text-center">
-		 		<img src={require('./Images/logo.png').default} alt="logo icon" />
+		 		<img src={require('./Images/logo.png').default} style={{height:"150px",objectFit:"contain"}} alt="logo icon" />
 		 	</div>
 		  <div class="card-title text-uppercase text-center py-3">Sign In</div>
 		    

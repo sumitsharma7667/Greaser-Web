@@ -12,7 +12,7 @@ function App(props) {
     <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
       <div class="brand-logo">
        <a href="index.html">
-        <img src="assets/images/logo-icon (1).png" class="logo-icon" alt="logo icon" />
+        <img src={require("./Images/logo.png").default} class="logo-icon" alt="logo icon" />
         {/* <h5 class="logo-text">Greaser</h5> */}
       </a>
     </div>
