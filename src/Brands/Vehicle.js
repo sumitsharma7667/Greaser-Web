@@ -90,7 +90,7 @@ const Vehicle =()=>{
         
            <div class="col-lg-6 form-group">
             <label for="input-2">Image</label>
-            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  />
+            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.files[0])}}  />
            </div>
            <div class="col-lg-6 form-group"  >
            <label for="input-2">Status</label>
