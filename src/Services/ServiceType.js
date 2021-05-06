@@ -15,7 +15,7 @@ const ServiceType =()=>{
         data.append('name', name)
         data.append('image',image)
         data.append('status',status)
-        const url = "http://http://144.91.110.221:3032/StoreServiceType"
+        const url = "http://144.91.110.221:3032/StoreServiceType"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -30,7 +30,7 @@ const ServiceType =()=>{
     }
 
     const GetServiceType = () => {
-        fetch("http://http://144.91.110.221:3032/GetServiceType")
+        fetch("http://144.91.110.221:3032/GetServiceType")
             .then(res => res.json())
             .then(data => {
                 console.log(data)

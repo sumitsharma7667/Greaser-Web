@@ -22,7 +22,7 @@ const CreateService =()=>{
     },[])
 
     const GetServiceType = () => {
-        fetch("http://http://144.91.110.221:3032/GetServiceType")
+        fetch("http://144.91.110.221:3032/GetServiceType")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -58,7 +58,7 @@ const CreateService =()=>{
     }
 
     const GetServices = () => {
-        fetch("http://http://144.91.110.221:3032/GetServices")
+        fetch("http://144.91.110.221:3032/GetServices")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -95,7 +95,7 @@ const CreateService =()=>{
         data.append('features', features)
         data.append('status', status)
         data.append('image',image)
-        const url="http://http://144.91.110.221:3032/UpdateService"
+        const url="http://144.91.110.221:3032/UpdateService"
                 fetch(url,
                     {
                     method:'put',
@@ -111,7 +111,7 @@ const CreateService =()=>{
       }
 
       const DeleteService = (id) => {
-        const apiUrl = 'http://http://144.91.110.221:3032/DeleteService';
+        const apiUrl = 'http://144.91.110.221:3032/DeleteService';
         fetch(apiUrl, {
           headers : { 
             'Content-Type': 'application/json',

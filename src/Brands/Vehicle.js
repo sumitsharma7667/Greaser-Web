@@ -20,7 +20,7 @@ const Vehicle =()=>{
         data.append('manufacturer',manufacturer)
         data.append('image',image)
         data.append('status',status)
-        const url = "http://http://144.91.110.221:3032/StoreVehicle"
+        const url = "http://144.91.110.221:3032/StoreVehicle"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -35,7 +35,7 @@ const Vehicle =()=>{
     }
 
     const GetVehicle = () => {
-        fetch("http://http://144.91.110.221:3032/GetVehicle")
+        fetch("http://144.91.110.221:3032/GetVehicle")
             .then(res => res.json())
             .then(data => {
                 console.log("Brands "+data)
@@ -44,7 +44,7 @@ const Vehicle =()=>{
             .then(err => console.log(err))
     }
     const GetBrand = () => {
-        fetch("http://http://144.91.110.221:3032/GetBrand")
+        fetch("http://144.91.110.221:3032/GetBrand")
             .then(res => res.json())
             .then(data => {
                 console.log("Brands "+data)
