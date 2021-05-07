@@ -23,7 +23,7 @@ const CreateService =()=>{
     },[])
 
     const GetServiceType = () => {
-        fetch("http://http://144.91.110.221:3032/GetServiceType")
+        fetch("http://144.91.110.221:3032/GetServiceType")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -32,7 +32,7 @@ const CreateService =()=>{
             .then(err => console.log(err))
     }
     const StoreService = () => {
-        if (this.checkValidation()) {
+        // if (this.checkValidation()) {
         const data = new FormData()
         data.append('name', name)
         data.append('mode', mode)
@@ -42,7 +42,7 @@ const CreateService =()=>{
         data.append('remark', remark)
         data.append('description', description)
         data.append('features', features)
-        data.append('is_service', is_service)        
+        data.append('isservice', is_service)        
         data.append('status', status)
         data.append('image',image)
         const url = "http://144.91.110.221:3032/StoreService"
@@ -56,11 +56,11 @@ const CreateService =()=>{
                 GetServices()               
             })
             .then(err => {})
-        }
+        // }
     }
 
     const GetServices = () => {
-        fetch("http://http://144.91.110.221:3032/GetServices")
+        fetch("http://144.91.110.221:3032/GetServices")
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -80,7 +80,7 @@ const CreateService =()=>{
         SetFeatures(obj.features)
         SetMode(obj.mode)
         SetEstimatedTime(obj.estimated_time)
-        SetIsService(obj.is_service)
+        SetIsService(obj.isservice)
         SetStatus(obj.status)
         SetImage(obj.image)
     }
@@ -96,10 +96,10 @@ const CreateService =()=>{
         data.append('remark', remark)
         data.append('description', description)
         data.append('features', features)
-        data.append('is_service', is_service)        
+        data.append('isservice', is_service)        
         data.append('status', status)
         data.append('image',image)
-        const url="http://http://144.91.110.221:3032/UpdateService"
+        const url="http://144.91.110.221:3032/UpdateService"
                 fetch(url,
                     {
                     method:'put',
@@ -115,7 +115,7 @@ const CreateService =()=>{
       }
 
       const DeleteService = (id) => {
-        const apiUrl = 'http://http://144.91.110.221:3032/DeleteService';
+        const apiUrl = 'http://144.91.110.221:3032/DeleteService';
         fetch(apiUrl, {
           headers : { 
             'Content-Type': 'application/json',
@@ -167,7 +167,7 @@ const CreateService =()=>{
            <div class="card-body">
            <div class="card-title">Services</div>
            <hr/>
-            {/ <form> /}
+            {/* {/ <form> /} */}
         <div class="form-row">
            <div class="col-lg-6  form-group">
             <label >Service Name</label>
@@ -230,7 +230,7 @@ const CreateService =()=>{
            </div>
            <div class="col-lg-6  form-group">
             <label >Image</label>
-            <input type="file" class="form-control"  onChange={(e)=>{SetImage(e.target.value)}} placeholder="Enter Brand Name" />
+            <input type="file" class="form-control"  onChange={(e)=>{SetImage(e.target.files[0])}} placeholder="Enter Brand Name" />
            </div>
            <div class="col-lg-6 form-group">
             <label >Description</label>
