@@ -183,7 +183,7 @@ const CreateService =()=>{
                     )
                 })}
             </select>
-            {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /}
+            {/* {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /} */}
            </div>
            <div class="col-lg-6 form-group">
             <label > Mode</label>
@@ -192,7 +192,7 @@ const CreateService =()=>{
                 <option value="Paid">Paid</option>
                 <option value="Free">Free</option>              
             </select>
-            {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /}
+            {/* {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /} */}
            </div>
            <div class="col-lg-6  form-group">
             <label >Estimated Time</label>
@@ -212,16 +212,17 @@ const CreateService =()=>{
                 <option value="9">9</option>
                 <option value="10">10</option>
             </select>
-            {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /}
+            {/* {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /} */}
            </div>
            <div class="col-lg-6 form-group">
             <label > Is Service</label>
             <select className="form-control" value={warranty}  onChange={(e)=>{SetIsService(e.target.value)}}>
+                <option value="Normal">Normal</option>                
                 <option value="Featured">Featured</option>
                 <option value="Premium">Premium</option>
                 <option value="For you">For you</option>
             </select>
-            {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /}
+            {/* {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /} */}
            </div>
             <div class="col-lg-6  form-group">
             <label >Remark</label>
@@ -254,12 +255,12 @@ const CreateService =()=>{
           </div>
           </div>
 
-          {/ </form> /}
+          {/* {/ </form> /} */}
          </div>
          </div>
       </div>
     </div> 
-    {/ // <!--End Row--> /}
+    {/* {/ // <!--End Row--> /} */}
     <div class="row mt-3">
              <div className="col-12">
                 <DataTable
