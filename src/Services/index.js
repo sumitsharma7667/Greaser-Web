@@ -15,7 +15,7 @@ const CreateService =()=>{
     const[image,SetImage]=useState()
     const[AllServices,SetAllService]=useState([])
     const[AllServiceType,SetAllServiceType]=useState([])
-    const[is_service,SetIsService]=useState([])
+    const[is_service,SetIsService]=useState("Normal")
 
     useEffect(()=>{
     GetServices()
@@ -216,7 +216,8 @@ const CreateService =()=>{
            </div>
            <div class="col-lg-6 form-group">
             <label > Is Service</label>
-            <select className="form-control" value={warranty}  onChange={(e)=>{SetIsService(e.target.value)}}>
+            <select className="form-control" value={is_service}  onChange={(e)=>{SetIsService(e.target.value)}}>
+            
                 <option value="Normal">Normal</option>                
                 <option value="Featured">Featured</option>
                 <option value="Premium">Premium</option>
