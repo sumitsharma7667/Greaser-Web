@@ -76,7 +76,7 @@ const Vehicle =()=>{
 
      const data =[];
      {AllVehicle.map((item,index)=>{
-     data.push( {"sr_no":index+1,"name":item.name,"manufacturer":item.manufacturer.name,"image":<img src={"http://144.91.110.221:3032/" + item.image} style={{ height: '100px' }} />,"action":<span><button className="btn btn-secondary" onClick={()=>{DeleteVehicle(item._d)}}> Delete</button> </span>})
+     data.push( {"sr_no":index+1,"name":item.name,"manufacturer":item.manufacturer.name,"image":<img src={"http://144.91.110.221:3032/" + item.image} style={{ height: '100px' }} />,"action":<span><button className="btn btn-secondary" onClick={()=>{DeleteVehicle(item._id)}}> Delete</button> </span>})
      })}
        const columns = [
          { title: "SR NO", data: "sr_no" },
