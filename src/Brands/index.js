@@ -15,7 +15,7 @@ const CreateBrands =()=>{
         data.append('name', name)
         data.append('image',image)
         data.append('status',status)
-        const url = "http://1http://144.91.110.221:3032/StoreBrand"
+        const url = "http://144.91.110.221:3032/StoreBrand"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -30,7 +30,7 @@ const CreateBrands =()=>{
     }
 
     const GetBrand = () => {
-        fetch("http://1http://144.91.110.221:3032/GetBrand")
+        fetch("http://144.91.110.221:3032/GetBrand")
             .then(res => res.json())
             .then(data => {
                 console.log("Brands "+data)
@@ -55,7 +55,7 @@ const CreateBrands =()=>{
            <div class="form-row">
            <div class="col-lg-6 form-group">
             <label for="input-2">Image</label>
-            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  />
+            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.files[0])}}  />
            </div>
            <div class="col-lg-6 form-group"  >
            <label for="input-2">Status</label>

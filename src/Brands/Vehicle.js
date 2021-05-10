@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
-
+import DataTable from '@bit/adeoy.utils.data-table';
 const Vehicle =()=>{
     const[name,SetName]=useState()
-    const[type,SetType]=useState()
+    const[type,SetType]=useState("Petrol")
     const[manufacturer,SetManufacturer]=useState()
     const[image,SetImage]=useState()
     const[status,SetStatus]=useState(0)
@@ -11,6 +11,7 @@ const Vehicle =()=>{
 
     useEffect(()=>{
     GetBrand()
+    GetVehicle()
     },[])
     const StoreVehicle = () => {
         // if (this.checkValidation()) {
@@ -20,7 +21,7 @@ const Vehicle =()=>{
         data.append('manufacturer',manufacturer)
         data.append('image',image)
         data.append('status',status)
-        const url = "http://http://144.91.110.221:3032/StoreVehicle"
+        const url = "http://144.91.110.221:3032/StoreVehicle"
         fetch(url, {
                 method: 'post',
                 body: data
@@ -28,23 +29,23 @@ const Vehicle =()=>{
             .then(res => res.json())
             .then(data => {
                 alert("Brand Created Successfully") 
-                // GetVehicle()               
+                GetVehicle()               
             })
             .then(err => {})
         // }
     }
 
     const GetVehicle = () => {
-        fetch("http://http://144.91.110.221:3032/GetVehicle")
+        fetch("http://144.91.110.221:3032/GetVehicle")
             .then(res => res.json())
             .then(data => {
-                console.log("Brands "+data)
+                console.log("Vehicles "+data)
                 SetAllVehicle(data)
             })
             .then(err => console.log(err))
     }
     const GetBrand = () => {
-        fetch("http://http://144.91.110.221:3032/GetBrand")
+        fetch("http://144.91.110.221:3032/GetBrand")
             .then(res => res.json())
             .then(data => {
                 console.log("Brands "+data)
@@ -52,6 +53,41 @@ const Vehicle =()=>{
             })
             .then(err => console.log(err))
     }
+
+    const DeleteVehicle = (id) => {
+        const apiUrl = 'http://144.91.110.221:3032/DeleteVehicle';
+        fetch(apiUrl, {
+          headers : { 
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          method:'delete',  
+          body:JSON.stringify({_id:id})
+        })
+        .then((response) => response.json())
+        .then((res) => {
+        alert("Service Deleted Successfully")
+        GetVehicle()
+          
+        })
+        
+      }
+     // data table
+
+     const data =[];
+     {AllVehicle.map((item,index)=>{
+     data.push( {"sr_no":index+1,"name":item.name,"manufacturer":item.manufacturer.name,"image":<img src={"http://144.91.110.221:3032/" + item.image} style={{ height: '100px' }} />,"action":<span><button className="btn btn-secondary" onClick={()=>{DeleteVehicle(item._id)}}> Delete</button> </span>})
+     })}
+       const columns = [
+         { title: "SR NO", data: "sr_no" },
+         { title: "Name", data: "name" },
+         { title: "Manufacturer", data: "manufacturer" },
+         { title: "Image", data: "image" },
+         { title: "Action", data: "action" },
+       ];
+       const click = (row) => {
+         console.log(row);
+       };
     return(
         <>
 <div class="container-fluid">
@@ -90,7 +126,7 @@ const Vehicle =()=>{
         
            <div class="col-lg-6 form-group">
             <label for="input-2">Image</label>
-            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  />
+            <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.files[0])}}  />
            </div>
            <div class="col-lg-6 form-group"  >
            <label for="input-2">Status</label>
@@ -108,6 +144,18 @@ const Vehicle =()=>{
          </div>
       </div>
     </div> 
+    <div class="row mt-3">
+             <div className="col-12">
+                <DataTable
+                data={data}
+                columns={columns}
+                striped={true}
+                hover={true}
+                responsive={true}
+                onClickRow={click}
+                />
+            </div>
+    </div>
     {/* // <!--End Row--> */}
 
 	{/* // <!--start overlay--> */}
