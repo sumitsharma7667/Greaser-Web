@@ -11,14 +11,14 @@ function Header(props) {
     document.getElementById("myNav").style.width = "0%";
   }
   return (
-    <nav style={{position:"absolute",zIndex:10}} className="w-100 mb-3">
+    <nav className="w-100 NavBg">
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onClick={()=>{closeNav()}}>&times;</a>
   <div class="overlay-content">
     <Link to="/home">Home</Link>
     <Link to="/services-packages">Services</Link>
     <a href="#">Clients</a>
-    <a href="#">Contact</a>
+    <Link to="/ContactUs">Contact Us</Link>
   </div>
 </div>
 <span style={{fontSize:"50px",cursor:"pointer"}} className="pl-5 text-white" onClick={()=>{openNav()}}>&#9776;</span>

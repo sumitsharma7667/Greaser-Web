@@ -1,16 +1,17 @@
-@font-face {
+/* @font-face {
     font-family: TransRobotics;
     src: url(../src/SF\ TransRobotics.ttf);
-  }
+  } */
  body{
      overflow-x: hidden;
      background-color: #1A1A1A;
+     font-family: 'Open Sans', sans-serif;
  }
 .FirstSection{
     height: 100vh;
-    background-image: url('./Images/home-screen.jpeg');
-    background-size: 100% 100%;
-
+    background-image: url('./Images/FirstIMg.jpg');
+    background-size: contain;
+    /* background-repeat: no-repeat; */
     display: flex;
     align-items: center;
 
@@ -37,6 +38,9 @@
   max-width: 20%;
   padding: 20px;
 }
+.NavBg{
+  background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+}
 
 .homepage-card{
 border-radius: 10px;
@@ -62,7 +66,7 @@ transition: all .4s ease-in-out;
 }
 
 .servicesHeading_in_service_feature{
-  font-family: TransRobotics;
+  /* font-family: TransRobotics; */
   font-weight: unset;
   color: #1c1c1c;
   text-align: center;
@@ -97,13 +101,13 @@ transition: all .4s ease-in-out;
 .service_card h6{
   padding-top: 30px;
   color: white;
-  font-family: 'TransRobotics';
+  /* font-family: 'TransRobotics'; */
   font-size: 25px;
   }
 
-.SecondSection h2{
+/* .SecondSection h2{
 font-family: 'TransRobotics';
-}
+} */
 
 .ThirdSection{
     background-color: #6809AA;
@@ -114,10 +118,10 @@ font-family: 'TransRobotics';
 }
 .ThirdSection .col-6:first-child h3{
     font-weight: unset;
-    font-family: 'TransRobotics';
+    /* font-family: 'TransRobotics'; */
     color: white;
     text-align: center;
-    font-size: 60px;
+    /* font-size: 60px; */
 }
 .ThirdSection .col-6:first-child p{
 color:white
@@ -374,7 +378,7 @@ footer ul {
 .service-heading p{
     font-size: 40px;
     padding-left: 20px;
-    font-family: 'TransRobotics';
+    /* font-family: 'TransRobotics'; */
     color: white !important;
     background-color: #6809AA;
 }
@@ -452,7 +456,11 @@ footer ul {
    * ### Inner Elements
    */
   
-  [class$='feature-card'] h2, [class$='feature-card'] p { color: #1d1d1d;;margin: 0; font-family: TransRobotics; }
+  [class$='feature-card'] h2, [class$='feature-card'] p {
+     color: #1d1d1d;
+     margin: 0; 
+     /* font-family: TransRobotics;  */
+    }
   
   [class$='feature-card'] img {
     position: absolute;
@@ -558,7 +566,7 @@ footer ul {
     font-size: 60px;
     margin: 0px;
     padding: 15px;
-    font-family: TransRobotics;
+    /* font-family: TransRobotics; */
 }
 
 .first_servicesCarousel{
@@ -628,7 +636,7 @@ background-color: #fefefe;
 }
 
 .section-showcase h1 {
-  font-family: TransRobotics;
+  /* font-family: TransRobotics; */
   font-size: 4rem;
   color: var(--primary-color);
 }
@@ -744,13 +752,13 @@ padding: 0px;
 }
 
 .section-large-text h3 ,.section-large-text h2{
-  font-family: TransRobotics;
+  /* font-family: TransRobotics; */
   line-height: 1.3;
 
 }
 
 .section-large-text_insrvice_features h3 ,.section-large-text_insrvice_features h2{
-  font-family: TransRobotics;
+  /* font-family: TransRobotics; */
   line-height: 1.3;
 
 }
@@ -1893,6 +1901,14 @@ input:focus + label, input:valid + label{
 .CheckOutBtn{
   background: #4251da !important;
   border: #80c7dd !important;
+  cursor: pointer;
+    display: block;
+    color: #fff;
+    padding: 10px !important;
+    font-size: 20px !important;
+    font-weight: 300;
+    width: 100% !important;
+    text-align: center;
 }
 .fa-plus-square, .fa-minus-square{
   font-size: 30px;
@@ -1917,12 +1933,16 @@ input:focus + label, input:valid + label{
   perspective-origin: 50% -100px;
   -webkit-perspective-origin: 50% -100px;
 }
+.features-section{
+  height: 100vh;
+}
 .HomeCard_conatainer{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   width: auto;
+  height: 100%;
 }
 .FeatureSEct_card{
   align-items: center;
@@ -2111,3 +2131,105 @@ input:focus + label, input:valid + label{
     transform: translatey(10px);
   }
 }
+
+/* Contact us  */
+.ContactUsSec{
+  height: 100vh;
+  background: #fff !important;
+  padding: 30px;
+}
+.contactUsCOnt{
+  height: 100%;
+}
+::placeholder{
+  color: #000 !important;
+}
+.Form_contact{  
+    position: relative;
+    top: 65px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 73%);
+    background: #fff !important;
+    width: -moz-fit-content;
+    width: fit-content;
+    right: 100px;
+    z-index: 10;
+}
+.COntactInput{
+  border: 0;
+  margin: 10px;
+  width: 300px;
+  background: #eee;
+}
+.COntact_para{
+  padding-right: 30px;
+}
+.CarBgImg{
+  background: url(./Images/Contactbackground\ shape-01.jpg);
+      height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.MapSection{
+   height: 70vh;
+   background: url();
+}
+marker {
+    top:200px;
+    left:300px;
+    margin-top: 20px;
+		margin-left: 30px;
+		position: relative;
+	}
+.grow{
+  position:absolute;
+  background:rgba(255,255,255,0.3);
+  background:#fff;
+  height:10px;
+  width:10px;
+  z-index:999;
+
+  border-radius:50%;
+  border: 5px solid #26baff;
+}
+.IframeMp{
+  position: absolute;
+  border: 0;
+  width: 100%;
+  height: 440px;
+}
+/* .MaP_card{
+  margin-top: 50px;
+  margin-bottom: -30px;
+  padding: 10px;
+} */
+
+	.dot {
+    position: absolute;
+    height: 50px;
+		width: 50px;
+		top: -25px;
+		left: -25px;
+		z-index: 2;
+		opacity: 0;
+		border: 10px solid #ff4800;;
+		background: #ff7200;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		-webkit-animation: pulse 2s ease-out;
+		-moz-animation: pulse 2s ease-out;
+		animation: pulse 2s ease-out;
+    -webkit-animation-iteration-count: infinite;
+		-moz-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+  }
+.ContactUs_icon{
+  font-size: 25px;
+}
+.info_Contact{
+  margin: 10px;
+}
+
+
+
+  

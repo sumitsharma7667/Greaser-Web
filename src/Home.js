@@ -483,14 +483,10 @@ function Home(props) {
   </div>
 </div>
 </section>
-
-
-
-
       <section className="ThirdSection">
           <div className="row d-flex">
             <div className="col-6">
-            <h3>Download the app</h3>
+            <h1>Download the App</h1>
             <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
               <div className="row d-flex">
                 <div className="col-4 Stroeicon">

@@ -14,6 +14,7 @@ import SericeType from './Services/ServiceType';
 import Services from './Service-packages';
 import ServicesDetail from './Service-detail';
 import Cart from './Cart';
+import ContactUs from './ContactUs';
 
 const AppRoute = ({component:Component,layout:Layout, ...rest})=>(
   <Route {...rest} render ={props=>(
@@ -32,6 +33,9 @@ ReactDOM.render(
 
       <Route path="/Cart"> 
           <Cart />
+      </Route>
+      <Route path="/ContactUs"> 
+          <ContactUs />
         </Route>
       
       <Route path="/Services-detail"> 
