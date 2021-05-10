@@ -106,13 +106,13 @@ function ContactUs(props) {
                   <h4>Do Not Hasitate to Reach Us</h4>
                   <p className="COntact_para">Fill up the form and our Team will get back to you within 24 hours.</p>
                   <div className="mt-5">
-                    <i class="fas fa-phone-square-alt ContactUs_icon"><span className="info_Contact">0135-27798989</span></i>
+                    <i class="fas fa-phone-square-alt ContactUs_icon"><span className="info_Contact"> 7500872014</span></i>
                   </div>
                    <div className="mt-5">
-                    <i class="fas fa-envelope-square ContactUs_icon"><span className="info_Contact">info@giksindia.com</span></i>
+                    <i class="fas fa-envelope-square ContactUs_icon"><span className="info_Contact"> info@giksindia.com</span></i>
                   </div>
                   <div className="mt-5">
-                    <i class="fas fa-map-marker-alt ContactUs_icon"><span className="info_Contact">222 Ram vihar Ballupur</span></i>
+                    <i class="fas fa-map-marker-alt ContactUs_icon"><span className="info_Contact"> 222 Ram vihar Ballupur</span></i>
                   </div>
                 </div>
               </div>
