@@ -16,7 +16,6 @@ const CreateService =()=>{
     const[AllServices,SetAllService]=useState([])
     const[AllServiceType,SetAllServiceType]=useState([])
     const[is_service,SetIsService]=useState("Normal")
-
     useEffect(()=>{
     GetServices()
     GetServiceType()
