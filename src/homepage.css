@@ -7,14 +7,18 @@
      background-color: #1A1A1A;
      font-family: 'Open Sans', sans-serif;
  }
-.FirstSection{
-    height: 100vh;
+ .FirstSection{
+       display: flex;
+       height: 100vh;
+       display: flex;
+ }
+.FirstSection::before{
+  content: "";
+  position: absolute;
+    height: 100%;
     background-image: url('./Images/FirstIMg.jpg');
     background-size: contain;
-    /* background-repeat: no-repeat; */
-    display: flex;
-    align-items: center;
-
+    width: 100%;
 }
 .SecondSection{
     /* height: 80vh; */
@@ -111,7 +115,7 @@ font-family: 'TransRobotics';
 
 .ThirdSection{
     background-color: #6809AA;
-    /* height: 80vh; */
+    height: 100vh;
 }
 .ThirdSection .col-6:first-child{
     padding: 150px 100px;
@@ -129,6 +133,7 @@ color:white
 .Stroeicon{
     background-size: 100% 100%;
     background-image: url('./Images/app-store-google-play-logo.png');
+    height: 80px;
  
 }
 /* .downloadSection{
@@ -201,9 +206,10 @@ footer ul {
 }
 .footer-logo {
   margin-bottom: 30px;
+  text-align: center;
 }
 .footer-logo img {
-    max-width: 200px;
+    max-width: 140px;
 }
 .footer-text p {
   margin-bottom: 14px;
@@ -1592,10 +1598,8 @@ header .footer-wave {
   margin: 0 auto;
   text-align: center;
 }
-
 .pset {
   padding-top: 180px;
-  padding-bottom: 80px;
 }
 
 .listar-map-button-text span {
@@ -1936,12 +1940,15 @@ input:focus + label, input:valid + label{
 .features-section{
   height: 100vh;
 }
+.footer_container{
+   width: 90% !important;
+}
 .HomeCard_conatainer{
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: auto;
+  width: 90%;
   height: 100%;
 }
 .FeatureSEct_card{

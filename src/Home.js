@@ -129,7 +129,7 @@ function Home(props) {
             </div>
             <div className="col-5">
            
-  <div class="row d-flex justify-content-center">
+  <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-11 col-lg-10 col-xl-9">
       <div class="card card0 border-0">
         <div class="row">
@@ -484,7 +484,7 @@ function Home(props) {
 </div>
 </section>
       <section className="ThirdSection">
-          <div className="row d-flex">
+          <div className="row d-flex align-items-center h-100">
             <div className="col-6">
             <h1>Download the App</h1>
             <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
@@ -492,8 +492,8 @@ function Home(props) {
                 <div className="col-4 Stroeicon">
                 </div>
                 <div className="col-8">
-                  <input type="text" className="form-control" />
-                  <button className="btn text-white w-100 mt-2" style={{backgroundColor:"#5c0b95"}}>Get the link</button>
+                  {/* <input type="text" className="form-control" />
+                  <button className="btn text-white w-100 mt-2" style={{backgroundColor:"#5c0b95"}}>Get the link</button> */}
                   </div>
               </div>
             </div>

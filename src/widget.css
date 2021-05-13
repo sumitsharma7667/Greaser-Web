@@ -1,7 +1,7 @@
 
 .FirstSection .card{
     height: auto !important;
-    padding: 30px 0px 0px 0px;
+    /* padding: 30px 0px 0px 0px; */
     background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
 }
 .FirstSection .card img {

@@ -21,8 +21,8 @@ function Header(props) {
     <Link to="/ContactUs">Contact Us</Link>
   </div>
 </div>
-<span style={{fontSize:"50px",cursor:"pointer"}} className="pl-5 text-white" onClick={()=>{openNav()}}>&#9776;</span>
-<span className="pr-5" style={{fontSize:"40px",float:"right"}}><Link to="/Login" className="text-white"><i class="fas fa-sign-in-alt"></i></Link></span>
+<span style={{fontSize:"35px",cursor:"pointer"}} className="pl-5 text-white" onClick={()=>{openNav()}}>&#9776;</span>
+<span className="pr-5" style={{fontSize:"35px",float:"right"}}><Link to="/Login" className="text-white"><i class="fas fa-sign-in-alt"></i></Link></span>
 </nav>
   );
 }
