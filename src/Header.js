@@ -22,7 +22,7 @@ function Header(props) {
   </div>
 </div>
 <span style={{fontSize:"35px",cursor:"pointer"}} className="pl-5 text-white" onClick={()=>{openNav()}}>&#9776;</span>
-<span className="pr-5" style={{fontSize:"35px",float:"right"}}><Link to="/Login" className="text-white"><i class="fas fa-sign-in-alt"></i></Link></span>
+<span className="pr-5" style={{fontSize:"35px",float:"right"}}><Link to="/Login" className="text-white"><i class='bx bx-log-in'></i></Link></span>
 </nav>
   );
 }

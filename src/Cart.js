@@ -14,11 +14,12 @@ function Cart(props) {
 <Header />
 		  <section className="Cart_page_sect">
 			 
-			  <div className="container CheckOut_CONT">
+			  <div className="container-fluid CheckOut_CONT">
 				  <div className="card Item_card p-4">
 					   <div className="row">
 						  <div className="col-12">
-							  <h6 className="headin_shopCart"> Continue Shoping</h6>
+								  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6>
+								  
 							  </div>
 					 </div>
 					  <div className="row">
@@ -32,88 +33,88 @@ function Cart(props) {
 						  <div className="col-8">
 							  <div class="card Child_card_shop">
 							  <div className="row cart_CenterROw">
-										  <div className="col-3">
+										  <div className="col-4 Cart_productImg">
 											  <img class="Cart_itemImg rounded mx-auto d-block " src={require("./Images/carousel1.jpeg").default} alt=""/>
 										  </div>
 										  <div className="col-3">
 											<h4 className="headin_shopCart">Dickey Shocker replacement</h4>
 										  </div>
-										  <div className="col-3">
+										  <div className="col-2">
 											  <div className="pos_negTIveIcon">
-												  <i class="fas fa-plus-square"></i>
-												  <i class="fas fa-minus-square"></i>
+												  <i class='bx bx-plus'></i>
+												  <i class='bx bx-minus'></i>
 											  </div>
 										  </div>
 										  <div className="col-3">
 											  <div className="pos_negTIveIcon">
 											  <h4 className="headin_shopCart">$78.00</h4>
-												  <i class="fas fa-trash"></i>
+												  <i class='bx bx-trash' ></i>
 												  </div>
 								  </div>
 							  </div>
 							  </div>
-							   <div class="card Child_card_shop">
+							    <div class="card Child_card_shop">
 							  <div className="row cart_CenterROw">
-										  <div className="col-3">
+										  <div className="col-4 Cart_productImg">
 											  <img class="Cart_itemImg rounded mx-auto d-block " src={require("./Images/carousel1.jpeg").default} alt=""/>
 										  </div>
 										  <div className="col-3">
 											<h4 className="headin_shopCart">Dickey Shocker replacement</h4>
 										  </div>
-										  <div className="col-3">
+										  <div className="col-2">
 											  <div className="pos_negTIveIcon">
-												  <i class="fas fa-plus-square"></i>
-												  <i class="fas fa-minus-square"></i>
+												   <i class='bx bx-plus'></i>
+												  <i class='bx bx-minus'></i>
 											  </div>
 										  </div>
 										  <div className="col-3">
 											  <div className="pos_negTIveIcon">
 											  <h4 className="headin_shopCart">$78.00</h4>
-												  <i class="fas fa-trash"></i>
+												  <i class='bx bx-trash' ></i>
 												  </div>
 								  </div>
 							  </div>
 							  </div>
-							   <div class="card Child_card_shop">
+							    <div class="card Child_card_shop">
 							  <div className="row cart_CenterROw">
-										  <div className="col-3">
+										  <div className="col-4 Cart_productImg">
 											  <img class="Cart_itemImg rounded mx-auto d-block " src={require("./Images/carousel1.jpeg").default} alt=""/>
 										  </div>
 										  <div className="col-3">
 											<h4 className="headin_shopCart">Dickey Shocker replacement</h4>
 										  </div>
-										  <div className="col-3">
+										  <div className="col-2">
 											  <div className="pos_negTIveIcon">
-												  <i class="fas fa-plus-square"></i>
-												  <i class="fas fa-minus-square"></i>
+												   <i class='bx bx-plus'></i>
+												  <i class='bx bx-minus'></i>
 											  </div>
 										  </div>
 										  <div className="col-3">
 											  <div className="pos_negTIveIcon">
 											  <h4 className="headin_shopCart">$78.00</h4>
-												  <i class="fas fa-trash"></i>
+												  <i class='bx bx-trash' ></i>
 												  </div>
 								  </div>
 							  </div>
 							  </div>
-							   <div class="card Child_card_shop">
+							    <div class="card Child_card_shop">
 							  <div className="row cart_CenterROw">
-										  <div className="col-3">
+										  <div className="col-4 Cart_productImg">
 											  <img class="Cart_itemImg rounded mx-auto d-block " src={require("./Images/carousel1.jpeg").default} alt=""/>
 										  </div>
 										  <div className="col-3">
 											<h4 className="headin_shopCart">Dickey Shocker replacement</h4>
 										  </div>
-										  <div className="col-3">
+										  <div className="col-2">
 											  <div className="pos_negTIveIcon">
-												  <i class="fas fa-plus-square"></i>
-												  <i class="fas fa-minus-square"></i>
+												   <i class='bx bx-plus'></i>
+												  <i class='bx bx-minus'></i>
 											  </div>
 										  </div>
 										  <div className="col-3">
 											  <div className="pos_negTIveIcon">
 											  <h4 className="headin_shopCart">$78.00</h4>
-												  <i class="fas fa-trash"></i>
+												  <i class='bx bx-trash' ></i>	
 												  </div>
 								  </div>
 							  </div>

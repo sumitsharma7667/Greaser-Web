@@ -5,7 +5,7 @@ function Header(props) {
   return (
     <footer class="footer-section">
           <div class="container-fluid footer_container">
-        <div class="footer-cta p-2">
+        <div class="footer-cta p-3">
             <div class="row">
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
@@ -57,7 +57,7 @@ function Header(props) {
                         </div>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            {/* <li><a href="#">about</a></li> */}
+                            <li><a href="#">Secvice Packages</a></li>
                             <li><a href="#">services</a></li>
                             {/* <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li> */}
