@@ -153,13 +153,16 @@ function Services(props) {
               <div className="col-12 text-center p-5">
                 <h2 className="servicesHeading_in_service_feature" >Top Services</h2>
                 <h4 className="text-dark">Trending services around you</h4>
-              </div>
-              <div className="col-12 pl-5 pr-5 pb-5">
+          </div>
+        </div>
+        <div className="conatiner-fluid">
+          <div className="row">
+              <div className="col-12  pb-5">
             
   <Carousel
   swipeable={false}
   draggable={false}
-  showDots={true}
+  // showDots={true}
   responsive={responsive}
   ssr={true} // means to render carousel on server-side.
   infinite={true}
@@ -346,8 +349,15 @@ function Services(props) {
     </div>
   </div>
 </Carousel>
-               </div>
           </div>
+          </div>
+</div>
+
+
+
+
+
+
         </section>
         
     <Footer />

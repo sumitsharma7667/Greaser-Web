@@ -576,7 +576,7 @@ footer ul {
 }
 
 .first_servicesCarousel{
-background-color: #fefefe;
+background-color: #f4f4f4;
 }
 .thumbs-wrapper {
   display: none;
@@ -1808,7 +1808,7 @@ header .footer-wave {
 }
 .Child_card_shop{
   background: #fff !important;
-  box-shadow: 0px 5px 5px 0px rgb(0 0 0 / 68%)
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 58%);
 }
 .headin_shopCart{
   color: #000 !important;
@@ -1827,7 +1827,11 @@ header .footer-wave {
 }
 .cart_CenterROw{
   align-items: center;
-  margin: 20px;
+  margin: 0px;
+}
+.Cart_productImg{
+    padding-right: 0 !important;
+    padding-left: 0 !important;
 }
 .Head_yourShop{
   text-align: center;
@@ -1852,7 +1856,7 @@ header .footer-wave {
   box-sizing: border-box;
 }
 #firstnamefield, #lastnamefield{
-  width: 50%;
+  width: 100%;
  
 }
 #addressfield{
@@ -1870,15 +1874,15 @@ header .footer-wave {
   width: 100%;
 }
 .formfield>input{
-  border: 1px solid #fdfdfd;
-  border-radius: 1.5em;
-  outline: none;
-  color: #fff;
-  background: rgba(255, 255, 255, 0);
+    border: 2px solid #fdfdfd;
+    border-radius: 10px;
+    outline: none;
+    color: #fff;
+    background: rgba(255, 255, 255, 0);
 }
 .formfield>label{
   position: absolute;
-  top: 0;
+  top: 7px;
   bottom: 0;
   left: 0;
   color: #ccc;
@@ -1887,7 +1891,7 @@ input:focus + label, input:valid + label{
   color: #fff;
   font-size: 0.8em;
   width: auto;
-  height: 1.3em;
+  height: 1.5em;
   padding: 0px 0.5em 0px 0.5em;
   margin: 0px;
   /*outline: 1px solid red; /*for debugigng purposes only*/
@@ -1900,7 +1904,7 @@ input:focus + label, input:valid + label{
   top: 10px;
 }
 .CheckOut_CONT{
-  width: auto;
+  width: 90% !important;
 }
 .CheckOutBtn{
   background: #4251da !important;
@@ -1914,13 +1918,23 @@ input:focus + label, input:valid + label{
     width: 100% !important;
     text-align: center;
 }
-.fa-plus-square, .fa-minus-square{
-  font-size: 30px;
-  margin: 35px;
+.bx-plus, .bx-minus {
+ font-size: 30px;
+  margin: 10px;
+  color: #69168F;
 }
-.fa-trash{
-  font-size: 30px;
-  margin: 20px;
+.bx-arrow-back{
+font-size: 25px;
+    margin-right: 10px;
+    color: #69168F;
+    top: 5px;
+    position: relative;
+}
+
+.bx-trash{
+font-size: 30px;
+  margin: 15px;
+  color: #69168F;
 }
 
 /* Features Home */
