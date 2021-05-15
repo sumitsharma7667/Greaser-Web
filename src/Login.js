@@ -16,7 +16,7 @@ function Login(props) {
 				  <div className="row">
 					  <div className="col-6">
 						  
-						  <img src={require('./Images/Mechanicimg.png').default} style={{height:"640px",objectFit:"contain"}} alt="logo icon" />
+						  <img src={require('./Images/Mechanicimg.png').default} style={{height:"560px",objectFit:"contain"}} alt="logo icon" />
 					  </div>
 					  <div className="col-6 login_formcol">
 						<div class="card-authentication1 mx-auto login_form ">
@@ -29,7 +29,7 @@ function Login(props) {
 		    
 			  <div class="form-group w-100">
 			  <label for="exampleInputUsername" class="sr-only">Username</label>
-			   <div class="position-relative has-icon-right">
+			   <div class="position-relative has-icon-right text-dark">
 				  <input type="text" id="exampleInputUsername" class="form-control input-shadow inputBG" placeholder="Enter Username" />
 				  <div class="form-control-position">
 					  <i class="icon-user"></i>
@@ -38,7 +38,7 @@ function Login(props) {
 			  </div>
 			  <div class="form-group w-100">
 			  <label for="exampleInputPassword" class="sr-only">Password</label>
-			   <div class="position-relative has-icon-right">
+			   <div class="position-relative has-icon-right text-dark">
 				  <input type="password" id="exampleInputPassword" class="form-control input-shadow inputBG" placeholder="Enter Password" />
 				  <div class="form-control-position">
 					  <i class="icon-lock"></i>
@@ -49,10 +49,10 @@ function Login(props) {
 			 <div class="form-group col-6">
 			   <div class="icheck-material-white">
                 <input type="checkbox" class="check_box" id="user-checkbox" checked="" />
-                <label for="user-checkbox" class="text-dark">Remember me</label>
+                <label for="user-checkbox" class="text-white">Remember me</label>
 			  </div>
 			 </div>
-			 <div class="form-group col-6 text-right">
+			 <div class="form-group col-6 text-right text-white">
 			  <a href="reset-password.html">Reset Password</a>
 			 </div>
 			</div>

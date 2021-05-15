@@ -831,7 +831,7 @@ padding: 0px;
 }
 
 a {
-	color: #000;
+	color: rgb(252, 248, 248);
 	text-decoration: none;
 
 	-webkit-transition: color .2s linear;
