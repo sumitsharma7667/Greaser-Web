@@ -19,7 +19,6 @@ function Cart(props) {
 					   <div className="row">
 						  <div className="col-12">
 								  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6>
-								  
 							  </div>
 					 </div>
 					  <div className="row">

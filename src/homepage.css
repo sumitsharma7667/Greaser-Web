@@ -25,6 +25,22 @@
     padding:30px 80px;
     /* background-color: #dededede; */
 }
+/* login form */
+.login_form{
+    background: #551d83;
+    border-radius: 10px;
+}
+.login_formcol{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+.back_to_home{
+  top: 30px;
+    position: relative;
+    left: 80px;
+}
 .servicesHeading{
     font-weight: unset;
     color: #1c1c1c;
@@ -45,7 +61,13 @@
 .NavBg{
   background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
 }
-
+.loginBg{
+  background-color: #fff !important;
+  background: url(./Images/loginBG.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .homepage-card{
 border-radius: 10px;
 background: rgb(255,0,238);
@@ -853,7 +875,7 @@ a:hover {
 .container {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0 auto;
-	width: 980px;
+
 }
 
 #cart {
@@ -1895,6 +1917,10 @@ header .footer-wave {
   left: 0;
   color: #ccc;
 }
+.inputBG{
+  background: #531a82 !important;
+  color: #fff !important;
+}
 input:focus + label, input:valid + label{
   color: #fff;
   font-size: 0.8em;
@@ -1905,7 +1931,10 @@ input:focus + label, input:valid + label{
   /*outline: 1px solid red; /*for debugigng purposes only*/
   transition: 0.2s ease-in-out;
   top: 0em;
-  left: 2em;
+  /* left: 2em; */
+}
+.check_box{
+  background-color: blue !important;
 }
 .Your_detailHead{
   position: relative;
