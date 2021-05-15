@@ -20,8 +20,10 @@ function Cart(props) {
 					   
 					  <div className="row">
 						  <div className="col-12">
+
 							  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6>
-							
+						
+								  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6> 025751e5f7adbe18056e6bb78398267a767acf05
 							  </div>
 					 </div>
 					 
