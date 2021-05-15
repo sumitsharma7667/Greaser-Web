@@ -489,7 +489,12 @@ function Home(props) {
             <h1>Download the App</h1>
             <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
               <div className="row d-flex">
-                <div className="col-4 Stroeicon">
+              <div className="col-8 Stroeicon">
+                <a href="#">
+                <img className="img1" src={require('../src/Images/google.png').default} alt="googlelogo"/></a>
+                <a href="#">
+                <img className="img2" src={require('../src/Images/apple.png').default} alt="apple"/>
+                </a>
                 </div>
                 <div className="col-8">
                   {/* <input type="text" className="form-control" />
