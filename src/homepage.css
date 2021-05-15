@@ -27,7 +27,7 @@
 }
 /* login form */
 .login_form{
-    background: #551d83;
+    background: linear-gradient(to right, #000428, #004e92);
     border-radius: 10px;
 }
 .login_formcol{
