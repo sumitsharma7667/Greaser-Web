@@ -130,11 +130,19 @@ font-family: 'TransRobotics';
 .ThirdSection .col-6:first-child p{
 color:white
 }
+
 .Stroeicon{
-    background-size: 100% 100%;
-    background-image: url('./Images/app-store-google-play-logo.png');
+  display: flex;
+   justify-content:space-between;
     height: 80px;
+    box-sizing: content-box;
+    margin-top:0;
  
+}
+.Stroeicon>img{
+  
+ width: 100%;
+
 }
 /* .downloadSection{
     background-image: url('./Images/gratis.png');
@@ -363,7 +371,7 @@ footer ul {
 
 .overlay .closebtn {
   position: absolute;
-  top: 20px;
+  top: -30px;
   right: 45px;
   font-size: 60px;
 }
