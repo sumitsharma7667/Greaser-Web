@@ -19,20 +19,19 @@ function Cart(props) {
 				  <div className="card Item_card p-4">
 					   
 					  <div className="row">
-						  <div className="col-12">
-
-							  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6>
-						
-								  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6> 025751e5f7adbe18056e6bb78398267a767acf05
+						  <div className="col-5">
+							  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'>
+							  </i>Continue Shoping</h6>
+						  </div>
+						  <div className="col-7">
+							  
+							   <h4 className="headin_shopCart"> Your Shoping Cart</h4>
+							  
 							  </div>
 					 </div>
 					 
 						  <div className="row">
-						  <div className="col-12">
-							  <div className="Head_yourShop">
-							   <h4 className="headin_shopCart"> Your Shoping Cart</h4>
-							  </div>
-							  </div>
+						  
 						  </div>
 					  <div className="row">
 						  <div className="col-8">

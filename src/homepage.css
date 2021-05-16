@@ -330,14 +330,20 @@ footer ul {
   font-size: 22px;
   transform: rotate(-6deg);
 }
-.copyright-area .container {
-    margin-left:5%;
-  
-}
+
 .copyright-area{
   background: #202020;
   padding: 25px 0;
 }
+.copy_container{
+  background: #202020;
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+
 .copyright-text p {
   margin: 0;
   font-size: 14px;
@@ -373,6 +379,9 @@ footer ul {
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+}
+.Head_yourShop {
+  text-align: left;
 }
 
 .overlay-content {
@@ -1126,9 +1135,7 @@ a:hover {
 	-o-transition: all .2s linear;
 	transition: all .2s linear;
 }
-.container{ 
-  margin-left:24%;
-}
+
 .container .btn:hover {
 	color: #fff;
 	background: #429188;
@@ -1845,7 +1852,7 @@ header .footer-wave {
 }
 .Child_card_shop{
   background: #fff !important;
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 58%);
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 2%);
 }
 .headin_shopCart{
   color: #000 !important;
@@ -2299,9 +2306,7 @@ marker {
 .ContactUs_icon{
   font-size: 25px;
 }
-.btn{
 
-}
 
 .info_Contact{
   margin: 10px;
