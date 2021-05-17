@@ -11,12 +11,13 @@ function Login(props) {
 
 		  <section className="loginBg">
 			 
-			  <div className="container-fluid">
+			  <div className="container-fluid h-100">
  					<h6 className="back_to_home"><i class='bx bx-arrow-back text-white'></i>Back to home</h6>
-				  <div className="row">
+				  <div className="row h-100">
 					  <div className="col-6">
-						  
-						  <img src={require('./Images/Mechanicimg.png').default} className="mechanicImg" alt="logo icon" />
+						  <div className="login_formcol">
+							  <img src={require('./Images/Mechanicimg.png').default} className="mechanicImg" alt="logo icon" />
+							  </div>
 					  </div>
 					  <div className="col-6 login_formcol">
 						<div class="card-authentication1 mx-auto login_form ">
