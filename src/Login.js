@@ -16,7 +16,7 @@ function Login(props) {
 				  <div className="row">
 					  <div className="col-6">
 						  
-						  <img src={require('./Images/Mechanicimg.png').default} style={{height:"560px",objectFit:"contain"}} alt="logo icon" />
+						  <img src={require('./Images/Mechanicimg.png').default} className="mechanicImg" alt="logo icon" />
 					  </div>
 					  <div className="col-6 login_formcol">
 						<div class="card-authentication1 mx-auto login_form ">
