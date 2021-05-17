@@ -5,8 +5,8 @@ function Header(props) {
   return (
     <footer class="footer-section">
           <div class="container-fluid footer_container">
-        <div class="footer-cta p-3">
-            <div class="row">
+              <div class="footer-cta p-3">
+              <div class="row">
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
                         <i class="fas fa-map-marker-alt"></i>
@@ -34,10 +34,10 @@ function Header(props) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="footer-content pt-5 pb-5">
-            <div class="row">
+              </div>
+             </div>
+              <div class="footer-content pt-5 pb-5">
+             <div class="row">
                 <div class="col-xl-4 col-lg-4 ">
                     <div class="footer-widget">
                         <div class="footer-logo">
@@ -91,32 +91,36 @@ function Header(props) {
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        </div>
+             </div>
+              </div>
+                </div>
+                   
+                     <div class="copyright-area">
+                     <div className='copy_container'>
+                         <div class="row">
+                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                             <div class="copyright-text">
+                      <p>Copyright &copy; 2021<a href="#"> Giks</a></p>
+                  </div>
+                    </div>
+                    
+              <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                  <div class="footer-menu">
+                      <ul>
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">Terms</a></li>
+                          <li><a href="#">Privacy</a></li>
+                          <li><a href="#">Policy</a></li>
+                          <li><a href="#">Contact</a></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+ </div>
+        
              
-    <div class="copyright-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                    <div class="copyright-text">
-                        <p>Copyright &copy; 2021<a href="#"> Giks</a></p>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                    <div class="footer-menu">
-                        <ul>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Terms</a></li>
-                            <li><a href="#">Privacy</a></li>
-                            <li><a href="#">Policy</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </footer>
   );
 }

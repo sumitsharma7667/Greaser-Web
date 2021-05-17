@@ -25,6 +25,23 @@
     padding:30px 80px;
     /* background-color: #dededede; */
 }
+/* login form */
+.login_form{
+    background: linear-gradient(to right, #000428, #004e92);
+    border-radius: 10px;
+}
+.login_formcol{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: relative;
+  height: 100%;
+}
+.back_to_home{
+  top: 30px;
+    position: relative;
+    left: 80px;
+}
 .servicesHeading{
     font-weight: unset;
     color: #1c1c1c;
@@ -45,7 +62,20 @@
 .NavBg{
   background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
 }
-
+.loginBg{
+  background-color: #fff !important;
+  background: url(./Images/loginBG.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.registerBg{
+  background-color: #fff !important;
+  background: url(./Images/registerShape.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
 .homepage-card{
 border-radius: 10px;
 background: rgb(255,0,238);
@@ -179,6 +209,7 @@ footer ul {
 }
 .footer-cta {
   border-bottom: 1px solid #373636;
+  padding-top: 3rem !important;
 }
 .single-cta i {
   color:#6b36aa;
@@ -307,10 +338,20 @@ footer ul {
   font-size: 22px;
   transform: rotate(-6deg);
 }
+
 .copyright-area{
   background: #202020;
   padding: 25px 0;
 }
+.copy_container{
+  background: #202020;
+  padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90%;
+}
+
 .copyright-text p {
   margin: 0;
   font-size: 14px;
@@ -346,6 +387,9 @@ footer ul {
   background-color: rgba(0,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+}
+.Head_yourShop {
+  text-align: left;
 }
 
 .overlay-content {
@@ -809,7 +853,7 @@ padding: 0px;
 }
 
 a {
-	color: #000;
+	color: rgb(252, 248, 248);
 	text-decoration: none;
 
 	-webkit-transition: color .2s linear;
@@ -853,7 +897,7 @@ a:hover {
 .container {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0 auto;
-	width: 980px;
+
 }
 
 #cart {
@@ -1090,7 +1134,7 @@ a:hover {
 	font-size: 20px;
 	font-weight: 300;
 	padding: 16px 0;
-	width: 290px;
+	width: 304px;
 	text-align: center;
 
 	-webkit-transition: all .2s linear;
@@ -1816,7 +1860,7 @@ header .footer-wave {
 }
 .Child_card_shop{
   background: #fff !important;
-  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 58%);
+  box-shadow: 0px 2px 4px -1px rgb(0 0 0 / 2%);
 }
 .headin_shopCart{
   color: #000 !important;
@@ -1836,12 +1880,19 @@ header .footer-wave {
 .cart_CenterROw{
   align-items: center;
   margin: 0px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
 }
 .Cart_productImg{
     padding-right: 0 !important;
     padding-left: 0 !important;
 }
+.topcart{
+  display: flex;
+  align-content: center;
+  justify-content: space-between;
+}
 .Head_yourShop{
+  
   text-align: center;
 }
 .Secon_colCard{
@@ -1905,7 +1956,10 @@ input:focus + label, input:valid + label{
   /*outline: 1px solid red; /*for debugigng purposes only*/
   transition: 0.2s ease-in-out;
   top: 0em;
-  left: 2em;
+  /* left: 2em; */
+}
+.check_box{
+  background-color: blue !important;
 }
 .Your_detailHead{
   position: relative;
@@ -2183,6 +2237,7 @@ font-size: 30px;
     right: 100px;
     z-index: 10;
 }
+
 .COntactInput{
   border: 0;
   margin: 10px;
@@ -2255,10 +2310,28 @@ marker {
 .ContactUs_icon{
   font-size: 25px;
 }
+
+
 .info_Contact{
   margin: 10px;
 }
 
 
+/* Media queries */
+@media only screen and (orientation : landscape) , only screen and (max-device-width: 1440px) and (min-device-width : 1280px) and  (orientation : portrait) { 
+  .mechanicImg{
+    height: 700px;
+  }
+  .card-authentication1 {
+    width: 25rem;
+    left: 30px;
+    position: relative;
+}
+}
+@media only screen and (orientation : landscape) , only screen and (min-device-width : 1920px) and  (orientation : portrait){
+  .card-authentication1 {
+    width: 30rem;  
+}
+}
 
   
