@@ -16,7 +16,7 @@ function Register(props) {
 				  <div className="row h-100">
 					  <div className="col-6">
 						  <div className="login_formcol">
-							  <img src={require('./Images/Mechanicimg.png').default} className="mechanicImg" alt="logo icon" />
+							  <img src={require('./Images/RegisterSignup.svg').default} className="mechanicImg" alt="logo icon" />
 							  </div>
 					  </div>
 					  <div className="col-6 login_formcol">
