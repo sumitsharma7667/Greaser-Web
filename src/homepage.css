@@ -35,6 +35,7 @@
   justify-content: center;
   display: flex;
   position: relative;
+  height: 100%;
 }
 .back_to_home{
   top: 30px;
@@ -64,6 +65,13 @@
 .loginBg{
   background-color: #fff !important;
   background: url(./Images/loginBG.png);
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.registerBg{
+  background-color: #fff !important;
+  background: url(./Images/registerShape.png);
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1938,10 +1946,6 @@ header .footer-wave {
   left: 0;
   color: #ccc;
 }
-.inputBG{
-  background: #531a82 !important;
-  color: #fff !important;
-}
 input:focus + label, input:valid + label{
   color: #fff;
   font-size: 0.8em;
@@ -2313,5 +2317,21 @@ marker {
 }
 
 
+/* Media queries */
+@media only screen and (orientation : landscape) , only screen and (max-device-width: 1440px) and (min-device-width : 1280px) and  (orientation : portrait) { 
+  .mechanicImg{
+    height: 700px;
+  }
+  .card-authentication1 {
+    width: 25rem;
+    left: 30px;
+    position: relative;
+}
+}
+@media only screen and (orientation : landscape) , only screen and (min-device-width : 1920px) and  (orientation : portrait){
+  .card-authentication1 {
+    width: 30rem;  
+}
+}
 
   
