@@ -490,11 +490,13 @@ function Home(props) {
             <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
               <div className="row d-flex">
               <div className="col-8 Stroeicon">
+                <div>
                 <a href="#">
-                <img className="img1" src={require('../src/Images/google.png').default} alt="googlelogo"/></a>
+                <img className="img1" src={require('../src/Images/appStor.svg').default} class="m-2" alt="googlelogo"/></a>
                 <a href="#">
-                <img className="img2" src={require('../src/Images/apple.png').default} alt="apple"/>
+                <img className="img2" src={require('../src/Images/playStore.svg').default} alt="apple"/>
                 </a>
+                </div>
                 </div>
                 <div className="col-8">
                   {/* <input type="text" className="form-control" />
