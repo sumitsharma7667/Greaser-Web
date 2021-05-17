@@ -15,19 +15,24 @@ function Cart(props) {
 		  <section className="Cart_page_sect">
 			 
 			  <div className="container-fluid CheckOut_CONT">
+				  
 				  <div className="card Item_card p-4">
-					   <div className="row">
-						  <div className="col-12">
-								  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'></i>Continue Shoping</h6>
-							  </div>
-					 </div>
+					   
 					  <div className="row">
-						  <div className="col-12">
-							  <div className="Head_yourShop">
+						  <div className="col-5">
+							  <h6 className="headin_shopCart"><i class='bx bx-arrow-back'>
+							  </i>Continue Shoping</h6>
+						  </div>
+						  <div className="col-7">
+							  
 							   <h4 className="headin_shopCart"> Your Shoping Cart</h4>
-							  </div>
+							  
 							  </div>
 					 </div>
+					 
+						  <div className="row">
+						  
+						  </div>
 					  <div className="row">
 						  <div className="col-8">
 							  <div class="card Child_card_shop">
