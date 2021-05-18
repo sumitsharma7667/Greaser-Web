@@ -9,7 +9,7 @@ function Header(props) {
               <div class="row">
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                        <i class="fas fa-map-marker-alt"></i>
+                        <i class='bx bxs-map'></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
                             <span>Ballupur Chowk, Dehradun</span>
@@ -18,7 +18,7 @@ function Header(props) {
                 </div>
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                        <i class="fas fa-phone"></i>
+                        <i class='bx bx-phone-call'></i>
                         <div class="cta-text">
                             <h4>Call us</h4>
                             <span>9876543210 0</span>
@@ -27,7 +27,7 @@ function Header(props) {
                 </div>
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                        <i class="far fa-envelope-open"></i>
+                       <i class='bx bx-mail-send'></i>
                         <div class="cta-text">
                             <h4>Mail us</h4>
                             <span>mail@info.com</span>
@@ -80,14 +80,14 @@ function Header(props) {
                         <div class="subscribe-form">
                             <form action="#">
                                 <input type="text" placeholder="Email Address" />
-                                <button><i class="fab fa-telegram-plane"></i></button>
+                                <button><i class='bx bxl-telegram' ></i></button>
                             </form>
                               </div>
                                <div class="footer-social-icon mt-3">
                             <span>Follow us</span>
-                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                            <a href="#"><i class='bx bxl-facebook'></i></a>
+                            <a href="#"><i class='bx bxl-twitter' ></i></a>
+                            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
                         </div>
                     </div>
                 </div>

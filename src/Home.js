@@ -136,7 +136,7 @@ function Home(props) {
           <div class="col-12">
             <div class="card card00 m-2 border-0">
               <div class="row text-center justify-content-center px-3">
-                <p class="prev text-danger" id="back"><span class="fa fa-long-arrow-left"> Go Back</span></p>
+                <p class="prev" id="back"><span class="fa fa-long-arrow-left"> Go Back</span></p>
                 <h3 class="mt-4">Get instant quotes for your car service</h3>
               </div>
               <div class=" px-3 mt-4 flex-column-reverse">
@@ -165,21 +165,21 @@ function Home(props) {
                       <div class="mb-2 col-2"> <span class="fa fa-twitter social"></span> </div>
                       <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
                     </div> */}
-                    <div class="row px-3 mt-4">
-                      <div class="form-group mt-1 mb-1"> 
+                    <div class="row px-3 ">
+                      <div class="form-group "> 
                       {/* <input type="text" id="email" class="form-control" required />  */}
-                      <select className="form-control" onChange={(e)=>{SetBrand(e.target.value)}}>
+                      <select className="form-control text-dark" onChange={(e)=>{SetBrand(e.target.value)}}>
                           <option value="">Manufacturer...</option>
                           {AllBrand.map((item,index)=>{
                             return(
-                              <option value={item.name}>{item.name}</option>
+                              <option className="" value={item.name}>{item.name}</option>
                             )
                           })}
                           
                       </select>
                       {/* <label class="ml-3 form-control-placeholder" for="email" >Email</label>  */}
                       </div>
-                      <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                      <div class="next-button text-center ml-2"> <span class="fa fa-arrow-right"></span> </div>
                     </div>
                     {/* <div class="row px-3 mt-1 mb-5">
                       <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input" /> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
@@ -189,8 +189,8 @@ function Home(props) {
                     <div class="row px-3 mt-3">
                       <div class="form-group mt-1 mb-1"> 
                       {/* <input type="password" id="pwd" class="form-control" required />  */}
-                      <select className="form-control" onChange={(e)=>{SetModal(e.target.value)}}>
-                          <option value="">Choose Model..</option>
+                      <select className="form-control text-dark" onChange={(e)=>{SetModal(e.target.value)}}>
+                          <option className="text-light" value="">Choose Model..</option>
                           {AllModal.map((item,index)=>{
                             if(item.manufacturer.name == Brand)
                             return(
@@ -220,9 +220,9 @@ function Home(props) {
                   <div class="card2 ml-2">
                     <div class="row px-3 mt-3">
                       {/* <p class="mb-0 w-100">Select your Country</p> */}
-                      <div class="form-group mt-3 mb-4">
-                      <select className="form-control" onChange={(e)=>{SetType(e.target.value)}}>
-                          <option value="">Choose Type..</option>
+                      <div class="form-group mt-3 ">
+                      <select className="form-control text-dark" onChange={(e)=>{SetType(e.target.value)}}>
+                          <option className="text-light" value="">Choose Type..</option>
                           <option value="Petrol">Petrol</option>
                           <option value="Deisel">Deisel</option>
                           <option value="CNG">CNG</option>
@@ -237,7 +237,7 @@ function Home(props) {
                     </div>
                   </div>
                   <div class="card2 ml-2">
-                    <div class="row px-3 mt-2 mb-4 text-center">
+                    <div class="row px-3 mt-2 text-center">
                       <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
                       <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif" /></div>
                       <h6 class="col-12 mt-2"><i>...we will notify you...</i></h6>

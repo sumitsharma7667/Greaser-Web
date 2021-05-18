@@ -269,13 +269,20 @@ footer ul {
   font-size: 16px;
   margin-right: 15px;
 }
-.footer-social-icon i {
+/* Footer Icon */
+
+.bxl-facebook, .bxl-twitter, .bxl-instagram-alt{
+  font-size: 40px;
+  color: #3B5998;
+}
+
+/* .footer-social-icon i {
   height: 40px;
   width: 40px;
   text-align: center;
   line-height: 38px;
   border-radius: 50%;
-}
+} */
 .facebook-bg{
   background: #3B5998;
 }
@@ -1819,7 +1826,7 @@ header .footer-wave {
 }
 .Heading_ServiceItem{
   text-align: center;
-  padding: 15px;
+  padding: 5px;
 }
 .Add_ToCart {
 	background: #000;
@@ -1922,10 +1929,10 @@ header .footer-wave {
   width: 100%;
 }
 #zipcodefield{
-  width: 25%;
+  width: 100%;
 }
 #cityfield{
-  width: 75%;
+  width: 100%;
 }
 .formfield>input, .formfield>label{
   padding: 0.8em;

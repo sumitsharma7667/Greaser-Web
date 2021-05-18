@@ -69,7 +69,8 @@ body {
 }
 
 select option {
-    background: #000;
+    background: rgb(50 33 112);
+    color: #fff;
 }
 
 ::placeholder {
