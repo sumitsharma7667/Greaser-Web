@@ -22,6 +22,7 @@ const responsive = {
     slidesToSlide: 1 // optional, default to 1.
   }
 };
+
 function ServiceDetail(props) {
   return (
     <>

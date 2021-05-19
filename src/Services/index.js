@@ -5,6 +5,7 @@ const CreateService =()=>{
     const[status,SetStatus]=useState(0)
     const[name,SetName]=useState()
     const[_id,SetId]=useState()
+    
     const[mode,SetMode]=useState()
     const[service_type,SetServiceType]=useState()
     const[estimated_time,SetEstimatedTime]=useState()

@@ -5,6 +5,7 @@ import Header from './Header';
 import Footer from './Footer';
 function Cart(props) {
   return (
+	  
     <div className="">
    	{/* <header id="site-header">
 		<div class="container">

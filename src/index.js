@@ -16,6 +16,7 @@ import ServicesDetail from './Service-detail';
 import Cart from './Cart';
 import ContactUs from './ContactUs';
 
+
 const AppRoute = ({component:Component,layout:Layout, ...rest})=>(
   <Route {...rest} render ={props=>(
     <Layout><Component {...props}> </Component></Layout>

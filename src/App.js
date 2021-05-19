@@ -16,6 +16,8 @@ function App(props) {
         {/* <h5 class="logo-text">Greaser</h5> */}
       </a>
     </div>
+
+    
     <ul class="sidebar-menu do-nicescrol">
        <li class="sidebar-header">MAIN NAVIGATION</li>
        <li>

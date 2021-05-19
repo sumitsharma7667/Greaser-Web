@@ -5,6 +5,7 @@ const ServiceType =()=>{
     const[name,SetName]=useState()
     const[image,SetImage]=useState()
     const[status,SetStatus]=useState(0)
+    
     const[_id,SetId]=useState()
     const[AllServicesType,SetAllServiceType]=useState([])
 

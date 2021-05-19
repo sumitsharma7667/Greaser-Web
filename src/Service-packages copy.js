@@ -18,6 +18,7 @@ function Services(props) {
               <div className="col-7">
               </div>
             </div>
+            
             <div className="row">
               <div className="col-5 p-4">
                 <h4>This is dummy Heading</h4>
