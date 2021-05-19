@@ -5,11 +5,11 @@ function Header(props) {
   return (
     <footer class="footer-section">
           <div class="container-fluid footer_container">
-              <div class="footer-cta p-3">
-              <div class="row">
+        <div class="footer-cta p-2">
+            <div class="row">
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                        <i class='bx bxs-map'></i>
+                        <i class="fas fa-map-marker-alt"></i>
                         <div class="cta-text">
                             <h4>Find us</h4>
                             <span>Ballupur Chowk, Dehradun</span>
@@ -18,7 +18,7 @@ function Header(props) {
                 </div>
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                        <i class='bx bx-phone-call'></i>
+                        <i class="fas fa-phone"></i>
                         <div class="cta-text">
                             <h4>Call us</h4>
                             <span>9876543210 0</span>
@@ -27,21 +27,21 @@ function Header(props) {
                 </div>
                 <div class="col-xl-4 col-md-4 ">
                     <div class="single-cta">
-                       <i class='bx bx-mail-send'></i>
+                        <i class="far fa-envelope-open"></i>
                         <div class="cta-text">
                             <h4>Mail us</h4>
                             <span>mail@info.com</span>
                         </div>
                     </div>
                 </div>
-              </div>
-             </div>
-              <div class="footer-content pt-5 pb-5">
-             <div class="row">
+            </div>
+        </div>
+        <div class="footer-content pt-5 pb-5">
+            <div class="row">
                 <div class="col-xl-4 col-lg-4 ">
                     <div class="footer-widget">
                         <div class="footer-logo">
-                            <a href="index.html"><img src={require('./Images/Glogo.png').default} class="img-fluid" alt="logo" /></a>
+                            <a href="index.html"><img src={require('./Images/logo.png').default} class="img-fluid" alt="logo" /></a>
                         </div>
                         <div class="footer-text">
                             <p>Lorem ipsum dolor sit amet, consec tetur adipisicing elit, sed do eiusmod tempor incididuntut consec tetur adipisicing
@@ -57,7 +57,7 @@ function Header(props) {
                         </div>
                         <ul>
                             <li><a href="#">Home</a></li>
-                            <li><a href="#">Secvice Packages</a></li>
+                            {/* <li><a href="#">about</a></li> */}
                             <li><a href="#">services</a></li>
                             {/* <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li> */}
@@ -80,47 +80,43 @@ function Header(props) {
                         <div class="subscribe-form">
                             <form action="#">
                                 <input type="text" placeholder="Email Address" />
-                                <button><i class='bx bxl-telegram' ></i></button>
+                                <button><i class="fab fa-telegram-plane"></i></button>
                             </form>
                               </div>
                                <div class="footer-social-icon mt-3">
                             <span>Follow us</span>
-                            <a href="#"><i class='bx bxl-facebook'></i></a>
-                            <a href="#"><i class='bx bxl-twitter' ></i></a>
-                            <a href="#"><i class='bx bxl-instagram-alt' ></i></a>
+                            <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                            <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
+                            <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
                         </div>
                     </div>
                 </div>
-             </div>
-              </div>
-                </div>
-                   
-                     <div class="copyright-area">
-                     <div className='copy_container'>
-                         <div class="row">
-                        <div class="col-xl-6 col-lg-6 text-center text-lg-left">
-                             <div class="copyright-text">
-                      <p>Copyright &copy; 2021<a href="#"> Giks</a></p>
-                  </div>
-                    </div>
-                    
-              <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
-                  <div class="footer-menu">
-                      <ul>
-                          <li><a href="#">Home</a></li>
-                          <li><a href="#">Terms</a></li>
-                          <li><a href="#">Privacy</a></li>
-                          <li><a href="#">Policy</a></li>
-                          <li><a href="#">Contact</a></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-      </div>
- </div>
-        
+            </div>
+        </div>
+        </div>
              
-    
+    <div class="copyright-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 text-center text-lg-left">
+                    <div class="copyright-text">
+                        <p>Copyright &copy; 2021<a href="#"> Giks</a></p>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 d-none d-lg-block text-right">
+                    <div class="footer-menu">
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Terms</a></li>
+                            <li><a href="#">Privacy</a></li>
+                            <li><a href="#">Policy</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
   );
 }

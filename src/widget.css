@@ -50,16 +50,18 @@
 .FirstSection input,
 .FirstSection select {
     padding: 2px;
-    border-radius: 5px;
+    border-radius: 0px;
     box-sizing: border-box;
     color: #9E9E9E;
-    font-size: 18px;
+    border: 1px solid #BDBDBD;
+    font-size: 16px;
     letter-spacing: 1px;
-    height: 50px !important;
+    height: 50px !important
 }
 
 .FirstSection select {
     width: 100%;
+    margin-bottom: 85px
 }
 
 .FirstSection input:focus,
@@ -101,7 +103,7 @@
 .next-button {
     width: 18%;
     height: 50px;
-    background-color: #5f1889;
+    background-color: #BDBDBD;
     color: #fff;
     border-radius: 6px;
     padding: 10px;
@@ -109,7 +111,7 @@
 }
 
 .next-button:hover {
-    /* background-color: #1b1b1b; */
+    background-color: #1b1b1b;
     color: #fff
 }
 
@@ -227,13 +229,13 @@
     display: block;
     position: absolute;
     left: 40px;
-    cursor: pointer;
-    top: 220px;
+    top: 20px;
+    cursor: pointer
 }
 
-/* .prev:hover {
+.prev:hover {
     color: #D50000 !important
-} */
+}
 
 @media screen and (max-width: 912px) {
     .card00 {

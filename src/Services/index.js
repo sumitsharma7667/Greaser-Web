@@ -224,6 +224,15 @@ const CreateService =()=>{
             </select>
             {/* {/ <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> /} */}
            </div>
+           <div class="col-lg-6 form-group">
+            <label > Is Service</label>
+            <select className="form-control" value={warranty}  onChange={(e)=>{SetIsService(e.target.value)}}>
+                <option value="Featured">Featured</option>
+                <option value="Premium">Premium</option>
+                <option value="For you">For you</option>
+            </select>
+            {/* <input type="file" class="form-control" onChange={(e)=>{SetImage(e.target.value)}}  /> */}
+           </div>
             <div class="col-lg-6  form-group">
             <label >Remark</label>
             <input type="text" class="form-control" value={remark} onChange={(e)=>{SetRemark(e.target.value)}} placeholder="Enter Brand Name" />

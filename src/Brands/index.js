@@ -5,7 +5,6 @@ const CreateBrands =()=>{
     const[image,SetImage]=useState()
     const[status,SetStatus]=useState(0)
     const[AllBrand,SetAllBrand]=useState([])
-    
 
     useEffect(()=>{
     GetBrand()

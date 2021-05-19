@@ -15,7 +15,6 @@ import Services from './Service-packages';
 import ServicesDetail from './Service-detail';
 import Cart from './Cart';
 import ContactUs from './ContactUs';
-import Register from './Register';
 
 const AppRoute = ({component:Component,layout:Layout, ...rest})=>(
   <Route {...rest} render ={props=>(
@@ -44,9 +43,6 @@ ReactDOM.render(
         </Route>
       <Route path="/Login"> 
           <Login />
-      </Route>
-      <Route path="/Register"> 
-          <Register />
         </Route>
       <Route path="/services-packages"> 
           <Services />

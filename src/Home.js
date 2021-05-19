@@ -123,11 +123,11 @@ function Home(props) {
 <>
 <Header />
         <section className="FirstSection">
-        <div className="row">
-            <div className="col-7 blankCol">
+        <div className="row" style={{display:"contents"}}>
+            <div className="col-7">
             <h1></h1>
             </div>
-            <div className="col-5 blankCol">
+            <div className="col-5">
            
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-11 col-lg-10 col-xl-9">
@@ -136,7 +136,7 @@ function Home(props) {
           <div class="col-12">
             <div class="card card00 m-2 border-0">
               <div class="row text-center justify-content-center px-3">
-                <p class="prev" id="back"><span class="fa fa-long-arrow-left"> Go Back</span></p>
+                <p class="prev text-danger" id="back"><span class="fa fa-long-arrow-left"> Go Back</span></p>
                 <h3 class="mt-4">Get instant quotes for your car service</h3>
               </div>
               <div class=" px-3 mt-4 flex-column-reverse">
@@ -165,21 +165,21 @@ function Home(props) {
                       <div class="mb-2 col-2"> <span class="fa fa-twitter social"></span> </div>
                       <div class="mb-2 col-2"> <span class="fa fa-dropbox social"></span> </div>
                     </div> */}
-                    <div class="row px-3 ">
-                      <div class="form-group "> 
+                    <div class="row px-3 mt-4">
+                      <div class="form-group mt-1 mb-1"> 
                       {/* <input type="text" id="email" class="form-control" required />  */}
-                      <select className="form-control text-dark" onChange={(e)=>{SetBrand(e.target.value)}}>
+                      <select className="form-control" onChange={(e)=>{SetBrand(e.target.value)}}>
                           <option value="">Manufacturer...</option>
                           {AllBrand.map((item,index)=>{
                             return(
-                              <option className="" value={item.name}>{item.name}</option>
+                              <option value={item.name}>{item.name}</option>
                             )
                           })}
                           
                       </select>
                       {/* <label class="ml-3 form-control-placeholder" for="email" >Email</label>  */}
                       </div>
-                      <div class="next-button text-center ml-2"> <span class="fa fa-arrow-right"></span> </div>
+                      <div class="next-button text-center mt-1 ml-2"> <span class="fa fa-arrow-right"></span> </div>
                     </div>
                     {/* <div class="row px-3 mt-1 mb-5">
                       <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input" /> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
@@ -189,8 +189,8 @@ function Home(props) {
                     <div class="row px-3 mt-3">
                       <div class="form-group mt-1 mb-1"> 
                       {/* <input type="password" id="pwd" class="form-control" required />  */}
-                      <select className="form-control text-dark" onChange={(e)=>{SetModal(e.target.value)}}>
-                          <option className="text-light" value="">Choose Model..</option>
+                      <select className="form-control" onChange={(e)=>{SetModal(e.target.value)}}>
+                          <option value="">Choose Model..</option>
                           {AllModal.map((item,index)=>{
                             if(item.manufacturer.name == Brand)
                             return(
@@ -220,9 +220,9 @@ function Home(props) {
                   <div class="card2 ml-2">
                     <div class="row px-3 mt-3">
                       {/* <p class="mb-0 w-100">Select your Country</p> */}
-                      <div class="form-group mt-3 ">
-                      <select className="form-control text-dark" onChange={(e)=>{SetType(e.target.value)}}>
-                          <option className="text-light" value="">Choose Type..</option>
+                      <div class="form-group mt-3 mb-4">
+                      <select className="form-control" onChange={(e)=>{SetType(e.target.value)}}>
+                          <option value="">Choose Type..</option>
                           <option value="Petrol">Petrol</option>
                           <option value="Deisel">Deisel</option>
                           <option value="CNG">CNG</option>
@@ -237,7 +237,7 @@ function Home(props) {
                     </div>
                   </div>
                   <div class="card2 ml-2">
-                    <div class="row px-3 mt-2 text-center">
+                    <div class="row px-3 mt-2 mb-4 text-center">
                       <h2 class="col-12 text-danger"><strong>Success !</strong></h2>
                       <div class="col-12 text-center"><img class="tick" src="https://i.imgur.com/WDI0da4.gif" /></div>
                       <h6 class="col-12 mt-2"><i>...we will notify you...</i></h6>
@@ -268,7 +268,7 @@ function Home(props) {
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/car.svg').default} />
@@ -277,7 +277,7 @@ function Home(props) {
             </Link>
           </div>
 
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/spray-gun.svg').default} />
@@ -285,7 +285,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/customization.svg').default} />
@@ -293,7 +293,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/accessories.svg').default} />
@@ -301,7 +301,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/wash.svg').default} />
@@ -313,7 +313,7 @@ function Home(props) {
         </div>
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/insurance.svg').default} />
@@ -322,7 +322,7 @@ function Home(props) {
             </Link>
           </div>
 
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/battery.svg').default} />
@@ -330,7 +330,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/windshield.svg').default} />
@@ -338,7 +338,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/tyre.svg').default} />
@@ -346,7 +346,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard w-100">
+          <div className="SecondSectionCard">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/headlights.svg').default} />
@@ -489,14 +489,7 @@ function Home(props) {
             <h1>Download the App</h1>
             <p>is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s</p>
               <div className="row d-flex">
-              <div className="col-8 Stroeicon">
-                <div>
-                <a href="#">
-                <img className="img1" src={require('../src/Images/appStor.svg').default} class="m-2" alt="googlelogo"/></a>
-                <a href="#">
-                <img className="img2" src={require('../src/Images/playStore.svg').default} alt="apple"/>
-                </a>
-                </div>
+                <div className="col-4 Stroeicon">
                 </div>
                 <div className="col-8">
                   {/* <input type="text" className="form-control" />
@@ -512,13 +505,15 @@ function Home(props) {
             </div>
           </div>
         </section>
+        
+
       <section className=" features-section">
         <div className="container-fluid HomeCard_conatainer">
           <div className="col-12 text-center p-3">
              <h1 className="Features-heading">Features</h1>
             </div>
           <div className="row">
-            <div className="col-3 feat_col_res">
+            <div className="col-3">
                <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -531,7 +526,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-            <div className="col-3 feat_col_res">
+            <div className="col-3">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -542,7 +537,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-            <div className="col-3 feat_col_res">
+            <div className="col-3">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -553,7 +548,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-             <div className="col-3 feat_col_res">
+             <div className="col-3">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -566,6 +561,19 @@ function Home(props) {
             </div>
           </div>
             </div>
+
+
+
+
+
+
+
+
+
+
+
+         
+
         </section>
        <Footer />
       </>
