@@ -212,7 +212,7 @@ footer ul {
   padding-top: 3rem !important;
 }
 .single-cta i {
-  color:#6b36aa;
+  color:#fff;
   font-size: 30px;
   float: left;
   margin-top: 8px;
@@ -273,7 +273,7 @@ footer ul {
 
 .bxl-facebook, .bxl-twitter, .bxl-instagram-alt{
   font-size: 40px;
-  color: #3B5998;
+  color: #fff;
 }
 
 /* .footer-social-icon i {
@@ -2340,5 +2340,45 @@ marker {
     width: 30rem;  
 }
 }
-
+@media screen and (max-width: 450px) {
+  .FirstSection {
+    /* display: flex; */
+    height: 100vh;
+    /* display: flex; */
+}
+.FirstSection::before {
+   
+    display: none;
+}
+.blankCol{
+  max-width: 100%;
+    flex: 0 0 100%;
+}
+.SecondSection {
+    /* height: 80vh; */
+    padding: 30px 10px;
+    /* background-color: #dededede; */
+}
+.SecondSectionCard {
+    max-width: 100%;
+    padding: 15px;
+}
+.ThirdSection .col-4 img {
+    display: none;
+}
+.ThirdSection .col-2 img {
+    display: none;
+}
+.ThirdSection .col-6{
+  max-width: 100%;
+    flex: 0 0 100%;
+}
+.features-section {
+     height: auto;
+}
+.feat_col_res{
+  max-width: 100%;
+    flex: 0 0 100%;
+}
+}
   

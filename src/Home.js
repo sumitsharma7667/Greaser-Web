@@ -123,11 +123,11 @@ function Home(props) {
 <>
 <Header />
         <section className="FirstSection">
-        <div className="row" style={{display:"contents"}}>
-            <div className="col-7">
+        <div className="row">
+            <div className="col-7 blankCol">
             <h1></h1>
             </div>
-            <div className="col-5">
+            <div className="col-5 blankCol">
            
   <div class="row d-flex justify-content-center align-items-center h-100">
     <div class="col-12 col-md-11 col-lg-10 col-xl-9">
@@ -268,7 +268,7 @@ function Home(props) {
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
           
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/car.svg').default} />
@@ -277,7 +277,7 @@ function Home(props) {
             </Link>
           </div>
 
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/spray-gun.svg').default} />
@@ -285,7 +285,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/customization.svg').default} />
@@ -293,7 +293,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/accessories.svg').default} />
@@ -301,7 +301,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/wash.svg').default} />
@@ -313,7 +313,7 @@ function Home(props) {
         </div>
         <div className="col-12">
         <div className="row " style={{display:"flex"}}>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/insurance.svg').default} />
@@ -322,7 +322,7 @@ function Home(props) {
             </Link>
           </div>
 
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/battery.svg').default} />
@@ -330,7 +330,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/windshield.svg').default} />
@@ -338,7 +338,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/tyre.svg').default} />
@@ -346,7 +346,7 @@ function Home(props) {
             </div>
             </Link>
           </div>
-          <div className="SecondSectionCard">
+          <div className="SecondSectionCard w-100">
             <Link to="/Services-detail"> 
             <div className="homepage-card">
             <img src={require('../src/Images/headlights.svg').default} />
@@ -512,15 +512,13 @@ function Home(props) {
             </div>
           </div>
         </section>
-        
-
       <section className=" features-section">
         <div className="container-fluid HomeCard_conatainer">
           <div className="col-12 text-center p-3">
              <h1 className="Features-heading">Features</h1>
             </div>
           <div className="row">
-            <div className="col-3">
+            <div className="col-3 feat_col_res">
                <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -533,7 +531,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 feat_col_res">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -544,7 +542,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-            <div className="col-3">
+            <div className="col-3 feat_col_res">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -555,7 +553,7 @@ function Home(props) {
                   </div>
                 </div>
             </div>
-             <div className="col-3">
+             <div className="col-3 feat_col_res">
               <div class="card FeatureSEct_card a">
                   <span></span>
                   <div class="content">
@@ -568,19 +566,6 @@ function Home(props) {
             </div>
           </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
-         
-
         </section>
        <Footer />
       </>
