@@ -8,6 +8,7 @@ const Vehicle =()=>{
     const[status,SetStatus]=useState(0)
     const[AllBrand,SetAllBrand]=useState([])
     const[AllVehicle,SetAllVehicle]=useState([])
+    
 
     useEffect(()=>{
     GetBrand()
