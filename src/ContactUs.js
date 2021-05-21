@@ -84,57 +84,90 @@ function ContactUs(props) {
 
     
   return (
-<>
-<Header />
+    <>
+      <Header />
 
       <section className="MapSection">
         <div className="card MaP_card">
-        <iframe  className="IframeMp" 
-   src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2695.5759731392045!2d19.053322250160253!3d47.49817323859679!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1399281289810"></iframe>
-<div class="marker">
-  <div class="dot"></div>
+          <iframe
+            className="IframeMp"
+            src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d2695.5759731392045!2d19.053322250160253!3d47.49817323859679!3m2!1i1024!2i768!4f13.1!5e0!3m2!1shu!2shu!4v1399281289810"
+          ></iframe>
+          <div class="marker">
+            <div class="dot"></div>
             <div class="grow"></div>
-            </div>
-</div>
-        </section>
+          </div>
+        </div>
+      </section>
       <section className="ContactUsSec">
         <div className="container contactUsCOnt">
           <div className="row contactUsCOnt">
-            <div className="col-6">
+            <div className="col-6 blankCol">
               <div className="card CarBgImg">
                 <div className="p-5">
-                  <h4>Do Not Hasitate to Reach Us</h4>
-                  <p className="COntact_para">Fill up the form and our Team will get back to you within 24 hours.</p>
+                  <h4>Do Not Hesitate to Reach Us</h4>
+                  <p className="COntact_para">
+                    Fill up the form and our Team will get back to you within 24
+                    hours.
+                  </p>
                   <div className="mt-5">
-                    <i class="fas fa-phone-square-alt ContactUs_icon"><span className="info_Contact"> 7500872014</span></i>
-                  </div>
-                   <div className="mt-5">
-                    <i class="fas fa-envelope-square ContactUs_icon"><span className="info_Contact"> info@giksindia.com</span></i>
+                    <i class="fas fa-phone-square-alt ContactUs_icon">
+                      <span className="info_Contact"> 7500872014</span>
+                    </i>
                   </div>
                   <div className="mt-5">
-                    <i class="fas fa-map-marker-alt ContactUs_icon"><span className="info_Contact"> 222 Ram vihar Ballupur</span></i>
+                    <i class="fas fa-envelope-square ContactUs_icon">
+                      <span className="info_Contact"> info@giksindia.com</span>
+                    </i>
+                  </div>
+                  <div className="mt-5">
+                    <i class="fas fa-map-marker-alt ContactUs_icon">
+                      <span className="info_Contact">
+                        {" "}
+                        222 Ram vihar Ballupur
+                      </span>
+                    </i>
                   </div>
                 </div>
               </div>
             </div>
-            <div className="col-6">
+            <div className="col-6 blankCol">
               <div className="Form_contact card">
-               <input class="form-control COntactInput" type="text" placeholder="Name"  />
-              <input class="form-control COntactInput" type="email" placeholder="Email*" />
-              <input class="form-control COntactInput" type="text" placeholder="Company" />
-              <input class="form-control COntactInput" type="phone" placeholder="Phone" />
-              <textarea rows="4" class="form-control COntactInput" placeholder="Message"></textarea>
-              <div className="text-center">
-                <button className="btn btn-primary m-2">Submit</button>
+                <input
+                  class="form-control COntactInput"
+                  type="text"
+                  placeholder="Name"
+                />
+                <input
+                  class="form-control COntactInput"
+                  type="email"
+                  placeholder="Email*"
+                />
+                <input
+                  class="form-control COntactInput"
+                  type="text"
+                  placeholder="Company"
+                />
+                <input
+                  class="form-control COntactInput"
+                  type="phone"
+                  placeholder="Phone"
+                />
+                <textarea
+                  rows="4"
+                  class="form-control COntactInput"
+                  placeholder="Message"
+                ></textarea>
+                <div className="text-center">
+                  <button className="btn btn-primary m-2">Submit</button>
                 </div>
               </div>
-              </div>
+            </div>
           </div>
-
         </div>
-       </section>
-       <Footer />
-      </>
-  )
+      </section>
+      <Footer />
+    </>
+  );
 }
 export default ContactUs
