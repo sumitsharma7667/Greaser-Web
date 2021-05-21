@@ -2457,5 +2457,9 @@ MapSection {
     width: auto;
     background: #eee;
 }
+/* login css responsive */
+.mechanicImg{
+  display: none;
+}
 }
   
