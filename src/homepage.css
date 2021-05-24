@@ -19,7 +19,7 @@
     background-image: url('./Images/FirstIMg.jpg');
     background-size: cover;
     width: 100%;
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
 }
 .firstRow{
@@ -1135,19 +1135,20 @@ a:hover {
 .right {
 	float: right;
 }
-
+/* btn Css */
 .container .btn {
-	background: #6b36aa;
-	border: 1px solid #999;
-	border-style: none none solid none;
-	cursor: pointer;
-	display: block;
-	color: #fff;
-	font-size: 20px;
-	font-weight: 300;
-	padding: 16px 0;
-	width: 304px;
-	text-align: center;
+background: #6b36aa;
+    /* border: 1px solid #999; */
+    border-style: none none solid none;
+    cursor: pointer;
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 300;
+    padding: 5px;
+    width: auto;
+    text-align: center;
+    transition: all .2s linear;
 
 	-webkit-transition: all .2s linear;
 	-moz-transition: all .2s linear;
@@ -1158,9 +1159,8 @@ a:hover {
 
 .container .btn:hover {
 	color: #fff;
-	background: #429188;
 }
-
+/* end btn css */
 .type {
 	background: #fcfcfc;
 	font-size: 13px;
@@ -1824,10 +1824,10 @@ header .footer-wave {
 	/* box-shadow: 0px 0px 136px 3px #6d74d6; */
 }
 
-.service_itemImg{
-  height: 100%;
-  width: 100%;
-  padding: 15px;
+.service_itemImg {
+    height: 255px;
+    width: 100%;
+    padding: 15px;
 }
 .Heading_ServiceItem{
   text-align: center;
@@ -1919,25 +1919,36 @@ header .footer-wave {
   box-sizing: border-box;
   float: left;
   margin: auto;
-  padding: 0px;
+  padding: 5px;
   border: 0px;
   font-size: 1em;
 }
 .formfield *{
   box-sizing: border-box;
 }
-#firstnamefield, #lastnamefield{
+#firstnamefield, #lastnamefield, #Emailfield, #Phonefield, #landmarkfield, #statefield, #zipcodefield, #cityfield{
   width: 50%;
- 
 }
 #addressfield{
-  width: 50%;
+  width: 100%;
 }
-#zipcodefield{
-  width: 50%;
+.PaymentBtn{
+  align-items: center;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 15px;
 }
-#cityfield{
-  width: 50%;
+.checkBoxalignment{
+  left: 25px;
+    position: relative;
+}
+.alignmentCol{
+  align-items: center;
+    justify-content: center;
+    position: relative;
+    display: flex;
+    height: 100%;
 }
 .formfield>input, .formfield>label{
   padding: 0.8em;
@@ -1946,7 +1957,7 @@ header .footer-wave {
 }
 .formfield>input {
     border: 2px solid #322170;
-    border-radius: 10px;
+    border-radius: 5px;
     outline: none;
     color: #000;
     /* background: rgba(255, 255, 255, 0); */
@@ -2394,7 +2405,10 @@ MapSection {
     text-align: center;
     height: 100%;
     transition: all .4s ease-in-out;
-    width: 150px;
+    width: 170px;
+}
+.SecondSectionCard, .ServiceFeaturesCard {
+    padding: 10px;
 }
 .SecondSectionCard {
     max-width: 100%;
