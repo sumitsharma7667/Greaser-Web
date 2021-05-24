@@ -16,7 +16,7 @@ function Cart(props) {
         <div className="container-fluid CheckOut_CONT">
           <div className="card Item_card p-4">
             <div className="row">
-              <div className="col- blankCol">
+              <div className="col-5 blankCol">
                 <h6 className="headin_shopCart">
                   <i class="bx bx-arrow-back"></i>Continue Shoping
                 </h6>
@@ -59,7 +59,7 @@ function Cart(props) {
                 </div>
                 <div class="card Child_card_shop">
                   <div className="row cart_CenterROw">
-                    <div className="col-4 Cart_productImg">
+                    <div className="col-4 Cart_productImg blankCol">
                       <img
                         class="Cart_itemImg  mx-auto d-block "
                         src={require("./Images/carousel1.jpeg").default}
@@ -144,91 +144,30 @@ function Cart(props) {
               </div>
               <div className="col-4 blankCol">
                 <div class=" card Secon_colCard">
-                  <h4 class="text-center Your_detailHead">Your Details</h4>
-                  <form>
-                    <div class="container-fluid p-3 ">
-                      <div class="formfield" id="firstnamefield">
-                        <input
-                          type="text"
-                          name="firstname"
-                          id="firstname"
-                          required
-                        />
-                        <label
-                          alt="firstname"
-                          for="firstname"
-                          placeholder="firstname"
-                        >
-                          firstname
-                        </label>
+                  <h3 className="text-center">Cart</h3>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-6">
+                        <h4>Basic Service</h4>
+                        <p className="text-light">Mobile 5W30</p>
                       </div>
-                      <div class="formfield" id="lastnamefield">
-                        <input
-                          type="text"
-                          name="lastname"
-                          id="lastname"
-                          required
-                        />
-                        <label
-                          alt="lastname"
-                          for="lastname"
-                          placeholder="lastname"
-                        >
-                          lastname
-                        </label>
-                      </div>
-                      <div class="formfield" id="addressfield">
-                        <input type="text" name="Phone" id="Phone" required />
-                        <label alt="Phone" for="Phone" placeholder="Phone">
-                          Phone
-                        </label>
-                      </div>
-                      <div class="formfield" id="addressfield">
-                        <input type="text" name="Email" id="Email" required />
-                        <label alt="Email" for="Email" placeholder="Email">
-                          Email
-                        </label>
-                      </div>
-
-                      <div class="formfield" id="addressfield">
-                        <input
-                          type="text"
-                          name="address"
-                          id="address"
-                          required
-                        />
-                        <label
-                          alt="Adresse"
-                          for="address"
-                          placeholder="Adresse"
-                        >
-                          Address
-                        </label>
-                      </div>
-
-                      <div class="formfield" id="zipcodefield">
-                        <input
-                          type="text"
-                          name="zipcode"
-                          id="zipcode"
-                          required
-                        />
-                        <label
-                          alt="Code postal"
-                          for="zipcode"
-                          placeholder="Code postal"
-                        >
-                          postal
-                        </label>
-                      </div>
-                      <div class="formfield" id="cityfield">
-                        <input type="text" name="city" id="city" required />
-                        <label alt="City" for="city" placeholder="City">
-                          City
-                        </label>
+                      <div className="col-6">
+                        <div className="text-right">
+                          <h4>$3099</h4>
+                        </div>
                       </div>
                     </div>
-                  </form>
+                    <hr />
+                    <div>
+                      <input
+                        type="text"
+                        name="Apply Coupon"
+                        id="coupon"
+                        placeholder="Apply Coupon"
+                        className="form-control text-dark"
+                      />
+                    </div>
+                  </div>
                   <hr />
                   <div class="container-fluid">
                     <div class="row">
@@ -296,3 +235,4 @@ function Cart(props) {
 }
 
 export default Cart;
+

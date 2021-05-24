@@ -118,7 +118,7 @@ function Login(props) {
         </div>
       </section>
 
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

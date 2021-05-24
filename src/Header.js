@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 function Header(props) {
 
   const openNav=()=> {
-    document.getElementById("myNav").style.width = "30%";
+    document.getElementById("myNav").style.width = "50%";
   }
   
   const closeNav =()=> {

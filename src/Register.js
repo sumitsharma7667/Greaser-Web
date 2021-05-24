@@ -106,7 +106,7 @@ function Register(props) {
           </div>
         </div>
       </section>
-      <Footer />
+      
     </>
   );
 }

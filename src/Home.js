@@ -361,7 +361,7 @@ function Home(props) {
               </div>
               <div className="SecondSectionCard w-100">
                 <Link to="/Services-detail">
-                  <div className="homepage-card">
+                  <div className="homepage-card lastServiceCard">
                     <img src={require("../src/Images/wash.svg").default} />
                     <h6 className="homeservicecard-subheading">Car Cleaning</h6>
                   </div>
@@ -414,7 +414,7 @@ function Home(props) {
               </div>
               <div className="SecondSectionCard w-100">
                 <Link to="/Services-detail">
-                  <div className="homepage-card">
+                  <div className="homepage-card lastServiceCard">
                     <img
                       src={require("../src/Images/headlights.svg").default}
                     />
