@@ -48,9 +48,8 @@ ReactDOM.render(
         <ContactUs />
       </Route>
 
-      <Route path="/Services-detail">
-        <ServicesDetail />
-      </Route>
+      <Route path="/Services-detail/:ServiceTypeId/:ServiceTypeName" component={ServicesDetail} />
+      
       <Route path="/Login">
         <Login />
       </Route>

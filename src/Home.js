@@ -14,6 +14,7 @@ function Home(props) {
   const [Brand, SetBrand] = useState([]);
   const [Modal, SetModal] = useState([]);
   const [Type, SetType] = useState([]);
+  const [AllServicesType,SetAllServiceType]=useState([])
 
   useEffect(() => {
     $(document).ready(function () {
@@ -91,7 +92,18 @@ function Home(props) {
 
     GetBrand();
     GetVehicle();
+    GetServiceType();
   }, []);
+
+  const GetServiceType = () => {
+    fetch("http://144.91.110.221:3032/GetServiceType")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            SetAllServiceType(data)
+        })
+        .then(err => console.log(err))
+}
 
   const GetBrand = async () => {
     await fetch("http://144.91.110.221:3032/GetBrand")
@@ -188,9 +200,6 @@ function Home(props) {
                                   <span class="fa fa-arrow-right"></span>{" "}
                                 </div>
                               </div>
-                              {/* <div class="row px-3 mt-1 mb-5">
-                      <div class="custom-control custom-checkbox"> <input checked id="customCheck1" type="checkbox" class="custom-control-input" /> <label for="customCheck1" class="custom-control-label">I want to receive promo emails</label> </div>
-                    </div> */}
                             </div>
                             <div class="card2 ml-2">
                               <div class="row px-3 mt-3">
@@ -318,110 +327,21 @@ function Home(props) {
           </div>
           <div className="col-12">
             <div className="row " style={{ display: "flex" }}>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img src={require("../src/Images/car.svg").default} />
-                    <h6 className="homeservicecard-subheading">Servicing</h6>
-                  </div>
-                </Link>
-              </div>
 
+              {AllServicesType.map((item,index)=>{
+                return(
               <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
+                <Link to={"/Services-detail/"+item._id+"/"+item.name}>
                   <div className="homepage-card">
-                    <img src={require("../src/Images/spray-gun.svg").default} />
-                    <h6 className="homeservicecard-subheading">
-                      Denting & Painting
-                    </h6>
+                    <img src={"http://144.91.110.221:3032/"+item.image} style={{height:"150px",width:"150px"}} />
+                    <h6 className="homeservicecard-subheading">{item.name}</h6>
                   </div>
                 </Link>
               </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img
-                      src={require("../src/Images/customization.svg").default}
-                    />
-                    <h6 className="homeservicecard-subheading">
-                      Custamization
-                    </h6>
-                  </div>
-                </Link>
-              </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img
-                      src={require("../src/Images/accessories.svg").default}
-                    />
-                    <h6 className="homeservicecard-subheading">Accesories</h6>
-                  </div>
-                </Link>
-              </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card lastServiceCard">
-                    <img src={require("../src/Images/wash.svg").default} />
-                    <h6 className="homeservicecard-subheading">Car Cleaning</h6>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="col-12">
-            <div className="row " style={{ display: "flex" }}>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img src={require("../src/Images/insurance.svg").default} />
-                    <h6 className="homeservicecard-subheading">
-                      Claim Ypur Insurance
-                    </h6>
-                  </div>
-                </Link>
-              </div>
+                )
+              })}
 
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img src={require("../src/Images/battery.svg").default} />
-                    <h6 className="homeservicecard-subheading">Batteries</h6>
-                  </div>
-                </Link>
-              </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img
-                      src={require("../src/Images/windshield.svg").default}
-                    />
-                    <h6 className="homeservicecard-subheading">
-                      Glasses &<br /> Windshield
-                    </h6>
-                  </div>
-                </Link>
-              </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card">
-                    <img src={require("../src/Images/tyre.svg").default} />
-                    <h6 className="homeservicecard-subheading">
-                      Wheels & Tyres
-                    </h6>
-                  </div>
-                </Link>
-              </div>
-              <div className="SecondSectionCard w-100">
-                <Link to="/Services-detail">
-                  <div className="homepage-card lastServiceCard">
-                    <img
-                      src={require("../src/Images/headlights.svg").default}
-                    />
-                    <h6 className="homeservicecard-subheading">Lights</h6>
-                  </div>
-                </Link>
-              </div>
+             
             </div>
           </div>
         </div>

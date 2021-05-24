@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect,useState}from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./logo.svg";
@@ -23,6 +23,19 @@ const responsive = {
   },
 };
 function ServiceDetail(props) {
+  const[AllServices,SetAllService]=useState([])
+  useEffect(()=>{
+    GetServices();
+  },[])
+  const GetServices = () => {
+    fetch("http://144.91.110.221:3032/GetServices")
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            SetAllService(data)
+        })
+        .then(err => console.log(err))
+    }
   return (
     <>
       <Header />
@@ -30,7 +43,7 @@ function ServiceDetail(props) {
         <div class="service_overlay">
           <div class="section-large-text-inner">
             <h3>Service</h3>
-            <h2>Dainting & painting</h2>
+            <h2>{props.match.params.ServiceTypeName}</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
               repudiandae laboriosam quia, error tempore porro
@@ -42,12 +55,15 @@ function ServiceDetail(props) {
       <section className="p-4 " style={{ backgroundColor: "#dedede" }}>
         <div class="contianer">
           <div class="row">
+            {AllServices.map((item,index)=>{
+              if(item.service_type._id == props.match.params.ServiceTypeId){
+              return(
             <div class="col-3 blankCol">
               <div class="card card_cont" id="container">
                 <div class="row">
                   <div class="col-12">
                     <div class="Heading_ServiceItem">
-                      <h4>Dickey Shocker replacement</h4>
+                      <h4>{item.name}</h4>
                     </div>
                   </div>
                 </div>
@@ -55,7 +71,7 @@ function ServiceDetail(props) {
                   <div class="col-12">
                     <img
                       class="service_itemImg"
-                      src={require("./Images/carousel1.jpeg").default}
+                      src={"http://144.91.110.221:3032/"+item.image}
                       alt=""
                     />
                   </div>
@@ -63,7 +79,7 @@ function ServiceDetail(props) {
                 <div class="row">
                   <div class="col-12">
                     <div class="Heading_ServiceItem">
-                      <h4>$120/-</h4>
+                      <h4>{item.price}/-</h4>
                     </div>
                   </div>
                 </div>
@@ -83,160 +99,14 @@ function ServiceDetail(props) {
                 </div>
               </div>
             </div>
-            <div class="col-3 blankCol">
-              <div class="card card_cont" id="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>Dickey Shocker replacement</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <img
-                      class="service_itemImg"
-                      src={require("./Images/carousel1.jpeg").default}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>$120/-</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <Link to="/Cart">
-                      <button
-                        id="button"
-                        class="Add_ToCart"
-                        type="button"
-                        name="button"
-                      >
-                        ADD TO CART
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3 blankCol">
-              <div class="card card_cont" id="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>Dickey Shocker replacement</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <img
-                      class="service_itemImg"
-                      src={require("./Images/carousel1.jpeg").default}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>$120/-</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <Link to="/Cart">
-                      <button
-                        id="button"
-                        class="Add_ToCart"
-                        type="button"
-                        name="button"
-                      >
-                        ADD TO CART
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-3 blankCol">
-              <div class="card card_cont" id="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>Dickey Shocker replacement</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <img
-                      class="service_itemImg"
-                      src={require("./Images/carousel1.jpeg").default}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>$120/-</h4>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <Link to="/Cart">
-                      <button
-                        id="button"
-                        class="Add_ToCart"
-                        type="button"
-                        name="button"
-                      >
-                        ADD TO CART
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
+              )
+              }
+              })
+            }
           </div>
         </div>
       </section>
-      {/*   <section id="home" class="section-showcase">
-      <div class="container">
-        <div>
-          <h1>Danting & Painting</h1>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
-            repudiandae rerum libero ipsum asperiores omnis mollitia, nostrum
-            commodi placeat ea itaque modi corrupti corporis nam voluptas aut
-            reprehenderit eaque culpa.
-          </p>
-         <ul>
-           <li>Lorem ipsum dolor sit amet consectetur</li>
-           <li>Lorem ipsum dolor sit amet consectetur</li>
-           <li>Lorem ipsum dolor sit amet consectetur</li>
-           <li>Lorem ipsum dolor sit amet consectetur</li>
-           <li>Lorem ipsum dolor sit amet consectetur</li>
-         </ul>
-          
-        
-        
-       
-        </div>
-        <div>
-        <img src={require("./Images/carousel1.jpeg").default} style={{height:"300px",boxShadow:"2px 10px 30px #2d2b2b"}} alt="" />
-        <h4 className="text-dark pt-4"> <span><img src={require("./Images/clock.png").default} style={{height:"50px"}} className="pr-2"/></span> 1 hour 15 minutes</h4>
-        </div>
-      </div>
-    </section> */}
+      
       <section className="first_servicesCarousel">
         <header class="header-design">
           <div class="footer-wave"></div>
@@ -267,6 +137,9 @@ function ServiceDetail(props) {
               dotListClass="custom-dot-list-style"
               itemClass="carousel-item-padding-40-px"
             >
+              {AllServices.map((item,index)=>{
+              if(item.service_type._id != props.match.params.ServiceTypeId){
+              return(
               <div>
                 <Link to="/Services-detail">
                   <div className="row ">
@@ -275,16 +148,15 @@ function ServiceDetail(props) {
                       <div className="row ">
                         <div className="col-12 text-center">
                           <img
-                            src={require("./Images/features.jpeg").default}
+                            src={"http://144.91.110.221:3032/"+item.image}
                             style={{ height: "200px" }}
                           />
                         </div>
                         <div className="col-12 text-center pt-4">
-                          <h3>Dainting & Paintin</h3>
+                          <h3>{item.name}</h3>
                           <p>
-                            this is dummy data for service description.
-                            description may be longer than 50 words or more.
-                            rhis is only for dummy purpose
+                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features}} />
+                            
                           </p>
                         </div>
                       </div>
@@ -293,180 +165,11 @@ function ServiceDetail(props) {
                   </div>
                 </Link>
               </div>
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Car Wash</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>{" "}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Great Service</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Great Service</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Dummy & Painting</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Car Wash</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>{" "}
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Great Service</h3>
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
-
-              <div>
-                <div className="row ">
-                  <div className="col-1"></div>
-                  <div className="col-10 carouselcardService">
-                    <div className="row ">
-                      <div className="col-12 text-center">
-                        <img
-                          src={require("./Images/features.jpeg").default}
-                          style={{ height: "200px" }}
-                        />
-                      </div>
-                      <div className="col-12 text-center pt-4">
-                        <h3>Dummy</h3>
-
-                        <p>
-                          this is dummy data for service description.
-                          description may be longer than 50 words or more. rhis
-                          is only for dummy purpose
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-1"></div>
-                </div>
-              </div>
+              )
+              }
+            })
+          }
+             
             </Carousel>
           </div>
         </div>
