@@ -8,6 +8,10 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 
 function Home(props) {
+   localStorage.setItem('userid', '')
+   localStorage.setItem('username', '')
+   localStorage.setItem('role', '')
+
   const [AllBrand, SetAllBrand] = useState([]);
   const [AllModal, SetAllVehicle] = useState([]);
 

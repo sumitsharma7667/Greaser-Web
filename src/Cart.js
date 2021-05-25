@@ -18,7 +18,9 @@ function Cart(props) {
             <div className="row">
               <div className="col-5 blankCol">
                 <h6 className="headin_shopCart">
+                  <Link to="/Serices-Packages">
                   <i class="bx bx-arrow-back"></i>Continue Shoping
+                  </Link>
                 </h6>
               </div>
               <div className="col-7 blankCol">

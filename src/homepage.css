@@ -100,7 +100,7 @@ border-radius: 10px;
   
 }
 .homepage-card img{
-    filter: invert(1);
+    /* filter: invert(1); */
     height: 50%;
     width: 50%; 
     margin: auto;
