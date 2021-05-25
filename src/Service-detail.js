@@ -86,8 +86,9 @@ function ServiceDetail(props) {
             <h3>Service</h3>
             <h2>{props.match.params.ServiceTypeName}</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
-              repudiandae laboriosam quia, error tempore porro
+              Get professional periodic car service, car repair, wheel care
+              services, cashless insurance claim and much more done at
+              affordable prices.
             </p>
           </div>
         </div>
@@ -96,33 +97,51 @@ function ServiceDetail(props) {
       <section className="p-4 " style={{ backgroundColor: "#dedede" }}>
         <div class="contianer">
           <div class="row">
-            {AllServices.map((item,index)=>{
-              if(item.service_type._id == props.match.params.ServiceTypeId){
-              return(
-            <div class="col-3 blankCol">
-              <div class="card card_cont" id="container">
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>{item.name}</h4>
+            {AllServices.map((item, index) => {
+              if (item.service_type._id == props.match.params.ServiceTypeId) {
+                return (
+                  <div class="col-3 blankCol">
+                    <div class="card card_cont" id="container">
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="Heading_ServiceItem">
+                            <h4>{item.name}</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <img
+                            class="service_itemImg"
+                            src={"http://144.91.110.221:3032/" + item.image}
+                            alt=""
+                          />
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <div class="Heading_ServiceItem">
+                            <h4>{item.price}/-</h4>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <Link to="/Cart">
+                            <button
+                              id="button"
+                              class="Add_ToCart"
+                              type="button"
+                              name="button"
+                            >
+                              ADD TO CART
+                            </button>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <img
-                      class="service_itemImg"
-                      src={"http://144.91.110.221:3032/"+item.image}
-                      alt=""
-                    />
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <div class="Heading_ServiceItem">
-                      <h4>{item.price}/-</h4>
-                    </div>
-                  </div>
+<<<<<<< HEAD
                 </div>
                 <div class="row">
                   <div class="col-12">
@@ -143,13 +162,15 @@ function ServiceDetail(props) {
               </div>
             </div>
               )
+=======
+                );
+>>>>>>> 847dea063cc434e31ad25b7cfec3702ed60a2811
               }
-              })
-            }
+            })}
           </div>
         </div>
       </section>
-      
+
       <section className="first_servicesCarousel">
         <header class="header-design">
           <div class="footer-wave"></div>
@@ -201,17 +222,11 @@ function ServiceDetail(props) {
                           <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features.slice(0, 100)+" See more..."}} />
                           </p>
                         </div>
-                      </div>
+                      </Link>
                     </div>
-                    <div className="col-1"></div>
-                  </div>
-                </Link>
-              </div>
-              )
-              }
-            })
-          }
-             
+                  );
+                }
+              })}
             </Carousel>
           </div>
         </div>

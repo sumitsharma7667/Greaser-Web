@@ -326,22 +326,24 @@ function Home(props) {
             <h2 className="servicesHeading">Services</h2>
           </div>
           <div className="col-12">
-            <div className="row " style={{ display: "flex" }}>
-
-              {AllServicesType.map((item,index)=>{
-                return(
-              <div className="SecondSectionCard w-100">
-                <Link to={"/Services-detail/"+item._id+"/"+item.name}>
-                  <div className="homepage-card">
-                    <img src={"http://144.91.110.221:3032/"+item.image} style={{height:"150px",width:"150px"}} />
-                    <h6 className="homeservicecard-subheading">{item.name}</h6>
+            <div className="row mt-4 " style={{ display: "flex" }}>
+              {AllServicesType.map((item, index) => {
+                return (
+                  <div className="SecondSectionCard w-100 col-2">
+                    <Link to={"/Services-detail/" + item._id + "/" + item.name}>
+                      <div className="homepage-card">
+                        <img
+                          src={"http://144.91.110.221:3032/" + item.image}
+                          style={{ height: "150px", width: "150px" }}
+                        />
+                        <h6 className="homeservicecard-subheading">
+                          {item.name}
+                        </h6>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
-              </div>
-                )
+                );
               })}
-
-             
             </div>
           </div>
         </div>
@@ -512,9 +514,8 @@ function Home(props) {
           <div className="col-6">
             <h1>Download the App</h1>
             <p>
-              is simply dummy text of the printing and typesetting industry.
-              Lorem Ipsum has been the industry's standard dummy text ever since
-              the 1500s
+              Choose and book a seamless car service experience and get upto Rs
+              500 off with the Greaser App
             </p>
             <div className="row d-flex">
               <div className="col-8 Stroeicon">

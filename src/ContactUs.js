@@ -87,7 +87,7 @@ function ContactUs(props) {
     <>
       <Header />
 
-      <section className="MapSection">
+      {/* <section className="MapSection">
         <div className="card MaP_card">
           <iframe
             className="IframeMp"
@@ -98,7 +98,7 @@ function ContactUs(props) {
             <div class="grow"></div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section className="ContactUsSec">
         <div className="container contactUsCOnt">
           <div className="row contactUsCOnt">
@@ -116,7 +116,7 @@ function ContactUs(props) {
                     </i>
                   </div>
                   <div className="mt-5">
-                    <i class="fas fa-envelope-square ContactUs_icon">
+                    <i class="bx bx-mail-send ContactUs_icon">
                       <span className="info_Contact"> info@giksindia.com</span>
                     </i>
                   </div>
