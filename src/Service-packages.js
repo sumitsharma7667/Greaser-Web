@@ -57,11 +57,11 @@ function Services(props) {
           <div class="section-large-text-inner">
             <h3>We provide you our best</h3>
             <h2>You are in right place to book your service</h2>
-            <p>
+            {/* <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta
               repudiandae laboriosam quia, error tempore porro ducimus voluptate
               laborum nostrum iure.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -109,7 +109,7 @@ function Services(props) {
               ssr={true} // means to render carousel on server-side.
               infinite={true}
               autoPlay={true}
-              autoPlaySpeed={2000}
+              autoPlaySpeed={3000}
               keyBoardControl={true}
               customTransition="all .5"
               transitionDuration={500}

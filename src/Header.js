@@ -17,7 +17,6 @@ function Header(props) {
   <div class="overlay-content">
     <Link to="/home">Home</Link>
     <Link to="/services-packages">Services</Link>
-    <a href="#">Clients</a>
     <Link to="/ContactUs">Contact Us</Link>
   </div>
 </div>

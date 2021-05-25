@@ -51,9 +51,10 @@ function Header(props) {
                 </div>
                 <div class="footer-text">
                   <p>
-                    Lorem ipsum dolor sit amet, consec tetur adipisicing elit,
-                    sed do eiusmod tempor incididuntut consec tetur adipisicing
-                    elit,Lorem ipsum dolor sit amet.
+                    Greaser aims to be the best of both worlds - Reliable and
+                    Cost-effective Car Services. Car Servicing, Car repairs and
+                    Car cleaning - we are your one-stop solution for all things
+                    cars.
                   </p>
                 </div>
               </div>
@@ -128,7 +129,11 @@ function Header(props) {
             <div class="col-xl-6 col-lg-6 text-center text-lg-left">
               <div class="copyright-text">
                 <p>
-                  Copyright &copy; 2021<a href="#"> Giks</a>
+                  Copyright &copy; 2021
+                  <a href="https://giksindia.com/">
+                    {" "}
+                    <span className="text-white">GIKS INDIA PVT LTD</span>
+                  </a>
                 </p>
               </div>
             </div>
@@ -143,10 +148,7 @@ function Header(props) {
                     <a href="#">Terms</a>
                   </li>
                   <li>
-                    <a href="#">Privacy</a>
-                  </li>
-                  <li>
-                    <a href="#">Policy</a>
+                    <a href="#">Privacy Policy</a>
                   </li>
                   <li>
                     <a href="#">Contact</a>

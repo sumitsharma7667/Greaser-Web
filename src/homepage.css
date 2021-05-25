@@ -52,12 +52,12 @@
     color: #1c1c1c;
     text-align: center;
     font-size: 60px;
-    margin: 0px;
-    padding: 15px;
+    /* margin: 0px;
+    padding: 15px; */
 }
 .SecondSectionCard{
     max-width: 20%;
-    padding: 20px;
+    padding: 10px;
 }
 .ServiceFeaturesCard{
   height: 300px;
@@ -83,13 +83,15 @@
 }
 .homepage-card{
 border-radius: 10px;
-background: rgb(255,0,238);
-background: linear-gradient(180deg, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
-color: white;
-text-align: center;
-padding: 30px 15px 0px 15px;
-height: 100%;
-transition: all .4s ease-in-out;
+    background: rgb(255,0,238);
+    background: linear-gradient(
+180deg
+, rgb(227 1 212) -120%, rgb(50 33 112) 64%);
+    color: white;
+    text-align: center;
+    /* padding: 30px 15px 0px 15px; */
+    height: 100%;
+    transition: all .4s ease-in-out;
 }
 .homepage-card:hover{
   
@@ -837,7 +839,7 @@ padding: 0px;
 
 .homeservicecard-subheading
 {
-  padding: 30px;
+  padding: 10px;
 }
 
 /* cart css */
@@ -1825,13 +1827,13 @@ header .footer-wave {
 }
 
 .service_itemImg {
-    height: 255px;
+    height: 215px;
     width: 100%;
-    padding: 15px;
 }
 .Heading_ServiceItem{
   text-align: center;
   padding: 5px;
+  height: 65px;
 }
 .Add_ToCart {
 	background: #000;
