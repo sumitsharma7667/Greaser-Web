@@ -21,7 +21,7 @@ function Header(props) {
                 <i class="bx bx-phone-call"></i>
                 <div class="cta-text">
                   <h4>Call us</h4>
-                  <span>9876543210 0</span>
+                  <span>98765432100</span>
                 </div>
               </div>
             </div>
@@ -30,7 +30,7 @@ function Header(props) {
                 <i class="bx bx-mail-send"></i>
                 <div class="cta-text">
                   <h4>Mail us</h4>
-                  <span>mail@info.com</span>
+                  <span>info@giksindia.com</span>
                 </div>
               </div>
             </div>
@@ -66,13 +66,13 @@ function Header(props) {
                 </div>
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                  <Link to="/Home">Home</Link>
                   </li>
                   <li>
-                    <a href="#">Secvice Packages</a>
+                    <Link to="/Services-Packages">Secvice Packages</Link>
                   </li>
                   <li>
-                    <a href="#">services</a>
+                  <Link to="/ContactUs">Contact us</Link>                    
                   </li>
                   {/* <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li> */}
@@ -142,16 +142,16 @@ function Header(props) {
               <div class="footer-menu">
                 <ul>
                   <li>
-                    <a href="#">Home</a>
+                    <Link to="/Home">Home</Link>
                   </li>
                   <li>
-                    <a href="#">Terms</a>
+                    <Link to="#">Terms</Link>
                   </li>
                   <li>
                     <a href="#">Privacy Policy</a>
                   </li>
                   <li>
-                    <a href="#">Contact</a>
+                    <a href="/ContactUs">Contact</a>
                   </li>
                 </ul>
               </div>

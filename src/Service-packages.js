@@ -125,7 +125,7 @@ function Services(props) {
                 <Link to="/Services-detail">
                   <div className="row ">
                     <div className="col-1"></div>
-                    <div className="col-10 carouselcardService" style={{height:"400px"}}>
+                    <div className="col-10 carouselcardService" style={{height:"420px"}}>
                       <div className="row ">
                         <div className="col-12 text-center">
                           <img
@@ -148,7 +148,6 @@ function Services(props) {
               )
             })
           }
-             
             </Carousel>
             </div>
           </div>

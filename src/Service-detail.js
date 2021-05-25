@@ -104,7 +104,7 @@ function ServiceDetail(props) {
                     <div class="card card_cont" id="container">
                       <div class="row">
                         <div class="col-12">
-                          <div class="Heading_ServiceItem">
+                          <div class="Heading_ServiceItem pt-3">
                             <h4>{item.name}</h4>
                           </div>
                         </div>
@@ -121,7 +121,7 @@ function ServiceDetail(props) {
                       <div class="row">
                         <div class="col-12">
                           <div class="Heading_ServiceItem">
-                            <h4>{item.price}/-</h4>
+                            {/* <h4>{item.price}/-</h4> */}
                           </div>
                         </div>
                       </div>
@@ -141,30 +141,7 @@ function ServiceDetail(props) {
                       </div>
                     </div>
                   </div>
-<<<<<<< HEAD
-                </div>
-                <div class="row">
-                  <div class="col-12">
-                    <Link to="/Cart">
-                      <button
-                      onClick={()=>{Addtocart()}}
-                        id="button"
-                        class="Add_ToCart"
-                        type="button"
-                        name="button"
-                        
-                      >
-                        ADD TO CART
-                      </button>
-                    </Link>
-                  </div>
-                </div>
-              </div>
-            </div>
-              )
-=======
                 );
->>>>>>> 847dea063cc434e31ad25b7cfec3702ed60a2811
               }
             })}
           </div>
@@ -208,7 +185,7 @@ function ServiceDetail(props) {
                 <Link to="/Services-detail">
                   <div className="row ">
                     <div className="col-1"></div>
-                    <div className="col-10 carouselcardService" style={{height:"400px"}}>
+                    <div className="col-10 carouselcardService" style={{height:"420px"}}>
                       <div className="row ">
                         <div className="col-12 text-center">
                           <img
@@ -221,6 +198,9 @@ function ServiceDetail(props) {
                           <p>
                           <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features.slice(0, 100)+" See more..."}} />
                           </p>
+                        </div>
+                        </div>
+                        </div>
                         </div>
                       </Link>
                     </div>
