@@ -6,7 +6,91 @@ import "./homepage.css";
 import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 
-function SingleService() {
+
+function SingleService(props) {
+  const [data,setdata]=useState([])
+  const [ServiceData,SetServiceData] =useState([])
+  useEffect(()=>{
+    getdata()
+    getServiceById()
+  },[])
+  const getServiceById = (_id) => {     
+    fetch("http://144.91.110.221:3032/getServiceById"
+        , {
+            method: 'POST',
+            headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              _id:props.match.params.service_id,
+            })
+        })
+        .then(res => res.json())
+        .then(res => { SetServiceData(res[0])
+        console.log(res[0].name,"here")
+        })
+}
+  const getdata = (_id) => {     
+    fetch("http://144.91.110.221:3032/mechanicbyservice"
+        , {
+            method: 'POST',
+            headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                _id:props.match.params.service_id,
+            })
+        })
+        .then(res => res.json())
+        .then(res => { setdata(res) 
+        console.log(res,"here")
+        })
+}
+const Addtocart=async(_id,m_id)=>{  
+  var id= await localStorage.getItem('userid')  
+  if(id == ''){
+    window.location.href = "/Login";
+  } 
+   fetch("http://144.91.110.221:3032/cartbyid"
+   , {
+       method: 'POST',
+       headers: {
+           Accept: 'application/json',
+           'Content-Type': 'application/json'
+       },
+       body: JSON.stringify({
+           userid: id
+       })
+   })
+   .then(res => res.json())
+   .then(res => { 
+     console.log(res)
+     if(JSON.stringify(res).includes(_id)==false){                     
+       fetch("http://144.91.110.221:3032/Addtocart"
+       , {
+           method: 'POST',
+           headers: {
+               Accept: 'application/json',
+               'Content-Type': 'application/json'
+           },
+           body: JSON.stringify({
+              userid:id,
+              _id:_id,
+              m_id:m_id
+           })
+       })
+       .then(res => res.json())
+       .then(res=>{
+       alert("added successfully")})
+       window.location.href = "/Cart";
+   }
+   else{
+       alert("This Service is allready in Your Cart ")
+       }
+ })
+}
   return (
     <>
       <Header />
@@ -32,13 +116,14 @@ function SingleService() {
                     <div className="col-4 Cart_productImg blankCol">
                       <img
                         class="Cart_itemImg mx-auto d-block "
-                        src={require("./Images/carousel1.jpeg").default}
+                        src={"http://144.91.110.221:3032/" + ServiceData.image}
+                        style={{height:"200px",width:"200px"}}
                         alt=""
                       />
                     </div>
                     <div className="col-3 blankCol">
-                      <h4 className="headin_shopCart">
-                        Dickey Shocker replacement
+                      <h4 className="headin_shopCart">                        
+                        {ServiceData.name }
                       </h4>
                     </div>
                     <div className="col-2 blankCol">
@@ -117,7 +202,11 @@ function SingleService() {
             <hr className="mechanicHr" />
 
             <div className="row ">
-              <div className="col-3">
+              {data.map((item,index)=>{
+                return(
+
+              
+              <div className="col-3 blankCol">
                 <div className="row mechanicRow p-2">
                   <div className="col-12">
                     <img
@@ -127,18 +216,20 @@ function SingleService() {
                     />
                   </div>
                   <div className=" text-center w-100">
-                    <h4>Sumit Sharma</h4>
+                    <h4>{item.name}</h4>
                   </div>
                   <hr />
                   <div className="col-6">
                     <h5 className="">Price</h5>
                     <h5 className="">Time</h5>
-                    <h5 className="">Exp</h5>
+                    <h5 className="">Contact</h5>
+                    <h5 className="">Address</h5>
                   </div>
                   <div className="col-6">
-                    <h5 className="text-right">$40</h5>
-                    <h5 className="text-right">5 hrs</h5>
-                    <h5 className="text-right">5 yrs</h5>
+                    <h5 className="text-right">{item.price}</h5>
+                    <h5 className="text-right">{item.time} Hours</h5>
+                    <h5 className="text-right">{item.user.mobile}</h5>
+                    <h5 className="text-right">{item.user.address}</h5>
                   </div>
                     <div class="row w-100">
                       <div class="col-12 text-center mb-3">
@@ -147,13 +238,18 @@ function SingleService() {
                           class="btn btn-primary btn-lg CheckOutBtn "
                           id="load"
                           data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order"
+                        onClick={()=>{Addtocart(item._id,item.user._id)}}
                         >
-                          Choose Mechanic
+                          ADD TO CART
                         </button>
                     </div>
                   </div>
                 </div>
               </div>
+
+)
+})}
+              
             </div>
           </div>
         </div>

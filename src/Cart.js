@@ -1,9 +1,45 @@
-import React from "react";
+import React,{useEffect,useState} from "react";
 import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 function Cart(props) {
+  const [data, setdata] = useState([])
+  useEffect(()=>{
+    getdata()
+  },[])
+  const getdata = async (_id) => {
+    var userid = await localStorage.getItem('userid')
+    fetch("http://144.91.110.221:3032/cartbyid"
+        , {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                userid: userid,
+            })
+        })
+        .then(res => res.json())
+        .then(res => { setdata(res) })
+} 
+const Deletefromcart = (id) => {
+  const apiUrl = 'http://144.91.110.221:3032/Deletefromcart';
+  fetch(apiUrl, {
+      headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+      },
+      method: 'delete',
+      body: JSON.stringify({ _id: id })
+  })
+      .then((response) => response.json())
+      .then((res) => {
+          getdata()
+          // contexdata.getcounts()
+      })
+}
   return (
     <div className="">
       {/* <header id="site-header">
@@ -31,118 +67,42 @@ function Cart(props) {
             <div className="row"></div>
             <div className="row">
               <div className="col-8 blankCol">
+                {data.map((item,index)=>{
+                  return(
+
+                 
                 <div class="card Child_card_shop">
                   <div className="row cart_CenterROw">
                     <div className="col-4 Cart_productImg blankCol">
                       <img
                         class="Cart_itemImg mx-auto d-block "
-                        src={require("./Images/carousel1.jpeg").default}
+                        src={"http://144.91.110.221:3032/" + item.service.service.image}
+                        style={{height:"200px",width:"200px"}}
                         alt=""
                       />
                     </div>
                     <div className="col-3 blankCol">
                       <h4 className="headin_shopCart">
-                        Dickey Shocker replacement
+                        {item.service.service.name}
                       </h4>
                     </div>
                     <div className="col-2 blankCol">
                       <div className="pos_negTIveIcon">
-                        <i class="bx bx-plus"></i>
-                        <i class="bx bx-minus"></i>
+                        {/* <i class="bx bx-plus"></i>
+                        <i class="bx bx-minus"></i> */}
                       </div>
                     </div>
                     <div className="col-3 blankCol">
                       <div className="pos_negTIveIcon">
-                        <h4 className="headin_shopCart">$78.00</h4>
-                        <i class="bx bx-trash"></i>
+                        <h4 className="headin_shopCart">{item.service.price}</h4>
+
+                        <i class="bx bx-trash" onClick={()=>{Deletefromcart(item._id)}}></i>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card Child_card_shop">
-                  <div className="row cart_CenterROw">
-                    <div className="col-4 Cart_productImg blankCol">
-                      <img
-                        class="Cart_itemImg  mx-auto d-block "
-                        src={require("./Images/carousel1.jpeg").default}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-3 blankCol">
-                      <h4 className="headin_shopCart">
-                        Dickey Shocker replacement
-                      </h4>
-                    </div>
-                    <div className="col-2 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <i class="bx bx-plus"></i>
-                        <i class="bx bx-minus"></i>
-                      </div>
-                    </div>
-                    <div className="col-3 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <h4 className="headin_shopCart">$78.00</h4>
-                        <i class="bx bx-trash"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card Child_card_shop">
-                  <div className="row cart_CenterROw">
-                    <div className="col-4 Cart_productImg blankCol">
-                      <img
-                        class="Cart_itemImg  mx-auto d-block "
-                        src={require("./Images/carousel1.jpeg").default}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-3 blankCol">
-                      <h4 className="headin_shopCart">
-                        Dickey Shocker replacement
-                      </h4>
-                    </div>
-                    <div className="col-2 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <i class="bx bx-plus"></i>
-                        <i class="bx bx-minus"></i>
-                      </div>
-                    </div>
-                    <div className="col-3 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <h4 className="headin_shopCart">$78.00</h4>
-                        <i class="bx bx-trash"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="card Child_card_shop">
-                  <div className="row cart_CenterROw">
-                    <div className="col-4 Cart_productImg blankCol">
-                      <img
-                        class="Cart_itemImg  mx-auto d-block "
-                        src={require("./Images/carousel1.jpeg").default}
-                        alt=""
-                      />
-                    </div>
-                    <div className="col-3 blankCol">
-                      <h4 className="headin_shopCart">
-                        Dickey Shocker replacement
-                      </h4>
-                    </div>
-                    <div className="col-2 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <i class="bx bx-plus"></i>
-                        <i class="bx bx-minus"></i>
-                      </div>
-                    </div>
-                    <div className="col-3 blankCol">
-                      <div className="pos_negTIveIcon">
-                        <h4 className="headin_shopCart">$78.00</h4>
-                        <i class="bx bx-trash"></i>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                 )
+                })}
               </div>
               <div className="col-4 blankCol">
                 <div class=" card Secon_colCard">

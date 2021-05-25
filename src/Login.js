@@ -45,9 +45,11 @@ function Login(props) {
 
       <section className="loginBg">
         <div className="container-fluid h-100">
-          <h6 className="back_to_home">
+          {/* <h6 className="back_to_home"> */}
+            <Link className="pt-5 pl-5" to="/Home">
             <i class="bx bx-arrow-back text-white"></i>Back to home
-          </h6>
+            </Link>
+          {/* </h6> */}
           <div className="row h-100">
             <div className="col-6">
               <div className="login_formcol ">
@@ -116,14 +118,14 @@ function Login(props) {
                             id="user-checkbox"
                             checked=""
                           />
-                          <label for="user-checkbox" class="text-white">
+                          {/* <label for="user-checkbox" class="text-white">
                             Remember me
-                          </label>
+                          </label> */}
                         </div>
                       </div>
-                      <div class="form-group col-6 text-right text-white">
+                      {/* <div class="form-group col-6 text-right text-white">
                         <a href="reset-password.html">Reset Password</a>
-                      </div>
+                      </div> */}
                     </div>
                     <button
                       type="button"
@@ -147,7 +149,7 @@ function Login(props) {
                 <div class="card-footer text-center py-3">
                   <p class="text-warning mb-0">
                     Do not have an account?{" "}
-                    <a href="register.html"> Sign Up here</a>
+                    <a href="#"> Sign Up here</a>
                   </p>
                 </div>
               </div>

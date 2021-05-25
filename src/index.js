@@ -42,9 +42,8 @@ ReactDOM.render(
       <Route path="/Cart">
         <Cart />
       </Route>
-      <Route path="/SingleService">
-        <SingleService />
-      </Route>
+      <Route path="/SingleService/:service_id" component={SingleService} />
+       
       <Route path="/Checkout">
         <Checkout />
       </Route>
