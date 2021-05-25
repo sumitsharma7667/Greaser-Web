@@ -125,19 +125,18 @@ function Services(props) {
                 <Link to="/Services-detail">
                   <div className="row ">
                     <div className="col-1"></div>
-                    <div className="col-10 carouselcardService">
+                    <div className="col-10 carouselcardService" style={{height:"400px"}}>
                       <div className="row ">
                         <div className="col-12 text-center">
                           <img
                             src={"http://144.91.110.221:3032/"+item.image}
-                            style={{ height: "200px" }}
+                            style={{ height: "200px",width:"320px",objectFit:"cover" }}
                           />
                         </div>
                         <div className="col-12 text-center pt-4">
                           <h3>{item.name}</h3>
                           <p>
-                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features}} />
-                            
+                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features.slice(0, 100)+" See more..."}} />
                           </p>
                         </div>
                       </div>

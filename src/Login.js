@@ -1,9 +1,44 @@
-import React from "react";
+import React ,{useState} from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 function Login(props) {
+  const [mobile, setmobile] = useState(8126273523)
+  const [password, setpassword] = useState()
+  const [passwordSecure, setpasswordSecure] = useState(true)
+  const [visible,setvissible]=useState(false)
+  const Loginuser = () => {
+    fetch("http://144.91.110.221:3032/usersignin"
+        , {
+            method: 'POST',
+            headers: {
+                Accept: 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                mobile: mobile,
+                password: password,
+            })
+        })
+        .then(res => res.json())
+        .then(async (user) => {
+
+            try {
+                const Userid = user.userid
+                await localStorage.setItem('userid', user.user._id)
+                await localStorage.setItem('username', user.user.fullname)
+                await localStorage.setItem('role', user.user.role)
+                window.location.href = "/Services-Packages";
+                
+            }
+            catch (e) {
+                alert('invalid user name or password')
+                console.log(e);
+            }
+        })
+
+}
   return (
     <>
       {/* <Header /> */}
@@ -47,7 +82,8 @@ function Login(props) {
                           type="text"
                           id="exampleInputUsername"
                           class="form-control input-shadow inputBG"
-                          placeholder="Enter Username"
+                          placeholder="Enter Mobile No"
+                          onChange={(e)=>{setmobile(e.target.value)}}
                         />
                         <div class="form-control-position">
                           <i class="icon-user"></i>
@@ -64,6 +100,7 @@ function Login(props) {
                           id="exampleInputPassword"
                           class="form-control input-shadow inputBG"
                           placeholder="Enter Password"
+                          onChange={(e)=>{setpassword(e.target.value)}}
                         />
                         <div class="form-control-position">
                           <i class="icon-lock"></i>
@@ -92,6 +129,7 @@ function Login(props) {
                       type="button"
                       class="btn btn-light btn-block"
                       style={{ background: "#531a82" }}
+                      onClick={()=>{Loginuser()}}
                     >
                       Sign In
                     </button>

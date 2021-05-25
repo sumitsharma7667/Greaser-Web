@@ -22,7 +22,48 @@ const responsive = {
     slidesToSlide: 1, // optional, default to 1.
   },
 };
+let userid
 function ServiceDetail(props) {
+
+   const Addtocart=async(_id,m_id)=>{
+    userid = await  localStorage.getItem('userid')       
+     fetch("http://144.91.110.221:3032/cartbyid"
+     , {
+         method: 'POST',
+         headers: {
+             Accept: 'application/json',
+             'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+             userid: userid,
+         })
+     })
+     .then(res => res.json())
+     .then(res => { if(JSON.stringify(res).includes(_id)==false){                     
+         fetch("http://144.91.110.221:3032/Addtocart"
+         , {
+             method: 'POST',
+             headers: {
+                 Accept: 'application/json',
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({
+                userid:userid,
+                _id:_id,
+                m_id:m_id
+             })
+         })
+         .then(res => res.json())
+         .then(res=>{
+        //  contextdata.getcounts()
+         alert("added successfully")})
+     }
+     else{
+         alert("This Service is allready in Your Cart ")
+         }
+ })
+
+ }
   const[AllServices,SetAllService]=useState([])
   useEffect(()=>{
     GetServices();
@@ -87,10 +128,12 @@ function ServiceDetail(props) {
                   <div class="col-12">
                     <Link to="/Cart">
                       <button
+                      onClick={()=>{Addtocart()}}
                         id="button"
                         class="Add_ToCart"
                         type="button"
                         name="button"
+                        
                       >
                         ADD TO CART
                       </button>
@@ -144,19 +187,18 @@ function ServiceDetail(props) {
                 <Link to="/Services-detail">
                   <div className="row ">
                     <div className="col-1"></div>
-                    <div className="col-10 carouselcardService">
+                    <div className="col-10 carouselcardService" style={{height:"400px"}}>
                       <div className="row ">
                         <div className="col-12 text-center">
                           <img
                             src={"http://144.91.110.221:3032/"+item.image}
-                            style={{ height: "200px" }}
+                            style={{ height: "200px",width:"320px",objectFit:"cover" }}
                           />
                         </div>
                         <div className="col-12 text-center pt-4">
                           <h3>{item.name}</h3>
                           <p>
-                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features}} />
-                            
+                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.features.slice(0, 100)+" See more..."}} />
                           </p>
                         </div>
                       </div>
