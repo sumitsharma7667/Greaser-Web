@@ -17,6 +17,7 @@ import Cart from "./Cart";
 import ContactUs from "./ContactUs";
 import Register from "./Register";
 import Checkout from "./Checkout";
+import SingleService from "./SingleService";
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -41,6 +42,9 @@ ReactDOM.render(
       <Route path="/Cart">
         <Cart />
       </Route>
+      <Route path="/SingleService">
+        <SingleService />
+      </Route>
       <Route path="/Checkout">
         <Checkout />
       </Route>
@@ -48,8 +52,11 @@ ReactDOM.render(
         <ContactUs />
       </Route>
 
-      <Route path="/Services-detail/:ServiceTypeId/:ServiceTypeName" component={ServicesDetail} />
-      
+      <Route
+        path="/Services-detail/:ServiceTypeId/:ServiceTypeName"
+        component={ServicesDetail}
+      />
+
       <Route path="/Login">
         <Login />
       </Route>

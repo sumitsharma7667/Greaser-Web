@@ -1870,7 +1870,7 @@ header .footer-wave {
 .Item_card{
   margin-top: 25px;
   background: #fff !important;
-  border-radius: 25px;
+  border-radius: 10px;
 }
 .Child_card_shop{
   background: #fff !important;
@@ -1910,7 +1910,7 @@ header .footer-wave {
   text-align: center;
 }
 .Secon_colCard{
-  border-radius: 15px;  
+  border-radius: 10px;  
   background: linear-gradient(
 180deg
 , rgb(227 1 212) -120%, rgb(50 33 112) 64%);
@@ -2002,7 +2002,6 @@ input:focus + label, input:valid + label{
     display: block;
     color: #fff;
     padding: 10px !important;
-    font-size: 20px !important;
     font-weight: 300;
     width: 100% !important;
     text-align: center;
@@ -2053,6 +2052,18 @@ font-size: 30px;
   flex-wrap: wrap;
   width: 90%;
   height: 100%;
+}
+/* choose mechanic */
+.Mechanic_itemImg{
+  height: 160px;
+    width: 100%;
+}
+.mechanicRow{
+  background: #322170;
+  border-radius: 10px;
+}
+.mechanicHr{
+  background: #000;
 }
 .FeatureSEct_card{
   align-items: center;

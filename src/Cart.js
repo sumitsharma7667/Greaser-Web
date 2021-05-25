@@ -151,7 +151,7 @@ function Cart(props) {
                     <div className="row">
                       <div className="col-6">
                         <h4>Basic Service</h4>
-                        <p className="text-light">Mobile 5W30</p>
+                        <p className="text-white">Mobile 5W30</p>
                       </div>
                       <div className="col-6">
                         <div className="text-right">
