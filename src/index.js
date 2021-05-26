@@ -24,6 +24,8 @@ import AllUsers from "./AllUsers";
 
 
 
+import Terms from "./Terms";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -49,11 +51,18 @@ ReactDOM.render(
       <AppRoute path="/vehicle" layout={App} component={Vehicle} />
       <AppRoute path="/dashboard" layout={App} component={Dashboard} />
 
+      <Route path="/PrivacyPolicy">
+        <PrivacyPolicy />
+      </Route>
       <Route path="/Cart">
         <Cart />
       </Route>
-      <Route path="/SingleService/:service_id" component={SingleService} />
-       
+      <Route path="/Terms">
+        <Terms />
+      </Route>
+      <Route path="/SingleService">
+        <SingleService />
+      </Route>
       <Route path="/Checkout">
         <Checkout />
       </Route>

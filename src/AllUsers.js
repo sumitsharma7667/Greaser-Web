@@ -59,7 +59,7 @@ const AllUsers =()=>{
              //   }
        }
     const GetAllUsers = () => {
-        fetch("http://192.168.43.123:3032/GetAllUsers")
+        fetch("http://144.91.110.221:3032/GetAllUsers")
             .then(res => res.json())
             .then(data => {
                 console.log(JSON.stringify(data))

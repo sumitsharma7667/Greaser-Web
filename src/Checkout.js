@@ -54,7 +54,7 @@ const StoreBillDetails = () => {
   data.append('SubTotal',SubTotal)
   data.append('GrandTotal',GrandTotal)
   data.append('CartData',JSON.stringify(PushData))
-  const url = "http://192.168.79.156:3032/StoreBillDetails"
+  const url = "http://144.91.110.221:3032/StoreBillDetails"
   fetch(url, {
           method: 'post',
           body: data

@@ -59,7 +59,7 @@ const AllMechanicsWithService =()=>{
              //   }
        }
     const GetAllMechanicsWithService = () => {
-        fetch("http://192.168.43.123:3032/GetmechanicWithService")
+        fetch("http://144.91.110.221:3032/GetmechanicWithService")
             .then(res => res.json())
             .then(data => {
                 console.log(JSON.stringify(data[0]))
