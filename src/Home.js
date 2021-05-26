@@ -8,9 +8,11 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 
 function Home(props) {
+  if(localStorage.getItem('username')==undefined){
    localStorage.setItem('userid', '')
    localStorage.setItem('username', '')
    localStorage.setItem('role', '')
+  }
 
   const [AllBrand, SetAllBrand] = useState([]);
   const [AllModal, SetAllVehicle] = useState([]);
