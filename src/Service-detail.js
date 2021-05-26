@@ -101,17 +101,18 @@ function ServiceDetail(props) {
                           src={"http://144.91.110.221:3032/" + item.image}
                           alt=""
                         />
+                        <h5 className="text-dark text-center">$450</h5>
                       </div>
                       <div className="col-9">
                         <div className="row">
-                          <div className="col-6 p-2">
-                            <h4 className="text-dark">{item.name}</h4>
+                          <div className="col-6 p-3">
+                            <h5 className="text-dark">{item.name}</h5>
                           </div>
-                          <div className="col-6">
+                          <div className="col-6 p-3">
                             <div className="">
-                              <h4 className="text-dark text-right">
+                              <h5 className="text-dark text-right">
                                 <i class="bx bx-time"></i> 4 hrs Taken
-                              </h4>
+                              </h5>
                             </div>
                           </div>
                           <div className="col-6">
@@ -133,40 +134,40 @@ function ServiceDetail(props) {
                         <div className="container">
                           <div className="row">
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                             <div className="col-6">
-                              <h5 className="text-dark">
+                              <h6 className="text-dark">
                                 <i class="bx bx-badge-check"></i> Engine Oil
                                 Replacement
-                              </h5>
+                              </h6>
                             </div>
                           </div>
                         </div>
@@ -219,12 +220,12 @@ function ServiceDetail(props) {
               })}
             </div>
             <div className="col-4 ">
-              <div className="card mechanicCard ">
+              <div className="card mechanicCard pt-2 pb-2 ">
                 <div className="container">
                   <div className="row p-2">
                     <div className="col-12">
-                      <h4 className="text-dark ">Disc turning</h4>
-                      <p className="text-dark ">
+                      <h4 className=" ">Disc turning</h4>
+                      <p className=" ">
                         Get professional periodic car service, car repair, wheel
                         care services, cashless insurance claim and much more
                         done at affordable prices.
@@ -232,27 +233,29 @@ function ServiceDetail(props) {
                     </div>
                   </div>
                   <select
-                    className="form-control text-dark"
+                    className="form-control "
                     placeholder="Select Mechanic"
                   >
                     {" "}
                     Select Mechanic
                   </select>
-                  <button className="btn btn-primary mt-3">Check Prices</button>
+                  <div className="ServiceDetBtn">
+                    <button className="btn btn-primary mt-3">
+                      Check Prices
+                    </button>
+                  </div>
                   <div className="row p-2 mt-2">
                     <div className="col-6">
-                      <h4 className="text-dark">
+                      <h4 className="">
                         <i class="bx bxs-star"></i>
                         4.8/s
                       </h4>
-                      <p className="text-dark">Based on 2000+ Reviews</p>
+                      <p className="">Based on 2000+ Reviews</p>
                     </div>
                     <div class="vl"></div>
                     <div className="col-5">
-                      <h4 className="text-dark text-center">
-                        25,000+
-                      </h4>
-                      <p className="text-dark text-center">Happy customers</p>
+                      <h4 className=" text-center">25,000+</h4>
+                      <p className=" text-center">Happy customers</p>
                     </div>
                   </div>
                 </div>
@@ -311,7 +314,7 @@ function ServiceDetail(props) {
                                   }
                                   style={{
                                     height: "200px",
-                                    width: "320px",
+                                    width: "100%",
                                     objectFit: "cover",
                                   }}
                                 />
