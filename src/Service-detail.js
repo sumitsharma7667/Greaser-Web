@@ -77,6 +77,7 @@ function ServiceDetail(props) {
         })
         .then(err => console.log(err))
     }
+    
   return (
     <>
       <Header />
@@ -127,14 +128,14 @@ function ServiceDetail(props) {
                       </div>
                       <div class="row">
                         <div class="col-12">
-                          <Link to="/Cart">
+                          <Link to={"/SingleService/"+item._id}>
                             <button
                               id="button"
                               class="Add_ToCart"
                               type="button"
                               name="button"
                             >
-                              ADD TO CART
+                              Choose Mechanic
                             </button>
                           </Link>
                         </div>
@@ -182,7 +183,7 @@ function ServiceDetail(props) {
               if(item.service_type._id != props.match.params.ServiceTypeId){
               return(
               <div>
-                <Link to="/Services-detail">
+                <Link to={"/SingleService/"+item._id}>
                   <div className="row ">
                     <div className="col-1"></div>
                     <div className="col-10 carouselcardService" style={{height:"420px"}}>
