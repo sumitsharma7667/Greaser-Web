@@ -18,6 +18,12 @@ import ContactUs from "./ContactUs";
 import Register from "./Register";
 import Checkout from "./Checkout";
 import SingleService from "./SingleService";
+import AllMechanics from "./AllMechanics";
+import AllMechanicsWithService from "./AllMechanicsWithService";
+import AllUsers from "./AllUsers";
+
+
+
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -36,6 +42,10 @@ ReactDOM.render(
       <AppRoute path="/brand" layout={App} component={CreateBrands} />
       <AppRoute path="/service" layout={App} component={CreateService} />
       <AppRoute path="/service-type" layout={App} component={SericeType} />
+      <AppRoute path="/AllMechanics" layout={App} component={AllMechanics} />
+      <AppRoute path="/AllMechanicsWithService" layout={App} component={AllMechanicsWithService} />
+      <AppRoute path="/AllUsers" layout={App} component={AllUsers} />
+      
       <AppRoute path="/vehicle" layout={App} component={Vehicle} />
       <AppRoute path="/dashboard" layout={App} component={Dashboard} />
 
