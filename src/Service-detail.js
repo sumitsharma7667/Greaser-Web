@@ -170,6 +170,15 @@ function ServiceDetail(props) {
                               </h6>
                             </div>
                           </div>
+                          <div className="row">
+                            <div className="col-12">
+                              <div className="ServiceAddBtn pb-2">
+                                <button className="btn btn-primary mt-3">
+                                  + Add to cart
+                                </button>
+                              </div>
+                            </div>
+                          </div>
                         </div>
                       </div>
                     </div>
