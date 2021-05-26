@@ -183,7 +183,7 @@ function ServiceDetail(props) {
               if(item.service_type._id != props.match.params.ServiceTypeId){
               return(
               <div>
-                <Link to="/Services-detail">
+                <Link to={"/SingleService/"+item._id}>
                   <div className="row ">
                     <div className="col-1"></div>
                     <div className="col-10 carouselcardService" style={{height:"420px"}}>

@@ -122,7 +122,7 @@ function Services(props) {
               {AllServices.map((item,index)=>{
               return(
               <div>
-                <Link to="/Services-detail">
+                <Link to={"/SingleService/"+item._id}>
                   <div className="row ">
                     <div className="col-1"></div>
                     <div className="col-10 carouselcardService" style={{height:"420px"}}>

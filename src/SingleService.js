@@ -207,7 +207,7 @@ const Addtocart=async(_id,m_id)=>{
 
               
               <div className="col-3 blankCol">
-                <div className="row mechanicRow p-2">
+                <div className="row mechanicRow p-2 m-0">
                   <div className="col-12">
                     <img
                       class="Mechanic_itemImg mx-auto d-block "
