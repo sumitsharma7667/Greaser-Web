@@ -117,7 +117,7 @@ function SingleService() {
             <hr className="mechanicHr" />
 
             <div className="row ">
-              <div className="col-3">
+              <div className="col-3 blankCol">
                 <div className="row mechanicRow p-2">
                   <div className="col-12">
                     <img

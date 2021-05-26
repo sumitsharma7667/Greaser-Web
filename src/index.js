@@ -18,6 +18,8 @@ import ContactUs from "./ContactUs";
 import Register from "./Register";
 import Checkout from "./Checkout";
 import SingleService from "./SingleService";
+import Terms from "./Terms";
+import PrivacyPolicy from "./PrivacyPolicy";
 
 const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
   <Route
@@ -39,8 +41,14 @@ ReactDOM.render(
       <AppRoute path="/vehicle" layout={App} component={Vehicle} />
       <AppRoute path="/dashboard" layout={App} component={Dashboard} />
 
+      <Route path="/PrivacyPolicy">
+        <PrivacyPolicy />
+      </Route>
       <Route path="/Cart">
         <Cart />
+      </Route>
+      <Route path="/Terms">
+        <Terms />
       </Route>
       <Route path="/SingleService">
         <SingleService />
