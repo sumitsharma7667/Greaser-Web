@@ -67,7 +67,7 @@ function ServiceDetail(props) {
      .then(res => res.json())
      .then(async(res) => { 
       
-       console.log(res)
+
        if(JSON.stringify(res).includes(_id)==false){                     
         await fetch("http://144.91.110.221:3032/Addtocart"
          , {
@@ -107,7 +107,7 @@ function ServiceDetail(props) {
         })
         .then(res => res.json())
         .then(res => { setdata(res) 
-        console.log(res,"here")
+        
         })
 }
 
@@ -134,7 +134,7 @@ const getSingleMechanicdata = (_id) => {
         SetSingleMechanicdata(res) 
         }
        
-      console.log(res,"here")
+      
       })
       
 }
@@ -142,10 +142,9 @@ const getSingleMechanicdata = (_id) => {
     fetch("http://144.91.110.221:3032/GetServices")
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        
         SetAllService(data);
       })
-      .then((err) => console.log(err));
   };
 
   return (
@@ -164,12 +163,14 @@ const getSingleMechanicdata = (_id) => {
         <div class="container">
           <div class="row">
             <div className="col-8  p-2 blankCol ">
+            <div className="row ">
               {SingleMechanicdata == ""
                 ? AllServices.map((item, index) => {
                     if (
                       item.service_type._id == props.match.params.ServiceTypeId
                     ) {
                       return (
+                        <div className="col-12 ">
                         <div className="row border pt-3 pb-3">
                           <div className="col-3 blankCol">
                             <img
@@ -177,8 +178,8 @@ const getSingleMechanicdata = (_id) => {
                               src={"http://144.91.110.221:3032/" + item.image}
                               alt=""
                             />
-                            <h5 className="text-dark text-center servicePrice">
-                              <i class="bx bx-rupee"></i> 450
+                            <h5 className="text-dark text-center">
+                              <i class="bx bx-rupee"></i> 
                             </h5>
                           </div>
                           <div className="col-9 blankCol">
@@ -190,8 +191,8 @@ const getSingleMechanicdata = (_id) => {
                               </div>
                               <div className="col-3  TimeBg blankCol">
                                 <div className="">
-                                  <h6 className=" text-center timing">
-                                    <i class="bx bx-time"></i> 4 hrs Taken
+                                  <h6 className=" text-center p-1">
+                                    <i class="bx bx-time"></i>  hrs Taken
                                   </h6>
                                 </div>
                               </div>
@@ -244,11 +245,13 @@ const getSingleMechanicdata = (_id) => {
                             </div>
                           </div>
                         </div>
+                        </div>
                       );
                     }
                   })
                 : SingleMechanicdata.map((item, index) => {
                     return (
+                      <div className="col-12 ">
                       <div className="row border pt-3 pb-3">
                         <div className="col-3 blankCol">
                           <img
@@ -326,19 +329,112 @@ const getSingleMechanicdata = (_id) => {
                                 <button
                                   className="btn btn-info btn-sm"
                                   onClick={() => {
-                                    getdata(item._id);
+                                    Addtocart(item._id,item.user._id);
                                   }}
                                 >
                                   {" "}
-                                  Choose Mechanic
+                                  ADD TO CART
                                 </button>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
+                      {AllServices.map((item, index) => {
+                    if (
+                      item.service_type._id == props.match.params.ServiceTypeId && !JSON.stringify(SingleMechanicdata).includes(item._id)
+                    ) {
+                      return (
+                        <div className="col-12 ">
+                        <div className="row border pt-3 pb-3">
+                          <div className="col-3 blankCol">
+                            <img
+                              class="service_itemImg"
+                              src={"http://144.91.110.221:3032/" + item.image}
+                              alt=""
+                            />
+                            <h5 className="text-dark text-center">
+                              <i class="bx bx-rupee"></i> 
+                            </h5>
+                          </div>
+                          <div className="col-9 blankCol">
+                            <div className="row">
+                              <div className="col-9 p-3">
+                                <h4 className="text-dark font-weight-bold">
+                                  {item.name}
+                                </h4>
+                              </div>
+                              <div className="col-3 badge TimeBg blankCol">
+                                <div className="">
+                                  <h6 className=" text-center p-1">
+                                    <i class="bx bx-time"></i>  hrs Taken
+                                  </h6>
+                                </div>
+                              </div>
+                              <div className="col-6 blankCol">
+                                <ul>
+                                  <li className="text-dark">
+                                    {" "}
+                                    1000 Kms or 1 Month Warranty
+                                  </li>
+                                </ul>
+                              </div>
+                              <div className="col-6 blankCol">
+                                <ul>
+                                  <li className="text-dark">
+                                    1000 Kms or 1 Month Warranty
+                                  </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div className="container">
+                              <div className="row">
+                                <div className="col-6 blankCol">
+                                  <h5 className="text-dark">
+                                    <div
+                                      className="blogDescrption"
+                                      dangerouslySetInnerHTML={{
+                                        __html:
+                                          item.features.slice(0, 100) +
+                                          " See more...",
+                                      }}
+                                    />
+                                  </h5>
+                                </div>
+                                <div className="col-6 blankCol">
+                                  <h5 className="text-dark">
+                                    <div
+                                      className="blogDescrption"
+                                      dangerouslySetInnerHTML={{
+                                        __html:
+                                          item.features.slice(0, 100) +
+                                          " See more...",
+                                      }}
+                                    />
+                                  </h5>
+                                </div>
+                              </div>
+                              <div className="row">
+                              <div className="col-4"></div>
+                              <div className="col-8  text-danger">
+                                  This service is not available for this mechanic
+                                
+                              </div>
+                            </div>
+                              {/* <div className="row border">
+                                <div className="col-12"></div>
+                              </div> */}
+                            </div>
+                          </div>
+                        </div>
+                        </div>
+                      );
+                    }
+                  })}
+                      </div>
                     );
                   })}
+            </div>
             </div>
             {/*Mechanic select card */}
             <div className="col-4 blankCol">
@@ -346,7 +442,22 @@ const getSingleMechanicdata = (_id) => {
                 <div className="container">
                   <div className="row p-2">
                     <div className="col-12">
-                      {/* <h4 className="text-dark">{item.service.name}</h4> */}
+                    <h2
+                            class=" get-bonus mt-5 mb-5 text-center"
+                            style={{ color: "#bdbdbd" }}
+                          >
+                            {" "}
+                            <span
+                              class="text-white"
+                              style={{
+                                fontFamily: "TransRobotics",
+                                fontSize: "40px",
+                              }}
+                            >
+                              Greaser
+                            </span>{" "}
+                            Anytime Anywhere
+                          </h2>
                     </div>
                   </div>
                   <select
