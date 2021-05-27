@@ -327,12 +327,12 @@ function Home(props) {
         </div>
       </section>
       <section className="SecondSection">
-        <div className="row">
+        <div className="row pt-3 pb-3">
           <div className="col-12 ">
             <h2 className="servicesHeading">Services</h2>
           </div>
           <div className="col-12">
-            <div className="row mt-4 " style={{ display: "flex" }}>
+            <div className="row mt-3 " style={{ display: "flex" }}>
               {AllServicesType.map((item, index) => {
                 return (
                   <div className="SecondSectionCard w-100 col-2">
