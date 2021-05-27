@@ -95,7 +95,7 @@ function ServiceDetail(props) {
   }
   const getdata = () => {  
     var _id   
-    fetch("http://192.168.79.156:3032/AllMechanicServices"
+    fetch("http://144.91.110.221:3032/AllMechanicServices"
         , {
             method: 'POST',
             headers: {
@@ -117,7 +117,7 @@ const getSingleMechanicdata = (_id) => {
     SetSingleMechanicdata([]) 
     return true
   }
-  fetch("http://192.168.79.156:3032/getSingleMechanicdata"
+  fetch("http://144.91.110.221:3032/getSingleMechanicdata"
       , {
           method: 'POST',
           headers: {
