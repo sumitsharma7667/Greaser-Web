@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import SingleService from "./SingleService";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -25,69 +26,118 @@ const responsive = {
 let userid;
 function ServiceDetail(props) {
   const [AllServices, SetAllService] = useState([]);
-  const [MechanicData, setdata] = useState([]);
+  const [MechanicData,setdata]=useState([])
+  const [MechanicServiceId,setMechanicServiceId]=useState([])
+  const [MechanicUserId,setMechanicUserId]=useState([])
+  const [MechanicRealServiceId,setRealServiceId]=useState()
+  
+  const [SingleMechanicdata,SetSingleMechanicdata]=useState([])
+  
+  
   useEffect(() => {
     GetServices();
+    getdata()
   }, []);
 
-  const Addtocart = async (_id, m_id) => {
-    var id = await localStorage.getItem("userid");
-    if (id == "") {
+  let SetChoosedMechanic =(data)=>{
+   var id= data.split("-")[0]
+   var user_id =data.split("-")[1]
+   var RealServiceId =data.split("-")[2]
+   setMechanicServiceId(id)
+   setMechanicUserId(user_id)
+   setRealServiceId(RealServiceId)
+
+  }
+  const Addtocart=async(_id,m_id)=>{  
+    var id= await localStorage.getItem('userid')  
+    if(id == ''){
       window.location.href = "/Login";
-    }
-    fetch("http://144.91.110.221:3032/cartbyid", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        userid: id,
-      }),
-    })
-      .then((res) => res.json())
-      .then(async (res) => {
-        console.log(res);
-        if (JSON.stringify(res).includes(_id) == false) {
-          await fetch("http://144.91.110.221:3032/Addtocart", {
-            method: "POST",
+    } 
+     fetch("http://144.91.110.221:3032/cartbyid"
+     , {
+         method: 'POST',
+         headers: {
+             Accept: 'application/json',
+             'Content-Type': 'application/json'
+         },
+         body: JSON.stringify({
+             userid: id
+         })
+     })
+     .then(res => res.json())
+     .then(async(res) => { 
+      
+       console.log(res)
+       if(JSON.stringify(res).includes(_id)==false){                     
+        await fetch("http://144.91.110.221:3032/Addtocart"
+         , {
+             method: 'POST',
+             headers: {
+                 Accept: 'application/json',
+                 'Content-Type': 'application/json'
+             },
+             body: JSON.stringify({
+                userid:id,
+                _id:_id,
+                m_id:m_id
+             })
+         })
+         .then(res => res.json())
+         .then(res=>{
+         alert("added successfully")})
+         window.location.href = "/Cart";
+     }
+     else{
+         alert("This Service is allready in Your Cart ")
+         }
+   })
+  }
+  const getdata = () => {  
+    var _id   
+    fetch("http://144.91.110.221:3032/AllMechanicServices"
+        , {
+            method: 'POST',
             headers: {
               Accept: "application/json",
               "Content-Type": "application/json",
             },
             body: JSON.stringify({
-              userid: id,
-              _id: _id,
-              m_id: m_id,
-            }),
+                _id:_id,
+            })
+        })
+        .then(res => res.json())
+        .then(res => { setdata(res) 
+        console.log(res,"here")
+        })
+}
+
+const getSingleMechanicdata = (_id) => {  
+  if(_id == ""){
+    SetSingleMechanicdata([]) 
+    return true
+  }
+  fetch("http://144.91.110.221:3032/getSingleMechanicdata"
+      , {
+          method: 'POST',
+          headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              _id:_id,
           })
-            .then((res) => res.json())
-            .then((res) => {
-              alert("added successfully");
-            });
-          window.location.href = "/Cart";
-        } else {
-          alert("This Service is allready in Your Cart ");
+      })
+      .then(res => res.json())
+      .then(res => { 
+        if(res[0] != undefined){
+          
+        SetSingleMechanicdata(res) 
         }
-      });
-  };
-  const getdata = (_id) => {
-    fetch("http://144.91.110.221:3032/mechanicbyservice", {
-      method: "POST",
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        _id: _id,
-      }),
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        setdata(res);
-        console.log(res, "here");
-      });
-  };
+       
+      console.log(res,"here")
+      })
+      
+}
   const GetServices = () => {
     fetch("http://144.91.110.221:3032/GetServices")
       .then((res) => res.json())
@@ -114,7 +164,11 @@ function ServiceDetail(props) {
         <div class="container">
           <div class="row">
             <div className="col-8  p-2  ">
-              {AllServices.map((item, index) => {
+              {
+              
+              SingleMechanicdata =="" ? 
+              
+              AllServices.map((item, index) => {
                 if (item.service_type._id == props.match.params.ServiceTypeId) {
                   return (
                     <div className="row border pt-3 pb-3">
@@ -131,11 +185,11 @@ function ServiceDetail(props) {
                       <div className="col-9">
                         <div className="row">
                           <div className="col-9 p-3">
-                            <h5 className="text-dark font-weight-bold">
+                            <h4 className="text-dark font-weight-bold">
                               {item.name}
-                            </h5>
+                            </h4>
                           </div>
-                          <div className="col-3 TimeBg">
+                          <div className="col-3 badge TimeBg">
                             <div className="">
                               <h6 className=" text-center p-1">
                                 <i class="bx bx-time"></i> 4 hrs Taken
@@ -185,97 +239,168 @@ function ServiceDetail(props) {
                               </h5>
                             </div>
                           </div>
-                          <div className="row">
-                            <div className="col-6"></div>
-                            <div className="col-6 ChooseMechBTn">
-                              <button
-                                className="btn btn-info btn-sm"
-                                onClick={() => {
-                                  getdata(item._id);
-                                }}
-                              >
-                                {" "}
-                                Choose Mechanic
-                              </button>
-                            </div>
+                          <div className="row border">
+                            <div className="col-12"></div>
                           </div>
                         </div>
                       </div>
                     </div>
                   );
                 }
-              })}
-            </div>
-            <div className="col-4 ">
-              <Carousel
-                swipeable={false}
-                draggable={false}
-                // showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={true}
-                autoPlaySpeed={10000}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                // deviceType={this.props.deviceType}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-              >
-                {MechanicData.map((item, index) => {
-                  return (
-                    <div className="card mechanicCard ">
-                      <div className="container">
-                        <div className="row p-2">
-                          <div className="col-12">
-                            <h4 className="">{item.service.name}</h4>
-                          </div>
-                        </div>
-                        {/* <select
-                    className="form-control text-dark"
-                    placeholder="Select Mechanic"
-                  >
-                    {" "}
-                    Select Mechanic
-                  </select> */}
-                        <h4 className="">{item.user.shop_name}</h4>
-                        <h4>{item.user.fullname}</h4>
-                        <h6 className="">{item.user.mobile}</h6>
-                        <span>
-                          <h6 className="">
-                            ${item.price} - {item.time} Hours
+              })
+            :
+            SingleMechanicdata.map((item,index)=>{
+              return (
+                <div className="row border pt-3 pb-3">
+                  <div className="col-3">
+                    <img
+                      class="service_itemImg"
+                      src={"http://144.91.110.221:3032/" + item.service.image}
+                      alt=""
+                    />
+                    <h5 className="text-dark text-center">
+                      <i class="bx bx-rupee"></i> {item.price}
+                    </h5>
+                  </div>
+                  <div className="col-9">
+                    <div className="row">
+                      <div className="col-9 p-3">
+                        <h4 className="text-dark font-weight-bold">
+                          {item.service.name}
+                        </h4>
+                      </div>
+                      <div
+                        className="col-3 badge TimeBg"
+                      >
+                        <div className="">
+                          <h6 className=" text-center">
+                            <i class="bx bx-time"></i> {item.time} hrs Taken
                           </h6>
-
+                        </div>
+                      </div>
+                      <div className="col-6">
+                        <ul>
+                          <li className="text-dark">
+                            {" "}
+                            1000 Kms or 1 Month Warranty
+                          </li>
+                        </ul>
+                      </div>
+                      <div className="col-6">
+                        <ul>
+                          <li className="text-dark">
+                            1000 Kms or 1 Month Warranty
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-6">
+                          <h5 className="text-dark">
+                            <div
+                              className="blogDescrption"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  item.service.features.slice(0, 100) +
+                                  " See more...",
+                              }}
+                            />
+                          </h5>
+                        </div>
+                        <div className="col-6">
+                          <h5 className="text-dark">
+                            <div
+                              className="blogDescrption"
+                              dangerouslySetInnerHTML={{
+                                __html:
+                                  item.service.features.slice(0, 100) +
+                                  " See more...",
+                              }}
+                            />
+                          </h5>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="col-6"></div>
+                        <div className="col-6 ChooseMechBTn">
                           <button
-                            className="btn btn-primary mt-3"
+                            className="btn btn-info btn-sm"
                             onClick={() => {
-                              Addtocart(item._id, item.user._id);
+                              getdata(item._id);
                             }}
                           >
-                            ADD TO CART
+                            {" "}
+                            Choose Mechanic
                           </button>
-                        </span>
-                        <div className="row p-2 mt-2">
-                          <div className="col-6">
-                            <h4 className="">
-                              <i class="bx bxs-star"></i> 4.8/5
-                            </h4>
-                            <p className="">Based on 2000+ Reviews</p>
-                          </div>
-                          <div class="vl"></div>
-                          <div className="col-5">
-                            <h4 className=" text-center">25,000+</h4>
-                            <p className=" text-center">Happy customers</p>
-                          </div>
                         </div>
                       </div>
                     </div>
-                  );
-                })}
-              </Carousel>
+                  </div>
+                </div>
+              );
+            })
+            }
+            </div>
+            <div className="col-4 ">
+           
+              
+                    <div className="card mechanicCard ">
+                <div className="container">
+                  <div className="row p-2">
+                    <div className="col-12">
+                    
+                      {/* <h4 className="text-dark">{item.service.name}</h4> */}
+                      
+                      
+
+                     
+                    </div>
+                  </div>
+                  <select
+                    className="form-control text-dark"
+                    placeholder="Select Mechanic"
+                    onChange={(e)=>{getSingleMechanicdata(e.target.value)}}
+                  >
+
+                  <option value="">Choose Mechanic...</option>
+                  {MechanicData.map((item, index) => {
+                    if(item.user !=undefined && item.service !=undefined){
+                      if(item.service.service_type._id == props.match.params.ServiceTypeId){
+                  return (
+                    <option value={item.user._id}>{item.user.fullname}</option>
+                  )
+                      }
+                    }
+                  })}
+                    
+                  </select>
+                  {/* <h4 className="text-dark">{item.user.shop_name}</h4>
+                  <h4>{item.user.fullname}</h4>
+                  <h6 className="text-dark">{item.user.mobile}</h6> */}
+                  {/* <span>
+                  <h6 className="text-dark">${item.price}  - {item.time} Hours</h6>
+
+                  <button className="btn btn-primary mt-3" onClick={()=>{Addtocart(item._id,item.user._id)}}>ADD TO CART</button>
+                  </span> */}
+                  <div className="row p-2 mt-2">
+                    <div className="col-6">
+                      <h4 className="">
+                        <i class="bx bxs-star"></i> 4.8/5
+                      </h4>
+                      <p className="">Based on 2000+ Reviews</p>
+                    </div>
+                    <div class="vl"></div>
+                    <div className="col-5">
+                      <h4 className=" text-center">25,000+</h4>
+                      <p className=" text-center">Happy customers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                
+
+              
             </div>
           </div>
         </div>
