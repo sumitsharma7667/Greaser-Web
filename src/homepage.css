@@ -2431,6 +2431,9 @@ MapSection {
     height: 100%;
     /* display: flex; */
 }
+.vl{
+  display: none;
+}
 .firstRow {
     display: flex;
 }
