@@ -138,24 +138,29 @@ function ServiceDetail(props) {
               {AllServices.map((item, index) => {
                 if (item.service_type._id == props.match.params.ServiceTypeId) {
                   return (
-                    <div className="row border">
+                    <div className="row border pt-3 pb-3">
                       <div className="col-3">
                         <img
                           class="service_itemImg"
                           src={"http://144.91.110.221:3032/" + item.image}
                           alt=""
                         />
+                        <h5 className="text-dark text-center">
+                          <i class="bx bx-rupee"></i> 450
+                        </h5>
                       </div>
                       <div className="col-9">
                         <div className="row">
-                          <div className="col-6 p-2">
-                            <h4 className="text-dark">{item.name}</h4>
+                          <div className="col-6 p-3">
+                            <h5 className="text-dark font-weight-bold">
+                              {item.name}
+                            </h5>
                           </div>
-                          <div className="col-6">
+                          <div className="col-6 p-3">
                             <div className="">
-                              <h4 className="text-dark text-right">
+                              <h5 className="text-dark text-right">
                                 <i class="bx bx-time"></i> 4 hrs Taken
-                              </h4>
+                              </h5>
                             </div>
                           </div>
                           <div className="col-6">
@@ -243,18 +248,15 @@ function ServiceDetail(props) {
                   </span> */}
                   <div className="row p-2 mt-2">
                     <div className="col-6">
-                      <h4 className="text-dark">
-                        <i class="bx bxs-star"></i>
-                        4.8/s
+                      <h4 className="">
+                        <i class="bx bxs-star"></i> 4.8/5
                       </h4>
-                      <p className="text-dark">Based on 2000+ Reviews</p>
+                      <p className="">Based on 2000+ Reviews</p>
                     </div>
                     <div class="vl"></div>
                     <div className="col-5">
-                      <h4 className="text-dark text-center">
-                        25,000+
-                      </h4>
-                      <p className="text-dark text-center">Happy customers</p>
+                      <h4 className=" text-center">25,000+</h4>
+                      <p className=" text-center">Happy customers</p>
                     </div>
                   </div>
                 </div>
