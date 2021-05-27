@@ -145,10 +145,10 @@ function Header(props) {
                     <Link to="/Home">Home</Link>
                   </li>
                   <li>
-                    <Link to="#">Terms</Link>
+                    <Link to="/Terms">Terms</Link>
                   </li>
                   <li>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="/PrivacyPolicy">Privacy Policy</Link>
                   </li>
                   <li>
                     <a href="/ContactUs">Contact</a>
