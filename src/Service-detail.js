@@ -340,9 +340,14 @@ const getSingleMechanicdata = (_id) => {
                           </div>
                         </div>
                       </div>
-                      {AllServices.map((item, index) => {
+                      
+                      </div>
+                    );
+                  })}
+                  {SingleMechanicdata != "" ? 
+                   AllServices.map((item, index) => {
                     if (
-                      item.service_type._id == props.match.params.ServiceTypeId && !JSON.stringify(SingleMechanicdata).includes(item._id)
+                      item.service_type._id == props.match.params.ServiceTypeId && (!JSON.stringify(SingleMechanicdata).includes(item._id)) && (!JSON.stringify(SingleMechanicdata).includes(item.name))
                     ) {
                       return (
                         <div className="col-12 ">
@@ -373,8 +378,7 @@ const getSingleMechanicdata = (_id) => {
                               </div>
                               <div className="col-6 blankCol">
                                 <ul>
-                                  <li className="text-dark">
-                                    {" "}
+                                  <li className="text-dark">                                    
                                     1000 Kms or 1 Month Warranty
                                   </li>
                                 </ul>
@@ -430,10 +434,8 @@ const getSingleMechanicdata = (_id) => {
                         </div>
                       );
                     }
-                  })}
-                      </div>
-                    );
-                  })}
+                  })
+                :null}
             </div>
             </div>
             {/*Mechanic select card */}
