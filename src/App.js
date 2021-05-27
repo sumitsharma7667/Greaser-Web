@@ -44,7 +44,28 @@ function App(props) {
            <i class="zmdi zmdi-format-list-bulleted"></i> <span>Vehicles</span>
          </Link>
        </li>
- 
+       <li>
+         <Link to="/AllUsers">
+           <i class="zmdi zmdi-format-list-bulleted"></i> <span>All Users</span>
+         </Link>
+       </li>
+       <li>
+         <Link to="/AllMechanics">
+           <i class="zmdi zmdi-format-list-bulleted"></i> <span>All Mechanics</span>
+         </Link>
+       </li>
+       <li>
+         <Link to="/AllMechanicsWithService">
+           <i class="zmdi zmdi-format-list-bulleted"></i> <span>Mechanics With Service</span>
+         </Link>
+       </li>
+       <li>
+         <Link to="/AllUsers">
+           <i class="zmdi zmdi-format-list-bulleted"></i> <span>All Users</span>
+         </Link>
+       </li>
+       
+       
        {/* <li>
          <a href="tables.html">
            <i class="zmdi zmdi-grid"></i> <span>Tables</span>

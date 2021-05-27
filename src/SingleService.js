@@ -65,10 +65,11 @@ const Addtocart=async(_id,m_id)=>{
        })
    })
    .then(res => res.json())
-   .then(res => { 
+   .then(async(res) => { 
+    
      console.log(res)
      if(JSON.stringify(res).includes(_id)==false){                     
-       fetch("http://144.91.110.221:3032/Addtocart"
+      await fetch("http://144.91.110.221:3032/Addtocart"
        , {
            method: 'POST',
            headers: {

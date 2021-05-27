@@ -3,9 +3,14 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
+
+let SubTotal =0
+let GradndTotal =0
 function Cart(props) {
   const [data, setdata] = useState([])
   useEffect(()=>{
+    GradndTotal=0
+    SubTotal=0
     getdata()
   },[])
   const getdata = async (_id) => {
@@ -40,6 +45,8 @@ const Deletefromcart = (id) => {
           // contexdata.getcounts()
       })
 }
+SubTotal=0
+GradndTotal=0
   return (
     <div className="">
       {/* <header id="site-header">
@@ -108,17 +115,22 @@ const Deletefromcart = (id) => {
                 <div class=" card Secon_colCard">
                   <h3 className="text-center">Cart</h3>
                   <div className="container">
+
+                  {data.map((item,index)=>{
+                  return(
                     <div className="row">
                       <div className="col-6">
-                        <h4>Basic Service</h4>
-                        <p className="text-white">Mobile 5W30</p>
+                        <h4>{item.service.service.name}</h4>
+                        {/* <p className="text-white"></p> */}
                       </div>
                       <div className="col-6">
                         <div className="text-right">
-                          <h4>$3099</h4>
+                          <h4>{item.service.price}</h4>
                         </div>
                       </div>
                     </div>
+                  )
+                })}
                     <hr />
                     <div>
                       <input
@@ -137,35 +149,45 @@ const Deletefromcart = (id) => {
                         <h5>Subtotal</h5>
                       </div>
                       <div class="col-6 text-right ">
-                        <h5>$100.00</h5>
+                        <h5>{
+                        data.map((item,index)=>{
+                          SubTotal=SubTotal+parseInt(item.service.price)
+                        })}
+                        {SubTotal}
+                        </h5>
                       </div>
                     </div>
-                    <div class="row">
+                    {/* <div class="row">
                       <div class="col-6">
                         <h5>Shipping</h5>
                       </div>
                       <div class="col-6 text-right">
                         <h5>$20.00</h5>
                       </div>
-                    </div>
+                    </div> */}
                     <div class="row">
                       <div class="col-6">
                         <h5>Total (tax incl.)</h5>
                       </div>
                       <div class="col-6 text-right">
-                        <h5>$190.00</h5>
+                        <h5>{
+                        data.map((item,index)=>{
+                          GradndTotal=GradndTotal+parseInt(item.service.price)
+                        })}
+                        {GradndTotal}</h5>
                       </div>
                     </div>
                     <div class="row">
                       <div class="col-12 text-center mb-3">
-                        <button
+                        <Link to="/CheckOut"
                           type="button"
                           class="btn btn-primary btn-lg CheckOutBtn "
                           id="load"
                           data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing Order"
+                        
                         >
                           Check out
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   </div>
