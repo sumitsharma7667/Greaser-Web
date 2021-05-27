@@ -27,26 +27,10 @@ function ServiceDetail(props) {
  
   const [AllServices, SetAllService] = useState([]);
   const [MechanicData,setdata]=useState([])
-  const [MechanicServiceId,setMechanicServiceId]=useState([])
-  const [MechanicUserId,setMechanicUserId]=useState([])
-  const [MechanicRealServiceId,setRealServiceId]=useState()
-  
-  
-  
   useEffect(() => {
     GetServices();
-    getdata()
   }, []);
 
-  let SetChoosedMechanic =(data)=>{
-   var id= data.split("-")[0]
-   var user_id =data.split("-")[1]
-   var RealServiceId =data.split("-")[2]
-   setMechanicServiceId(id)
-   setMechanicUserId(user_id)
-   setRealServiceId(RealServiceId)
-
-  }
   const Addtocart=async(_id,m_id)=>{  
     var id= await localStorage.getItem('userid')  
     if(id == ''){
@@ -91,9 +75,8 @@ function ServiceDetail(props) {
          }
    })
   }
-  const getdata = () => {  
-    var _id   
-    fetch("http://144.91.110.221:3032/AllMechanicServices"
+  const getdata = (_id) => {     
+    fetch("http://144.91.110.221:3032/mechanicbyservice"
         , {
             method: 'POST',
             headers: {
@@ -190,9 +173,7 @@ function ServiceDetail(props) {
                           </div>
                           <div className="row border">
                           <div className="col-12">
-                            {item._id== MechanicRealServiceId ? 
-                            <button className="btn btn-info btn-sm" onClick={()=>{Addtocart(MechanicServiceId,MechanicUserId)}}> Add to cart</button>
-                            :<span className="text-dark">"Not Available For This Mechanic"</span>}
+                            <button className="btn btn-info btn-sm" onClick={()=>{getdata(item._id)}}> Choose Mechanic</button>
                            </div>
                         </div>
                         </div>
@@ -203,44 +184,53 @@ function ServiceDetail(props) {
               })}
             </div>
             <div className="col-4 ">
-           
-              
+            <Carousel
+              swipeable={false}
+              draggable={false}
+              // showDots={true}
+              responsive={responsive}
+              ssr={true} // means to render carousel on server-side.
+              infinite={true}
+              autoPlay={true}
+              autoPlaySpeed={10000}
+              keyBoardControl={true}
+              customTransition="all .5"
+              transitionDuration={500}
+              containerClass="carousel-container"
+              removeArrowOnDeviceType={["tablet", "mobile"]}
+              // deviceType={this.props.deviceType}
+              dotListClass="custom-dot-list-style"
+              itemClass="carousel-item-padding-40-px"
+            >
+              {MechanicData.map((item, index) => {
+                  return (
                     <div className="card mechanicCard ">
                 <div className="container">
                   <div className="row p-2">
                     <div className="col-12">
                     
-                      {/* <h4 className="text-dark">{item.service.name}</h4> */}
+                      <h4 className="text-dark">{item.service.name}</h4>
                       
                       
 
                      
                     </div>
                   </div>
-                  <select
+                  {/* <select
                     className="form-control text-dark"
                     placeholder="Select Mechanic"
-                    onChange={(e)=>{SetChoosedMechanic(e.target.value)}}
                   >
-
-                  <option value="">Choose Mechanic...</option>
-                  {MechanicData.map((item, index) => {
-                    if(item.user !=undefined && item.service !=undefined){
-                  return (
-                    <option value={item._id+"-"+item.user._id+"-"+item.service._id}>{item.user.fullname}</option>
-                  )
-                    }
-                  })}
-                    
-                  </select>
-                  {/* <h4 className="text-dark">{item.user.shop_name}</h4>
+                    {" "}
+                    Select Mechanic
+                  </select> */}
+<h4 className="text-dark">{item.user.shop_name}</h4>
                   <h4>{item.user.fullname}</h4>
-                  <h6 className="text-dark">{item.user.mobile}</h6> */}
-                  {/* <span>
+                  <h6 className="text-dark">{item.user.mobile}</h6>
+                  <span>
                   <h6 className="text-dark">${item.price}  - {item.time} Hours</h6>
 
                   <button className="btn btn-primary mt-3" onClick={()=>{Addtocart(item._id,item.user._id)}}>ADD TO CART</button>
-                  </span> */}
+                  </span>
                   <div className="row p-2 mt-2">
                     <div className="col-6">
                       <h4 className="text-dark">
@@ -259,8 +249,10 @@ function ServiceDetail(props) {
                   </div>
                 </div>
               </div>
+                  );
                 
-
+              })}
+            </Carousel>
               
             </div>
           </div>
