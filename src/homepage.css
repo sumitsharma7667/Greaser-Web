@@ -1145,7 +1145,7 @@ background: #6b36aa;
     cursor: pointer;
     display: block;
     color: #fff;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 300;
     padding: 5px;
     width: auto;
@@ -2055,10 +2055,22 @@ font-size: 30px;
   height: 100%;
 }
 /* choose mechanic */
+/* .blogDescrption ul li{
+  list-style-type: none;
+} */
+.TimeBg{
+    background: #6b36aa;
+    height: 25px;
+}
 .ServiceDetBtn{
   justify-content: center;
     align-items: center;
     position: relative;
+    display: flex;
+}
+.ChooseMechBTn{
+  align-items: flex-end;
+    justify-content: flex-end;
     display: flex;
 }
 .vl {

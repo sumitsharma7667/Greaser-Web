@@ -108,7 +108,7 @@ function Services(props) {
               responsive={responsive}
               ssr={true} // means to render carousel on server-side.
               infinite={true}
-              autoPlay={true}
+              autoPlay={false}
               autoPlaySpeed={3000}
               keyBoardControl={true}
               customTransition="all .5"
@@ -130,7 +130,7 @@ function Services(props) {
                         <div className="col-12 text-center">
                           <img
                             src={"http://144.91.110.221:3032/"+item.image}
-                            style={{ height: "200px",width:"320px",objectFit:"cover" }}
+                            style={{ height: "200px",width:"100%",objectFit:"cover" }}
                           />
                         </div>
                         <div className="col-12 text-center pt-4">
