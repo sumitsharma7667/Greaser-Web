@@ -5,6 +5,7 @@ import logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import SingleService from "./SingleService";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
@@ -31,6 +32,7 @@ function ServiceDetail(props) {
   const [MechanicUserId,setMechanicUserId]=useState([])
   const [MechanicRealServiceId,setRealServiceId]=useState()
   
+  const [SingleMechanicdata,SetSingleMechanicdata]=useState([])
   
   
   useEffect(() => {
@@ -93,7 +95,7 @@ function ServiceDetail(props) {
   }
   const getdata = () => {  
     var _id   
-    fetch("http://144.91.110.221:3032/AllMechanicServices"
+    fetch("http://192.168.79.156:3032/AllMechanicServices"
         , {
             method: 'POST',
             headers: {
@@ -108,6 +110,34 @@ function ServiceDetail(props) {
         .then(res => { setdata(res) 
         console.log(res,"here")
         })
+}
+
+const getSingleMechanicdata = (_id) => {  
+  if(_id == ""){
+    SetSingleMechanicdata([]) 
+    return true
+  }
+  fetch("http://192.168.79.156:3032/getSingleMechanicdata"
+      , {
+          method: 'POST',
+          headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+              _id:_id,
+          })
+      })
+      .then(res => res.json())
+      .then(res => { 
+        if(res[0] != undefined){
+          
+        SetSingleMechanicdata(res) 
+        }
+       
+      console.log(res,"here")
+      })
+      
 }
   const GetServices = () => {
     fetch("http://144.91.110.221:3032/GetServices")
@@ -135,7 +165,11 @@ function ServiceDetail(props) {
         <div class="container">
           <div class="row">
             <div className="col-8  p-2  ">
-              {AllServices.map((item, index) => {
+              {
+              
+              SingleMechanicdata =="" ? 
+              
+              AllServices.map((item, index) => {
                 if (item.service_type._id == props.match.params.ServiceTypeId) {
                   return (
                     <div className="row border pt-3 pb-3">
@@ -195,9 +229,6 @@ function ServiceDetail(props) {
                           </div>
                           <div className="row border">
                           <div className="col-12">
-                            {item._id== MechanicRealServiceId ? 
-                            <button className="btn btn-info btn-sm" onClick={()=>{Addtocart(MechanicServiceId,MechanicUserId)}}> Add to cart</button>
-                            :<span className="text-dark">"Not Available For This Mechanic"</span>}
                            </div>
                         </div>
                         </div>
@@ -205,7 +236,78 @@ function ServiceDetail(props) {
                     </div>
                   );
                 }
-              })}
+              })
+            :
+            SingleMechanicdata.map((item,index)=>{
+              return(
+                <div className="row border pt-3 pb-3">
+                <div className="col-3">
+                  <img
+                    class="service_itemImg"
+                    src={"http://144.91.110.221:3032/" + item.service.image}
+                    alt=""
+                  />
+                  <h5 className="text-dark text-center">
+                    <i class="bx bx-rupee"></i> {item.price}
+                  </h5>
+                </div>
+                <div className="col-9">
+                  <div className="row">
+                    <div className="col-6 p-3">
+                      <h5 className="text-dark font-weight-bold">
+                        {item.name}
+                      </h5>
+                    </div>
+                    <div className="col-6 p-3">
+                      <div className="">
+                        <h5 className="text-dark text-right">
+                          <i class="bx bx-time"></i> {item.time} hrs Taken
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="col-6">
+                      <ul>
+                        <li className="text-dark">
+                          {" "}
+                          1000 Kms or 1 Month Warranty
+                        </li>
+                      </ul>
+                    </div>
+                    <div className="col-6">
+                      <ul>
+                        <li className="text-dark">
+                          1000 Kms or 1 Month Warranty
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="container">
+                    <div className="row">
+                      <div className="col-6">
+                        <h5 className="text-dark">
+                          <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.service.features.slice(0, 100)+" See more..."}} />
+                          
+                        </h5>
+                      </div>
+                      <div className="col-6">
+                        <h5 className="text-dark">
+                        <div className="blogDescrption" dangerouslySetInnerHTML={{__html:item.service.features.slice(0, 100)+" See more..."}} />
+                        </h5>
+                      </div>
+                    </div>
+                    <div className="row border">
+                    <div className="col-12">
+
+                      <button className="btn btn-info btn-sm" onClick={()=>{Addtocart(item._id,item.user._id)}}> Add to cart</button>
+
+                     </div>
+                  </div>
+                  </div>
+                </div>
+              </div>
+              )
+            })
+            }
             </div>
             <div className="col-4 ">
            
@@ -225,15 +327,17 @@ function ServiceDetail(props) {
                   <select
                     className="form-control text-dark"
                     placeholder="Select Mechanic"
-                    onChange={(e)=>{SetChoosedMechanic(e.target.value)}}
+                    onChange={(e)=>{getSingleMechanicdata(e.target.value)}}
                   >
 
                   <option value="">Choose Mechanic...</option>
                   {MechanicData.map((item, index) => {
                     if(item.user !=undefined && item.service !=undefined){
+                      if(item.service.service_type._id == props.match.params.ServiceTypeId){
                   return (
-                    <option value={item._id+"-"+item.user._id+"-"+item.service._id}>{item.user.fullname}</option>
+                    <option value={item.user._id}>{item.user.fullname}</option>
                   )
+                      }
                     }
                   })}
                     
