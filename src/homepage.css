@@ -2060,6 +2060,7 @@ font-size: 30px;
 }
 .blogDescrption ul li{
   list-style: none;
+  font-size: 0.9375rem;
 }
 .blogDescrption ul li::before{
   font-family: 'FontAwesome';
@@ -2069,6 +2070,7 @@ font-size: 30px;
 }
 .servicePrice{
   margin-top: 27px;
+  font-weight: 800;
 }
 .TimeBg{
     background: #89888b;

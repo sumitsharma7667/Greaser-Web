@@ -171,80 +171,80 @@ const getSingleMechanicdata = (_id) => {
                     ) {
                       return (
                         <div className="col-12 ">
-                        <div className="row border pt-3 pb-3">
-                          <div className="col-3 blankCol">
-                            <img
-                              class="service_itemImg"
-                              src={"http://144.91.110.221:3032/" + item.image}
-                              alt=""
-                            />
-                            <h5 className="text-dark text-center">
-                              <i class="bx bx-rupee"></i> 
-                            </h5>
-                          </div>
-                          <div className="col-9 blankCol">
-                            <div className="row">
-                              <div className="col-9 p-3">
-                                <h4 className="text-dark font-weight-bold">
-                                  {item.name}
-                                </h4>
-                              </div>
-                              <div className="col-3  TimeBg blankCol">
-                                <div className="">
-                                  <h6 className=" text-center p-1">
-                                    <i class="bx bx-time"></i>  hrs Taken
-                                  </h6>
-                                </div>
-                              </div>
-                              <div className="col-6 blankCol">
-                                <ul>
-                                  <li className="text-dark">
-                                    {" "}
-                                    1000 Kms or 1 Month Warranty
-                                  </li>
-                                </ul>
-                              </div>
-                              <div className="col-6 blankCol">
-                                <ul>
-                                  <li className="text-dark">
-                                    1000 Kms or 1 Month Warranty
-                                  </li>
-                                </ul>
-                              </div>
+                          <div className="row border pt-3 pb-3">
+                            <div className="col-3 blankCol">
+                              <img
+                                class="service_itemImg"
+                                src={"http://144.91.110.221:3032/" + item.image}
+                                alt=""
+                              />
+                              <h5 className="text-dark text-center font-weight-bold">
+                                <i class="bx bx-rupee"></i>
+                              </h5>
                             </div>
-                            <div className="container">
+                            <div className="col-9 blankCol">
                               <div className="row">
-                                <div className="col-6 blankCol">
-                                  <h5 className="text-dark">
-                                    <div
-                                      className="blogDescrption"
-                                      dangerouslySetInnerHTML={{
-                                        __html:
-                                          item.features.slice(0, 100) +
-                                          " See more...",
-                                      }}
-                                    />
-                                  </h5>
+                                <div className="col-9 p-3">
+                                  <h4 className="text-dark font-weight-bold">
+                                    {item.name}
+                                  </h4>
+                                </div>
+                                <div className="col-3  TimeBg blankCol">
+                                  <div className="">
+                                    <h6 className=" text-center p-1">
+                                      <i class="bx bx-time"></i> hrs Taken
+                                    </h6>
+                                  </div>
                                 </div>
                                 <div className="col-6 blankCol">
-                                  <h5 className="text-dark">
-                                    <div
-                                      className="blogDescrption"
-                                      dangerouslySetInnerHTML={{
-                                        __html:
-                                          item.features.slice(0, 100) +
-                                          " See more...",
-                                      }}
-                                    />
-                                  </h5>
+                                  <ul>
+                                    <li className="text-dark">
+                                      {" "}
+                                      1000 Kms or 1 Month Warranty
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div className="col-6 blankCol">
+                                  <ul>
+                                    <li className="text-dark">
+                                      1000 Kms or 1 Month Warranty
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
-                              <div className="row">
-                                <div className="col-12"></div>
+                              <div className="container">
+                                <div className="row">
+                                  <div className="col-6 blankCol">
+                                    <h5 className="text-dark">
+                                      <div
+                                        className="blogDescrption"
+                                        dangerouslySetInnerHTML={{
+                                          __html:
+                                            item.features.slice(0, 100) +
+                                            " See more...",
+                                        }}
+                                      />
+                                    </h5>
+                                  </div>
+                                  <div className="col-6 blankCol">
+                                    <h5 className="text-dark">
+                                      <div
+                                        className="blogDescrption"
+                                        dangerouslySetInnerHTML={{
+                                          __html:
+                                            item.features.slice(0, 100) +
+                                            " See more...",
+                                        }}
+                                      />
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div className="row">
+                                  <div className="col-12"></div>
+                                </div>
                               </div>
                             </div>
                           </div>
-                        </div>
                         </div>
                       );
                     }
@@ -351,86 +351,86 @@ const getSingleMechanicdata = (_id) => {
                     ) {
                       return (
                         <div className="col-12 ">
-                        <div className="row border pt-3 pb-3">
-                          <div className="col-3 blankCol">
-                            <img
-                              class="service_itemImg"
-                              src={"http://144.91.110.221:3032/" + item.image}
-                              alt=""
-                            />
-                            <h5 className="text-dark text-center">
-                              <i class="bx bx-rupee"></i> 
-                            </h5>
-                          </div>
-                          <div className="col-9 blankCol">
-                            <div className="row">
-                              <div className="col-9 p-3">
-                                <h4 className="text-dark font-weight-bold">
-                                  {item.name}
-                                </h4>
-                              </div>
-                              <div className="col-3 badge TimeBg blankCol">
-                                <div className="">
-                                  <h6 className=" text-center p-1">
-                                    <i class="bx bx-time"></i>  hrs Taken
-                                  </h6>
-                                </div>
-                              </div>
-                              <div className="col-6 blankCol">
-                                <ul>
-                                  <li className="text-dark">                                    
-                                    1000 Kms or 1 Month Warranty
-                                  </li>
-                                </ul>
-                              </div>
-                              <div className="col-6 blankCol">
-                                <ul>
-                                  <li className="text-dark">
-                                    1000 Kms or 1 Month Warranty
-                                  </li>
-                                </ul>
-                              </div>
+                          <div className="row border pt-3 pb-3">
+                            <div className="col-3 blankCol">
+                              <img
+                                class="service_itemImg"
+                                src={"http://144.91.110.221:3032/" + item.image}
+                                alt=""
+                              />
+                              <h5 className="text-dark text-center font-weight-bold">
+                                <i class="bx bx-rupee"></i>
+                              </h5>
                             </div>
-                            <div className="container">
+                            <div className="col-9 blankCol">
                               <div className="row">
-                                <div className="col-6 blankCol">
-                                  <h5 className="text-dark">
-                                    <div
-                                      className="blogDescrption"
-                                      dangerouslySetInnerHTML={{
-                                        __html:
-                                          item.features.slice(0, 100) +
-                                          " See more...",
-                                      }}
-                                    />
-                                  </h5>
+                                <div className="col-9 p-3">
+                                  <h4 className="text-dark font-weight-bold">
+                                    {item.name}
+                                  </h4>
+                                </div>
+                                <div className="col-3 badge TimeBg blankCol">
+                                  <div className="">
+                                    <h6 className=" text-center p-1">
+                                      <i class="bx bx-time"></i> hrs Taken
+                                    </h6>
+                                  </div>
                                 </div>
                                 <div className="col-6 blankCol">
-                                  <h5 className="text-dark">
-                                    <div
-                                      className="blogDescrption"
-                                      dangerouslySetInnerHTML={{
-                                        __html:
-                                          item.features.slice(0, 100) +
-                                          " See more...",
-                                      }}
-                                    />
-                                  </h5>
+                                  <ul>
+                                    <li className="text-dark">
+                                      1000 Kms or 1 Month Warranty
+                                    </li>
+                                  </ul>
+                                </div>
+                                <div className="col-6 blankCol">
+                                  <ul>
+                                    <li className="text-dark">
+                                      1000 Kms or 1 Month Warranty
+                                    </li>
+                                  </ul>
                                 </div>
                               </div>
-                              <div className="row">
-                              <div className="col-4"></div>
-                              <div className="col-8  text-danger">
-                                  This service is not available for this mechanic
-                                
-                              </div>
-                            </div>
-                              {/* <div className="row border">
+                              <div className="container">
+                                <div className="row">
+                                  <div className="col-6 blankCol">
+                                    <h5 className="text-dark">
+                                      <div
+                                        className="blogDescrption"
+                                        dangerouslySetInnerHTML={{
+                                          __html:
+                                            item.features.slice(0, 100) +
+                                            " See more...",
+                                        }}
+                                      />
+                                    </h5>
+                                  </div>
+                                  <div className="col-6 blankCol">
+                                    <h5 className="text-dark">
+                                      <div
+                                        className="blogDescrption"
+                                        dangerouslySetInnerHTML={{
+                                          __html:
+                                            item.features.slice(0, 100) +
+                                            " See more...",
+                                        }}
+                                      />
+                                    </h5>
+                                  </div>
+                                </div>
+                                <div className="row">
+                                  <div className="col-4"></div>
+                                  <div className="col-8  text-danger">
+                                    This service is not available for this
+                                    mechanic
+                                  </div>
+                                </div>
+                                {/* <div className="row border">
                                 <div className="col-12"></div>
                               </div> */}
+                              </div>
                             </div>
                           </div>
-                        </div>
                         </div>
                       );
                     }
