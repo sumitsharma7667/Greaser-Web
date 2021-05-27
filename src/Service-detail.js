@@ -305,7 +305,7 @@ const getSingleMechanicdata = (_id) => {
                                     dangerouslySetInnerHTML={{
                                       __html:
                                         item.service.features.slice(0, 100) +
-                                        " See more...",
+                                        " ",
                                     }}
                                   />
                                 </h5>
@@ -317,7 +317,7 @@ const getSingleMechanicdata = (_id) => {
                                     dangerouslySetInnerHTML={{
                                       __html:
                                         item.service.features.slice(0, 100) +
-                                        " See more...",
+                                        " ",
                                     }}
                                   />
                                 </h5>
@@ -400,7 +400,7 @@ const getSingleMechanicdata = (_id) => {
                                         dangerouslySetInnerHTML={{
                                           __html:
                                             item.features.slice(0, 100) +
-                                            " See more...",
+                                            "",
                                         }}
                                       />
                                     </h5>
@@ -412,7 +412,7 @@ const getSingleMechanicdata = (_id) => {
                                         dangerouslySetInnerHTML={{
                                           __html:
                                             item.features.slice(0, 100) +
-                                            " See more...",
+                                            "",
                                         }}
                                       />
                                     </h5>
@@ -439,7 +439,7 @@ const getSingleMechanicdata = (_id) => {
             </div>
             </div>
             {/*Mechanic select card */}
-            <div className="col-4 blankCol">
+            <div className="col-4 blankCol MainMech">
               <div className="card mechanicCard ">
                 <div className="container">
                   <div className="row p-2">
