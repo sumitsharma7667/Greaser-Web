@@ -12,7 +12,10 @@ function Header(props) {
                 <i class="bx bxs-map"></i>
                 <div class="cta-text">
                   <h4>Find us</h4>
-                  <span>Ballupur Chowk, Dehradun</span>
+                  <span>
+                    222 Ghanshala Dental Care Ballupur <br /> Dehradun
+                    Uttarakhand
+                  </span>
                 </div>
               </div>
             </div>
@@ -21,7 +24,7 @@ function Header(props) {
                 <i class="bx bx-phone-call"></i>
                 <div class="cta-text">
                   <h4>Call us</h4>
-                  <span>98765432100</span>
+                  <span>7500872014</span>
                 </div>
               </div>
             </div>
@@ -66,13 +69,13 @@ function Header(props) {
                 </div>
                 <ul>
                   <li>
-                  <Link to="/Home">Home</Link>
+                    <Link to="/Home">Home</Link>
                   </li>
                   <li>
                     <Link to="/Services-Packages">Secvice Packages</Link>
                   </li>
                   <li>
-                  <Link to="/ContactUs">Contact us</Link>                    
+                    <Link to="/ContactUs">Contact us</Link>
                   </li>
                   {/* <li><a href="#">portfolio</a></li>
                             <li><a href="#">Contact</a></li> */}
@@ -145,13 +148,15 @@ function Header(props) {
                     <Link to="/Home">Home</Link>
                   </li>
                   <li>
-                    <Link to="#">Terms</Link>
+                    <Link to="/Terms">Terms</Link>
                   </li>
                   <li>
-                    <a href="#">Privacy Policy</a>
+                    <Link to="/PrivacyPolicy">Privacy Policy</Link>
                   </li>
                   <li>
-                    <a href="/ContactUs">Contact</a>
+                    <Link to="/ContactUs">
+                      Contact
+                    </Link>
                   </li>
                 </ul>
               </div>

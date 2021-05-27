@@ -177,7 +177,7 @@ const getSingleMechanicdata = (_id) => {
                               src={"http://144.91.110.221:3032/" + item.image}
                               alt=""
                             />
-                            <h5 className="text-dark text-center">
+                            <h5 className="text-dark text-center servicePrice">
                               <i class="bx bx-rupee"></i> 450
                             </h5>
                           </div>
@@ -188,9 +188,9 @@ const getSingleMechanicdata = (_id) => {
                                   {item.name}
                                 </h4>
                               </div>
-                              <div className="col-3 badge TimeBg blankCol">
+                              <div className="col-3  TimeBg blankCol">
                                 <div className="">
-                                  <h6 className=" text-center p-1">
+                                  <h6 className=" text-center timing">
                                     <i class="bx bx-time"></i> 4 hrs Taken
                                   </h6>
                                 </div>
@@ -238,7 +238,7 @@ const getSingleMechanicdata = (_id) => {
                                   </h5>
                                 </div>
                               </div>
-                              <div className="row border">
+                              <div className="row">
                                 <div className="col-12"></div>
                               </div>
                             </div>
@@ -258,7 +258,7 @@ const getSingleMechanicdata = (_id) => {
                             }
                             alt=""
                           />
-                          <h5 className="text-dark text-center">
+                          <h5 className="text-dark text-center servicePrice ">
                             <i class="bx bx-rupee"></i> {item.price}
                           </h5>
                         </div>
@@ -269,9 +269,9 @@ const getSingleMechanicdata = (_id) => {
                                 {item.service.name}
                               </h4>
                             </div>
-                            <div className="col-3 badge TimeBg blankCol">
+                            <div className="col-3  TimeBg blankCol">
                               <div className="">
-                                <h6 className=" text-center">
+                                <h6 className=" text-center timing">
                                   <i class="bx bx-time"></i> {item.time} hrs
                                   Taken
                                 </h6>
@@ -388,7 +388,7 @@ const getSingleMechanicdata = (_id) => {
                       <p className="">Based on 2000+ Reviews</p>
                     </div>
                     <div class="vl"></div>
-                    <div className="col-5 blankCol">
+                    <div className="col-5">
                       <h4 className=" text-center">25,000+</h4>
                       <p className=" text-center">Happy customers</p>
                     </div>
