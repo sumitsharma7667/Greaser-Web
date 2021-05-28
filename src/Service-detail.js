@@ -157,10 +157,7 @@ function ServiceDetail() {
               <div className="row ">
                 {SingleMechanicdata == ""
                   ? AllServices.map((item, index) => {
-                      if (
-                        item.service_type._id ==
-                        ServiceTypeId
-                      ) {
+                      if (item.service_type._id == ServiceTypeId) {
                         return (
                           <div className="col-12 ">
                             <div className="row border pt-3 pb-3">
@@ -345,8 +342,7 @@ function ServiceDetail() {
                 {SingleMechanicdata != ""
                   ? AllServices.map((item, index) => {
                       if (
-                        item.service_type._id ==
-                          ServiceTypeId &&
+                        item.service_type._id == ServiceTypeId &&
                         !JSON.stringify(SingleMechanicdata).includes(
                           item._id
                         ) &&
@@ -504,7 +500,127 @@ function ServiceDetail() {
               {/* Mechanoc List start */}
               <div className="mechanicBox border p-2 ">
                 <div className="container-fluid">
+                  <div className="pt-1 pb-2">
+                    <h4 className="text-dark text-center">Mechanics</h4>
+                  </div>
                   <div className="row">
+                    <div className="col-6 pl-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12 blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6 pr-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-6 pl-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12 blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6 pr-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div className="col-6 pl-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12 blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="col-6 pr-0 blankCol">
+                      <div class="card  mechlistCard">
+                        <div className="co-12blankCol">
+                          <img
+                            src={require("./Images/profileMech.jpg").default}
+                            className=""
+                            style={{ height: "100px", width: "100%" }}
+                            alt="logo icon"
+                          />
+                        </div>
+                        <hr />
+                        <div className="col-12 pl-0 pr-0 blankCol">
+                          <h5 className="text-center">Sumit Sharma</h5>
+                        </div>
+                        <div className="col-12 blankCol">
+                          <h5 className="text-center">4 yrs exp</h5>
+                        </div>
+                      </div>
+                    </div>
+
                     <div className="col-6 pl-0 blankCol">
                       <div class="card  mechlistCard">
                         <div className="co-12 blankCol">

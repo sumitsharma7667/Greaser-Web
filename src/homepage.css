@@ -2154,6 +2154,31 @@ font-size: 30px;
   border-radius: 5px;
   background-color: #fff;
 }
+.mechanicBox{
+  overflow: scroll;
+  height: 700px;
+}
+
+.mechanicBox::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.mechanicBox::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+.mechanicBox::-webkit-scrollbar-thumb {
+  background: #322170;
+}
+
+/* Handle on hover */
+.mechanicBox::-webkit-scrollbar-thumb:hover {
+  background: #322170;
+}
+
+
 .mechlistCard{
   background: linear-gradient(to top, #6441a5, #2a0845);
 }
