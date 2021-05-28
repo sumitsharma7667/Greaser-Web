@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { Router, Route, Switch, Redirect } from "react-router-dom";
+import history from './history';
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
@@ -39,7 +40,7 @@ const AppRoute = ({ component: Component, layout: Layout, ...rest }) => (
 );
 
 ReactDOM.render(
-  <BrowserRouter>
+  <Router history={history}>
     <Switch>
       <AppRoute path="/brand" layout={App} component={CreateBrands} />
       <AppRoute path="/service" layout={App} component={CreateService} />
@@ -71,7 +72,7 @@ ReactDOM.render(
       </Route>
 
       <Route
-        path="/Services-detail/:ServiceTypeId/:ServiceTypeName"
+        path="/Services-detail"
         component={ServicesDetail}
       />
 
@@ -88,7 +89,7 @@ ReactDOM.render(
         <Home />
       </Route>
     </Switch>
-  </BrowserRouter>,
+  </Router>,
   document.getElementById("root")
 );
 

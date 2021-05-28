@@ -6,6 +6,7 @@ const [mobile, setmobile] = useState(8126273523);
 const [password, setpassword] = useState();
 const [passwordSecure, setpasswordSecure] = useState(true);
 const [visible, setvissible] = useState(false);
+const [Access,setAccess]=useState(localStorage.getItem("username"))
 const Loginuser = () => {
   fetch("http://144.91.110.221:3032/usersignin", {
     method: "POST",
@@ -23,9 +24,11 @@ const Loginuser = () => {
       try {
         const Userid = user.userid;
         await localStorage.setItem("userid", user.user._id);
-        await localStorage.setItem("username", user.user.fullname);
+        await localStorage.setItem("username", user.user.fullname);        
         await localStorage.setItem("role", user.user.role);
-        window.location.href = "/Services-Packages";
+        window.location.reload()
+        // window.location.href = "/Services-Packages";
+        setAccess(localStorage.getItem("username"))
       } catch (e) {
         alert("invalid user name or password");
         console.log(e);
@@ -80,8 +83,7 @@ const Loginuser = () => {
             <Link className="text-white">
               <i
                 class="bx bx-log-in"
-                data-toggle="modal"
-                data-target="#exampleModal"
+                data-toggle="modal" data-target="#myModal"
               ></i>
             </Link>
           </span>
@@ -105,7 +107,109 @@ const Loginuser = () => {
           </span>
         )}
       </nav>
-      <div class="modal fade " id="exampleModal" role="dialog">
+
+
+       {/* Modal  */}
+<div id="myModal" class="modal fade text-dark" role="dialog">
+  <div class="modal-dialog">
+
+     {/* Modal content */}
+    <div class="modal-content model-sm login_form">
+      <div class=" pt-3 pr-4">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body  ">
+            <div class="card-body">
+              <div class="card-content">
+                <div class="text-center ">
+                  <img
+                    src={require("./Images/Glogo.png").default}
+                    style={{ height: "150px", objectFit: "contain" }}
+                    alt="logo icon"
+                    className=""
+                  />
+                </div>
+                <div class="card-title text-uppercase text-center">Sign In</div>
+
+                <div class="form-group w-100">
+                  <label for="exampleInputUsername" class="sr-only">
+                    Username
+                  </label>
+                  <div class="position-relative has-icon-right text-dark">
+                    <input
+                      type="text"
+                      id="exampleInputUsername"
+                      class="form-control input-shadow inputBG"
+                      placeholder="Enter Mobile No"
+                      onChange={(e) => {
+                        setmobile(e.target.value);
+                      }}
+                    />
+                    <div class="form-control-position">
+                      <i class="icon-user"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group w-100">
+                  <label for="exampleInputPassword" class="sr-only">
+                    Password
+                  </label>
+                  <div class="position-relative has-icon-right text-dark">
+                    <input
+                      type="password"
+                      id="exampleInputPassword"
+                      class="form-control input-shadow inputBG"
+                      placeholder="Enter Password"
+                      onChange={(e) => {
+                        setpassword(e.target.value);
+                      }}
+                    />
+                    <div class="form-control-position">
+                      <i class="icon-lock"></i>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-6">
+                    <div class="icheck-material-white">
+                      <input
+                        type="checkbox"
+                        class="check_box"
+                        id="user-checkbox"
+                        checked=""
+                      />
+                    </div>
+                  </div>
+                  
+                </div>
+                <button
+                  type="button"
+                  class="btn btn-light btn-block"
+                  style={{ background: "#531a82" }}
+                  onClick={() => {
+                    Loginuser();
+                  }}
+                >
+                  Sign In
+                </button>
+              </div>
+            </div>
+            <div class="card-footer text-center py-3">
+              <p class="text-warning mb-0">
+                Do not have an account? <a href="#"> Sign Up here</a>
+              </p>
+            </div>
+      </div>
+      {/* <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div> */}
+    </div>
+
+  </div>
+</div>
+
+
+      {/* <div class="modal fade " id="exampleModal" role="dialog">
         <div className=" login_formcol blankCol ">
           <div class="card-authentication1 mx-auto login_form ">
             <div class="card-body">
@@ -168,14 +272,10 @@ const Loginuser = () => {
                         id="user-checkbox"
                         checked=""
                       />
-                      {/* <label for="user-checkbox" class="text-white">
-                            Remember me
-                          </label> */}
+                      
                     </div>
                   </div>
-                  {/* <div class="form-group col-6 text-right text-white">
-                        <a href="reset-password.html">Reset Password</a>
-                      </div> */}
+                  
                 </div>
                 <button
                   type="button"
@@ -196,7 +296,7 @@ const Loginuser = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }
