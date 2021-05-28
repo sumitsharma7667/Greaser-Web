@@ -360,7 +360,7 @@ function Home(props) {
           <div class="listar-map-button">
             <div
               class="listar-map-button-text"
-              style={{ display: "inline-block", opacity: 1 }}
+              style={{ display: "inline-block", opacity: 1, top:"75px", position:"relative" }}
             >
               <span class="icon-map2">How it Works? </span>
             </div>
