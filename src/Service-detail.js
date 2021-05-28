@@ -25,7 +25,7 @@ const responsive = {
   },
 };
 let userid;
-function ServiceDetail(props) {
+function ServiceDetail() {
   const [AllServices, SetAllService] = useState([]);
   const [MechanicData, setdata] = useState([]);
   const [MechanicServiceId, setMechanicServiceId] = useState([]);
@@ -33,6 +33,9 @@ function ServiceDetail(props) {
   const [MechanicRealServiceId, setRealServiceId] = useState();
 
   const [SingleMechanicdata, SetSingleMechanicdata] = useState([]);
+
+  const ServiceTypeId=localStorage.getItem("ServiceTypeId")
+  const ServiceTypeName  = localStorage.getItem("ServiceTypeName")
 
   useEffect(() => {
     GetServices();
@@ -142,7 +145,7 @@ function ServiceDetail(props) {
         <div class="service_overlay">
           <div class="section-large-text-inner">
             <h3>Service</h3>
-            <h2>{props.match.params.ServiceTypeName}</h2>
+            <h2>{ServiceTypeName}</h2>
           </div>
         </div>
       </section>
@@ -156,7 +159,7 @@ function ServiceDetail(props) {
                   ? AllServices.map((item, index) => {
                       if (
                         item.service_type._id ==
-                        props.match.params.ServiceTypeId
+                        ServiceTypeId
                       ) {
                         return (
                           <div className="col-12 ">
@@ -343,7 +346,7 @@ function ServiceDetail(props) {
                   ? AllServices.map((item, index) => {
                       if (
                         item.service_type._id ==
-                          props.match.params.ServiceTypeId &&
+                          ServiceTypeId &&
                         !JSON.stringify(SingleMechanicdata).includes(
                           item._id
                         ) &&
@@ -587,7 +590,7 @@ export default ServiceDetail;
 //                       if (item.user != undefined && item.service != undefined) {
 //                         if (
 //                           item.service.service_type._id ==
-//                           props.match.params.ServiceTypeId
+//                           ServiceTypeId
 //                         ) {
 //                           return (
 //                             <option value={item.user._id}>
