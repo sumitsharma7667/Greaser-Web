@@ -3,7 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import $ from "jquery";
 import logo from "./logo.svg";
-import { Link } from "react-router-dom";
+import { Link,useHistory} from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 const responsive = {
@@ -25,6 +25,8 @@ const responsive = {
 };
 
 function Services(props) {
+  const history = useHistory()
+
   const[AllServices,SetAllService]=useState([])
   const [AllServicesType,SetAllServiceType]=useState([])
   useEffect(()=>{
@@ -48,6 +50,11 @@ function Services(props) {
             SetAllService(data)
         })
         .then(err => console.log(err))
+    }
+    const setRedirection =(id,name)=>{
+      localStorage.setItem("ServiceTypeId",id)
+      localStorage.setItem("ServiceTypeName",name)
+      history.push('/Services-detail')
     }
   return (
     <>
@@ -75,7 +82,7 @@ function Services(props) {
               {AllServicesType.map((item, index) => {
                 return (
                   <div className="SecondSectionCard w-100 col-2 blankCol">
-                    <Link to={"/Services-detail/" + item._id + "/" + item.name}>
+                    <Link onClick={()=>{setRedirection(item._id,item.name)}}>
                       <div className="homepage-card">
                         <img
                           src={"http://144.91.110.221:3032/" + item.image}

@@ -3,6 +3,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./logo.svg";
 import { Link } from "react-router-dom";
+import { useParams } from 'react-router-dom'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SingleService from "./SingleService";
@@ -30,13 +31,18 @@ function ServiceDetail(props) {
   const [MechanicServiceId,setMechanicServiceId]=useState([])
   const [MechanicUserId,setMechanicUserId]=useState([])
   const [MechanicRealServiceId,setRealServiceId]=useState()
-  
   const [SingleMechanicdata,SetSingleMechanicdata]=useState([])
-  
-  
+
+  const [Access,setAccess]=useState(localStorage.getItem("username"))
+
+  const ServiceTypeId=localStorage.getItem("ServiceTypeId")
+  const ServiceTypeName  = localStorage.getItem("ServiceTypeName")
+    
   useEffect(() => {
     GetServices();
     getdata()
+
+    setAccess(localStorage.getItem("username"))
   }, []);
 
   let SetChoosedMechanic =(data)=>{
@@ -154,7 +160,7 @@ const getSingleMechanicdata = (_id) => {
         <div class="service_overlay">
           <div class="section-large-text-inner">
             <h3>Service</h3>
-            <h2>{props.match.params.ServiceTypeName}</h2>
+            <h2>{ServiceTypeName}</h2>
           </div>
         </div>
       </section>
@@ -167,7 +173,7 @@ const getSingleMechanicdata = (_id) => {
               {SingleMechanicdata == ""
                 ? AllServices.map((item, index) => {
                     if (
-                      item.service_type._id == props.match.params.ServiceTypeId
+                      item.service_type._id == ServiceTypeId
                     ) {
                       return (
                         <div className="col-12 ">
@@ -326,15 +332,24 @@ const getSingleMechanicdata = (_id) => {
                             <div className="row">
                               <div className="col-6"></div>
                               <div className="col-6 ChooseMechBTn blankCol">
+                              {Access == "" ? 
+                                <button
+                                className="btn btn-info btn-sm"
+                                data-toggle="modal" data-target="#myModal"
+                                onCh
+                                >
+                                ADD TO CAR
+                                </button>
+                              :                              
                                 <button
                                   className="btn btn-info btn-sm"
                                   onClick={() => {
                                     Addtocart(item._id,item.user._id);
                                   }}
                                 >
-                                  {" "}
                                   ADD TO CART
                                 </button>
+                }
                               </div>
                             </div>
                           </div>
@@ -347,7 +362,7 @@ const getSingleMechanicdata = (_id) => {
                   {SingleMechanicdata != "" ? 
                    AllServices.map((item, index) => {
                     if (
-                      item.service_type._id == props.match.params.ServiceTypeId && (!JSON.stringify(SingleMechanicdata).includes(item._id)) && (!JSON.stringify(SingleMechanicdata).includes(item.name))
+                      item.service_type._id == ServiceTypeId && (!JSON.stringify(SingleMechanicdata).includes(item._id)) && (!JSON.stringify(SingleMechanicdata).includes(item.name))
                     ) {
                       return (
                         <div className="col-12 ">
@@ -474,7 +489,7 @@ const getSingleMechanicdata = (_id) => {
                       if (item.user != undefined && item.service != undefined) {
                         if (
                           item.service.service_type._id ==
-                          props.match.params.ServiceTypeId
+                          ServiceTypeId
                         ) {
                           return (
                             <option value={item.user._id}>

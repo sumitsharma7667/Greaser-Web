@@ -5,7 +5,7 @@ import $ from "jquery";
 import "./homepage.css";
 import "./widget.css";
 import logo from "./logo.svg";
-import { Link } from "react-router-dom";
+import { Link,Redirect,useHistory } from "react-router-dom";
 
 function Home(props) {
   if(localStorage.getItem('username')==undefined){
@@ -13,14 +13,15 @@ function Home(props) {
    localStorage.setItem('username', '')
    localStorage.setItem('role', '')
   }
-
+  const history = useHistory()
   const [AllBrand, SetAllBrand] = useState([]);
   const [AllModal, SetAllVehicle] = useState([]);
 
   const [Brand, SetBrand] = useState([]);
   const [Modal, SetModal] = useState([]);
   const [Type, SetType] = useState([]);
-  const [AllServicesType,SetAllServiceType]=useState([])
+  const [AllServicesType,SetAllServiceType]=useState([])  
+  
 
   useEffect(() => {
     $(document).ready(function () {
@@ -99,6 +100,7 @@ function Home(props) {
     GetBrand();
     GetVehicle();
     GetServiceType();
+    
   }, []);
 
   const GetServiceType = () => {
@@ -131,7 +133,12 @@ function Home(props) {
       })
       .then((err) => console.log(err));
   };
-
+const setRedirection =(id,name)=>{
+  
+  localStorage.setItem("ServiceTypeId",id)
+  localStorage.setItem("ServiceTypeName",name)
+  history.push('/Services-detail')
+}
   return (
     <>
       <Header />
@@ -336,7 +343,7 @@ function Home(props) {
               {AllServicesType.map((item, index) => {
                 return (
                   <div className="SecondSectionCard w-100 col-2">
-                    <Link to={"/Services-detail/" + item._id + "/" + item.name}>
+                    <Link onClick={()=>{setRedirection(item._id,item.name)}}>
                       <div className="homepage-card">
                         <img
                           src={"http://144.91.110.221:3032/" + item.image}
