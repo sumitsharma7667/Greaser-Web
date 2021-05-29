@@ -1917,6 +1917,11 @@ header .footer-wave {
 , rgb(227 1 212) -120%, rgb(50 33 112) 64%);
 }
 /* form Css Cart page  */
+.DetailsHead{
+  background: #f0f0f0;
+  height: 50px;
+  padding: 15px;
+}
 .formfield{
   position: relative;
   box-sizing: border-box;
@@ -1935,12 +1940,16 @@ header .footer-wave {
 #addressfield{
   width: 100%;
 }
-.PaymentBtn{
-  align-items: center;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    top: 15px;
+.CartPageBtn{
+ background: linear-gradient(to top, #6441a5, #2a0845) !important;
+}
+.applyCouponBtn{
+  background: rgba(0, 0, 0, 0) !important;
+  border-color: #000 !important;
+  color: #000;
+}
+.applyCouponBtn:hover{
+  background: linear-gradient(to top, #6441a5, #2a0845) !important;
 }
 .checkBoxalignment{
   left: 25px;
@@ -2121,7 +2130,11 @@ font-size: 30px;
 }
 .vl {
   border-left: 2px solid #edecf1;
-  height: 90px;
+      border-left: 2px solid #edecf1;
+    height: 900px;
+    position: relative;
+    top: 20px;
+    bottom: 20px;
 }
 .mechanicCard{
   background: #fff !important;
