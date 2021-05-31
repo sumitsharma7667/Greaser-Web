@@ -69,7 +69,6 @@ const ServiceType =()=>{
     }
 
     // data table
-
     const data =[];
     {AllServicesType.map((item,index)=>{
     data.push( {"sr_no":index+1,"name":item.name,"image":<img src={"http://144.91.110.221:3032/" + item.image} style={{ height: '100px' }} />,"action":<span><button className="btn btn-secondary" onClick={()=>{EditObj(item)}}> Edit</button> </span>})

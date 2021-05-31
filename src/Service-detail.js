@@ -33,6 +33,7 @@ function ServiceDetail() {
   const [MechanicRealServiceId, setRealServiceId] = useState();
 
   const [SingleMechanicdata, SetSingleMechanicdata] = useState([]);
+  const [AllModal, SetAllVehicle] = useState([]);
 
   const ServiceTypeId=localStorage.getItem("ServiceTypeId")
   const ServiceTypeName  = localStorage.getItem("ServiceTypeName")
@@ -40,6 +41,7 @@ function ServiceDetail() {
   useEffect(() => {
     GetServices();
     getdata();
+    GetVehicle()
   }, []);
 
   let SetChoosedMechanic = (data) => {
@@ -49,6 +51,16 @@ function ServiceDetail() {
     setMechanicServiceId(id);
     setMechanicUserId(user_id);
     setRealServiceId(RealServiceId);
+  };
+  const GetVehicle = async () => {
+    // brandid=await AsyncStorage.getItem('vehiclebrand')
+    fetch("http://144.91.110.221:3032/GetVehicle")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Brands " + data);
+        SetAllVehicle(data);
+      })
+      .then((err) => console.log(err));
   };
   const Addtocart = async (_id, m_id) => {
     var id = await localStorage.getItem("userid");
@@ -469,6 +481,9 @@ function ServiceDetail() {
                     </div>
                   </div>
                   <hr />
+                  {AllModal.map((item, index) => {
+                                      if (item.manufacturer.name == localStorage.getItem("manufacturer") && item.name == localStorage.getItem("modal"))
+                                        return (
                   <div className="row mb-2 p-2">
                     {/* Change car column */}
                     {/* <div className="col-12">
@@ -479,7 +494,8 @@ function ServiceDetail() {
                     {/* Car image Column */}
                     <div className="col-12 blankCol">
                       <img
-                        src={require("./Images/transparent.png").default}
+                        src={"http://144.91.110.221:3032/" + item.image}
+                        // style={{ height: "150px", width: "150px" }}
                         className=""
                         style={{ height: "200px", width: "100%" }}
                         alt="logo icon"
@@ -492,9 +508,9 @@ function ServiceDetail() {
                             className="text-dark"
                             style={{ fontSize: "1.25rem" }}
                           >
-                            Hyundai i20
+                            {item.manufacturer.name} {item.name}
                           </h4>
-                          <h6 className="FuelType text-dark">Petrol</h6>
+                          <h6 className="FuelType text-dark">{localStorage.getItem("type")}</h6>
                         </div>
                       </div>
                       <div className="col-4 pr-0 blankCol">
@@ -502,8 +518,13 @@ function ServiceDetail() {
                       </div>
                     </div>
                   </div>
+                   )}
+                   )
+                                       }
                 </div>
               </div>
+                                       
+
               {/* Mechanoc List start */}
               <div className="mechanicBox border p-2 ">
                 <div className="container-fluid">

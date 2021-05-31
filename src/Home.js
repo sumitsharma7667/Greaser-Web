@@ -134,7 +134,12 @@ function Home(props) {
       .then((err) => console.log(err));
   };
 const setRedirection =(id,name)=>{
+  // alert(id)
+  localStorage.setItem("manufacturer",Brand)
+  localStorage.setItem("modal",Modal)
+  localStorage.setItem("type",Type)
   
+
   localStorage.setItem("ServiceTypeId",id)
   localStorage.setItem("ServiceTypeName",name)
   history.push('/Services-detail')
@@ -199,6 +204,7 @@ const setRedirection =(id,name)=>{
                                   >
                                     <option value="">Manufacturer...</option>
                                     {AllBrand.map((item, index) => {
+                                      if(item.status==0)
                                       return (
                                         <option className="" value={item.name}>
                                           {item.name}
@@ -279,9 +285,9 @@ const setRedirection =(id,name)=>{
                        <input type="mobile" placeholder="Enter your mobile number" class="form-control" required /> 
                       </div> */}
 
-                                <div class="next-button text-center mt-3 ml-2">
+                                <div class="next-button text-center mt-3 ml-2" onClick={()=>{setRedirection("6094d5427362100a2387c7c2","Periodic Service")}}>
                                   {" "}
-                                  <span class="fa fa-arrow-right"></span>{" "}
+                                  <span class="fa fa-arrow-right" ></span>{" "}
                                 </div>
                               </div>
                             </div>
