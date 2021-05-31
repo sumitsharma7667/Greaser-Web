@@ -346,7 +346,7 @@ function ServiceDetail() {
                                         Addtocart(item._id, item.user._id);
                                       }}
                                     >
-                                    }                                    
+                                                                        
                                       ADD TO CART
                                     </button>
                   }

@@ -46,6 +46,7 @@ function Cart(props) {
         // contexdata.getcounts()
       });
   };
+  
   SubTotal = 0;
   GradndTotal = 0;
   return (
@@ -60,14 +61,16 @@ function Cart(props) {
                   <h5 className="text-dark">DETAILS</h5>
                 </div>
                 <div className="col-6 blankCol">
-                  <h5 className="text-dark text-right">
+                  {/* <h5 className="text-dark text-right">
                     *This is an Accordian
-                  </h5>
+                  </h5> */}
                 </div>
               </div>
               <div className="row mb-2 mt-2 p-3">
                 <div className="col-12 blankCol">
-                  <h5 className="text-dark">PERSONAL INFORMATION</h5>
+                  <h5 className="text-dark font-weight-bold">
+                    PERSONAL INFORMATION
+                  </h5>
                 </div>
               </div>
               <form className="mb-2">
@@ -76,68 +79,67 @@ function Cart(props) {
                     <input
                       type="text"
                       placeholder="First Name*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Last Name*"
-                      className="w-100 form-control "
+                      className="w-100 form-control CartInput "
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Mobile*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Email*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-12 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Address*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Landmark*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="Postal*"
-                      className="w-100 form-control p-2"
+                      className="w-100 form-control p-2 CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="City*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                   <div className="col-6 blankCol p-2">
                     <input
                       type="text"
                       placeholder="State*"
-                      className="w-100 form-control"
+                      className="w-100 form-control CartInput"
                     />
                   </div>
                 </div>
               </form>
-              <hr />
               <div className="row mt-3 mb-3 p-2">
                 <div className="col-12 text-right">
                   <button className="btn btn-primary CartPageBtn">
@@ -145,51 +147,56 @@ function Cart(props) {
                   </button>
                 </div>
               </div>
-              <div className="row mt-3 mb-3 DetailsHead">
-                <div className="col-6 blankCol">
-                  <h5 className="text-dark">SCHEDULE YOUR BOOKINGS</h5>
-                </div>
-                <div className="col-6 blankCol">
-                  <h5 className="text-dark text-right">
-                    *This is an Accordian
-                  </h5>
-                </div>
-              </div>
-              <div className="row mb-2 mt-2 p-3">
-                <div className="col-12 blankCol">
-                  <h5 className="text-dark">BOOKING INFORMATION</h5>
-                </div>
-              </div>
-              <div className="row pl-3">
-                <div className="col-12 blankCol p-2">
-                  <label className="text-dark">Please enter Time</label>
-                  <input
-                    type="time"
-                    id="appt"
-                    name="appt"
-                    min="09:00"
-                    max="18:00"
-                    placeholder="Please enter Time"
-                    className="w-50 form-control"
-                  />
-                </div>
-                <div className="col-12 blankCol p-2">
-                  <label className="text-dark">Please Select date</label>
-                  <input
-                    type="date"
-                    placeholder="Date*"
-                    className="w-50 form-control "
-                  />
-                </div>
-              </div>
               <hr />
-              <div className="row mt-3 mb-3 p-2">
+              <div id="BookingSect">
+                <div className="row mt-4 mb-3 DetailsHead">
+                  <div className="col-6 blankCol">
+                    <h5 className="text-dark">SCHEDULE YOUR BOOKINGS</h5>
+                  </div>
+                  <div className="col-6 blankCol">
+                    <h5 className="text-dark text-right">
+                      *This is an Accordian
+                    </h5>
+                  </div>
+                </div>
+                <div className="row mb-2 mt-2 p-3">
+                  <div className="col-12 blankCol">
+                    <h5 className="text-dark font-weight-bold">
+                      BOOKING INFORMATION
+                    </h5>
+                  </div>
+                </div>
+                <div className="row pl-3 mb-4">
+                  <div className="col-12 blankCol p-2">
+                    <label className="text-dark">Please enter Time</label>
+                    <input
+                      type="time"
+                      id="appt"
+                      name="appt"
+                      min="09:00"
+                      max="18:00"
+                      placeholder="Please enter Time"
+                      className="w-50 form-control"
+                    />
+                  </div>
+                  <div className="col-12 blankCol p-2">
+                    <label className="text-dark">Please Select date</label>
+                    <input
+                      type="date"
+                      placeholder="Date*"
+                      className="w-50 form-control "
+                    />
+                  </div>
+                </div>
+              </div>
+              {/* <hr /> */}
+              {/* <div className="row mt-3 mb-3 p-2">
                 <div className="col-12 text-right">
                   <button className="btn btn-primary CartPageBtn">
                     Confirm
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
             <div className="col-1 blankCol alignmentCol pr-0 pl-0">
               <div className="vl"></div>
@@ -223,9 +230,21 @@ function Cart(props) {
                   </div>
                 </div>
                 <div className="col-12 mt-3 mb-3">
-                  <button className="btn btn-primary w-100 applyCouponBtn">
+                  {/* <button className="btn btn-primary w-100 applyCouponBtn">
                     Apply Coupon
-                  </button>
+                  </button> */}
+                  <div class="applyCouponBtn d-flex">
+                    
+                      <input
+                        type="text"
+                        placeholder="Appy Coupn"
+                        className="CartInput form-control w-80"
+                      />
+                      <button style={{border:"none", width:"60px", background: "#583692"}} >
+                        <i class="bx bxl-telegram text-white" style={{fontSize:"22px"}}></i>
+                      </button>
+                    
+                  </div>
                 </div>
               </div>
 
@@ -262,6 +281,7 @@ function Cart(props) {
                     </h6>
                   </div>
                 </div>
+                <hr className="w-100" />
                 <div className=" row  w-100 p-2">
                   <div className="col-6">
                     <h6 className="text-dark">Total</h6>

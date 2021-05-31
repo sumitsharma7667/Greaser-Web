@@ -1945,11 +1945,16 @@ header .footer-wave {
 }
 .applyCouponBtn{
   background: rgba(0, 0, 0, 0) !important;
-  border-color: #000 !important;
+  border-color: #5f3c9d !important;
   color: #000;
 }
+.CartInput{
+  height: calc(2.5em + .75rem + 2px) !important;
+  border-radius: 0;
+}
 .applyCouponBtn:hover{
-  background: linear-gradient(to top, #6441a5, #2a0845) !important;
+  background: rgba(0, 0, 0, 0) !important;
+  color: #000;
 }
 .checkBoxalignment{
   left: 25px;
