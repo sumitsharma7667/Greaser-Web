@@ -35,13 +35,13 @@ function ServiceDetail() {
   const [SingleMechanicdata, SetSingleMechanicdata] = useState([]);
   const [AllModal, SetAllVehicle] = useState([]);
 
-  const ServiceTypeId=localStorage.getItem("ServiceTypeId")
-  const ServiceTypeName  = localStorage.getItem("ServiceTypeName")
+  const ServiceTypeId = localStorage.getItem("ServiceTypeId");
+  const ServiceTypeName = localStorage.getItem("ServiceTypeName");
 
   useEffect(() => {
     GetServices();
     getdata();
-    GetVehicle()
+    GetVehicle();
   }, []);
 
   let SetChoosedMechanic = (data) => {
@@ -64,7 +64,7 @@ function ServiceDetail() {
   };
   const Addtocart = async (_id, m_id) => {
     var id = await localStorage.getItem("userid");
-    
+
     fetch("http://144.91.110.221:3032/cartbyid", {
       method: "POST",
       headers: {
@@ -119,7 +119,6 @@ function ServiceDetail() {
   };
 
   const getSingleMechanicdata = (_id) => {
-    
     if (_id == "") {
       SetSingleMechanicdata([]);
       return true;
@@ -162,7 +161,7 @@ function ServiceDetail() {
       </section>
       {/* Card Section */}
       <section className="pt-5 pb-5" style={{ backgroundColor: "#fff" }}>
-        <div class="container-fluid CheckOut_CONT">
+        <div class="container-fluid" style={{ width: "95%" }}>
           <div class="row">
             <div className="col-8  p-2 blankCol ">
               <div className="row ">
@@ -170,8 +169,11 @@ function ServiceDetail() {
                   ? AllServices.map((item, index) => {
                       if (item.service_type._id == ServiceTypeId) {
                         return (
-                          <div className="col-12 ">
-                            <div className="row border pt-3 pb-3">
+                          <div
+                            className="col-12 Card serviceCard "
+                            style={{ background: "#fff" }}
+                          >
+                            <div className="row pt-1 ">
                               <div className="col-3 blankCol">
                                 <img
                                   class="service_itemImg"
@@ -180,23 +182,13 @@ function ServiceDetail() {
                                   }
                                   alt=""
                                 />
-                                <h5 className="text-dark text-center font-weight-bold">
-                                  <i class="bx bx-rupee"></i>
-                                </h5>
                               </div>
                               <div className="col-9 blankCol">
                                 <div className="row">
-                                  <div className="col-9 p-3">
-                                    <h4 className="text-dark font-weight-bold">
+                                  <div className="col-9 ">
+                                    <h4 className="text-dark font-weight-bold text-center">
                                       {item.name}
                                     </h4>
-                                  </div>
-                                  <div className="col-3  TimeBg blankCol">
-                                    <div className="">
-                                      <h6 className=" text-center p-1">
-                                        <i class="bx bx-time"></i> hrs Taken
-                                      </h6>
-                                    </div>
                                   </div>
                                   <div className="col-6 blankCol">
                                     <ul>
@@ -241,11 +233,22 @@ function ServiceDetail() {
                                       </h5>
                                     </div>
                                   </div>
-                                  <div className="row">
-                                    <div className="col-12"></div>
-                                  </div>
                                 </div>
                               </div>
+                            </div>
+                            <div className="row pb-1">
+                              <div className="col-3">
+                                <h5
+                                  className="text-white text-center font-weight-bold servicePrice"
+                                  style={{
+                                    marginTop: "0px",
+                                    marginBottom: "0px",
+                                  }}
+                                >
+                                  <i class="bx bx-rupee"></i>
+                                </h5>
+                              </div>
+                              <div className="col-6"></div>
                             </div>
                           </div>
                         );
@@ -253,8 +256,8 @@ function ServiceDetail() {
                     })
                   : SingleMechanicdata.map((item, index) => {
                       return (
-                        <div className="col-12 ">
-                          <div className="row border pt-3 pb-3">
+                        <div className="col-12 card ">
+                          <div className="row  pt-1 ">
                             <div className="col-3 blankCol">
                               <img
                                 class="service_itemImg"
@@ -264,14 +267,11 @@ function ServiceDetail() {
                                 }
                                 alt=""
                               />
-                              <h5 className="text-dark text-center servicePrice ">
-                                <i class="bx bx-rupee"></i> {item.price}
-                              </h5>
                             </div>
                             <div className="col-9 blankCol">
                               <div className="row">
-                                <div className="col-9 p-3">
-                                  <h4 className="text-dark font-weight-bold">
+                                <div className="col-9">
+                                  <h4 className="text-dark font-weight-bold text-center">
                                     {item.service.name}
                                   </h4>
                                 </div>
@@ -330,29 +330,45 @@ function ServiceDetail() {
                                     </h5>
                                   </div>
                                 </div>
-                                <div className="row">
-                                  <div className="col-6"></div>
-                                  <div className="col-6 ChooseMechBTn blankCol">
-                                    {localStorage.getItem("userid") =="" ?   <button
-                                      data-toggle="modal" data-target="#myModal" className="btn btn-info btn-sm"
-                                     
-                                    >
-                                      ADD TO CART
-                                    </button> 
-                                    :
-                                    <button
-                                      className="btn btn-info btn-sm"
-                                      onClick={() => {
-                                        Addtocart(item._id, item.user._id);
-                                      }}
-                                    >
-                                                                        
-                                      ADD TO CART
-                                    </button>
-                  }
-                                  </div>
-                                </div>
                               </div>
+                            </div>
+                          </div>
+                          <div className="row pb-1">
+                            <div className="col-3 blankCol">
+                              <h5
+                                className="text-white text-center servicePrice"
+                                style={{
+                                  background: "#322170",
+                                  marginTop: "0px",
+                                  marginBottom: "0px",
+                                }}
+                              >
+                                <i class="bx bx-rupee"></i> {item.price}
+                              </h5>
+                            </div>
+                            {/* add cart button */}
+                            <div className="col-9  blankCol pr-0">
+                              {localStorage.getItem("userid") == "" ? (
+                                <div className="text-right">
+                                  <button
+                                    data-toggle="modal"
+                                    data-target="#myModal"
+                                    className="btn btn-info btn-sm addCartBtn"
+                                  >
+                                    <i class="bx bxs-cart-add"></i>
+                                    ADD TO CART
+                                  </button>
+                                </div>
+                              ) : (
+                                <button
+                                  className="btn btn-info btn-sm addCartBtn"
+                                  onClick={() => {
+                                    Addtocart(item._id, item.user._id);
+                                  }}
+                                >
+                                  ADD TO CART
+                                </button>
+                              )}
                             </div>
                           </div>
                         </div>
@@ -368,8 +384,8 @@ function ServiceDetail() {
                         !JSON.stringify(SingleMechanicdata).includes(item.name)
                       ) {
                         return (
-                          <div className="col-12 ">
-                            <div className="row border pt-3 pb-3">
+                          <div className="col-12 Card serviceCard ">
+                            <div className="row ">
                               <div className="col-3 blankCol">
                                 <img
                                   class="service_itemImg"
@@ -378,20 +394,17 @@ function ServiceDetail() {
                                   }
                                   alt=""
                                 />
-                                <h5 className="text-dark text-center font-weight-bold">
-                                  <i class="bx bx-rupee"></i>
-                                </h5>
                               </div>
                               <div className="col-9 blankCol">
                                 <div className="row">
-                                  <div className="col-9 p-3">
-                                    <h4 className="text-dark font-weight-bold">
+                                  <div className="col-9 ">
+                                    <h4 className="text-dark font-weight-bold  text-center">
                                       {item.name}
                                     </h4>
                                   </div>
-                                  <div className="col-3 badge TimeBg blankCol">
+                                  <div className="col-3  TimeBg blankCol">
                                     <div className="">
-                                      <h6 className=" text-center p-1">
+                                      <h6 className=" text-center timing">
                                         <i class="bx bx-time"></i> hrs Taken
                                       </h6>
                                     </div>
@@ -411,7 +424,7 @@ function ServiceDetail() {
                                     </ul>
                                   </div>
                                 </div>
-                                <div className="container">
+                                <div className="">
                                   <div className="row">
                                     <div className="col-6 blankCol">
                                       <h5 className="text-dark">
@@ -436,16 +449,15 @@ function ServiceDetail() {
                                       </h5>
                                     </div>
                                   </div>
-                                  <div className="row">
+                                  <div className="row mb-1">
                                     <div className="col-4"></div>
-                                    <div className="col-8  text-danger">
-                                      This service is not available for this
-                                      mechanic
+                                    <div className="col-8  text-danger pr-0">
+                                      <h5 className="  text-white TimeBg timing">
+                                        This service is not available for this
+                                        mechanic
+                                      </h5>
                                     </div>
                                   </div>
-                                  {/* <div className="row border">
-                                <div className="col-12"></div>
-                              </div> */}
                                 </div>
                               </div>
                             </div>
@@ -460,208 +472,212 @@ function ServiceDetail() {
             <div className="col-4 blankCol MainMech">
               <div className="card mechanicCard ">
                 <div className="container-fluid">
-                  <div className="row p-2">
-                    <div className="col-12 blankCol">
+                  <div className="row p-2" style={{ background: "#3E288C" }}>
+                    <div className="col-4 blankCol">
+                      <img
+                        src={require("./Images/Glogo.png").default}
+                        class="img-fluid"
+                        alt="logo"
+                      />
+                    </div>
+                    <div className="col-8 blankCol p-3">
                       <h2
-                        class=" get-bonus mt-2 mb-2 p-2 text-center"
-                        style={{ color: "#bdbdbd" }}
+                        class=" get-bonus text-center text-white "
+                        style={{
+                          fontFamily: "TransRobotics",
+                          fontSize: "55px",
+                        }}
                       >
                         {" "}
-                        <span
-                          class="text-dark"
-                          style={{
-                            fontFamily: "TransRobotics",
-                            fontSize: "40px",
-                          }}
-                        >
-                          Greaser
-                        </span>{" "}
-                        Anytime Anywhere
+                        Greaser
                       </h2>
+                      <p
+                        class="text-white text-center mb-0"
+                        style={{
+                          lineHeight: "0",
+                        }}
+                      >
+                        Anytime Anywhere
+                      </p>
                     </div>
                   </div>
-                  <hr />
                   {AllModal.map((item, index) => {
-                                      if (item.manufacturer.name == localStorage.getItem("manufacturer") && item.name == localStorage.getItem("modal"))
-                                        return (
-                  <div className="row mb-2 p-2">
-                    {/* Change car column */}
-                    {/* <div className="col-12">
+                    if (
+                      item.manufacturer.name ==
+                        localStorage.getItem("manufacturer") &&
+                      item.name == localStorage.getItem("modal")
+                    )
+                      return (
+                        <div className="row mb-2 p-2">
+                          {/* Change car column */}
+                          {/* <div className="col-12">
                       <h5 className="text-dark">
                         <i class="bx bx-arrow-back text-dark"></i>Change
                       </h5>
                     </div> */}
-                    {/* Car image Column */}
-                    <div className="col-12 blankCol">
+                          {/* Car image Column */}
+                          <div className="col-12 blankCol">
+                            <img
+                              src={"http://144.91.110.221:3032/" + item.image}
+                              // style={{ height: "150px", width: "150px" }}
+                              className=""
+                              style={{ height: "200px", width: "100%" }}
+                              alt="logo icon"
+                            />
+                          </div>
+                          <h4
+                            className="text-white text-center w-100"
+                            style={{
+                              fontSize: "1.1rem",
+                              background: "#3E288C",
+                              lineHeight: "40px",
+                            }}
+                          >
+                            {item.manufacturer.name} {item.name}
+                          </h4>
+                          <hr />
+                          <div className="CarDetails  col-12 blankCol w-100">
+                            <div className="col-6 ">
+                              <div className="CarDetails">
+                                <h6
+                                  className="text-dark font-weight-bold"
+                                  style={{ fontSize: "" }}
+                                >
+                                  {item.manufacturer.name} {item.name}
+                                </h6>
+                              </div>
+                            </div>
+                            <div className="col-3 ">
+                              <h6 className=" text-dark font-weight-bold">
+                                {localStorage.getItem("type")}
+                              </h6>
+                            </div>
+                            <div className="col-3  blankCol">
+                              <h6 className="text-dark ">Change</h6>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                  })}
+                </div>
+              </div>
+
+              {/* Mechanoc List start */}
+              <div className="mechanicBox border p-2 ">
+                <div className="container-fluid">
+                  <div className="pt-1 pb-2" style={{ background: "#3e288c" }}>
+                    <h4 className="text-white text-center">Mechanics</h4>
+                  </div>
+
+                  <div
+                    className="row border mt-4"
+                    style={{
+                      boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
+                      borderRadius: "2px",
+                    }}
+                  >
+                    <div className="col-5 pl-0 pr-0">
                       <img
-                        src={"http://144.91.110.221:3032/" + item.image}
-                        // style={{ height: "150px", width: "150px" }}
+                        src={require("./Images/profileMech.jpg").default}
                         className=""
                         style={{ height: "200px", width: "100%" }}
                         alt="logo icon"
                       />
                     </div>
-                    <div className="CarDetails  col-12 blankCol">
-                      <div className="col-8 pl-0">
-                        <div className="CarDetails">
-                          <h4
-                            className="text-dark"
-                            style={{ fontSize: "1.25rem" }}
-                          >
-                            {item.manufacturer.name} {item.name}
-                          </h4>
-                          <h6 className="FuelType text-dark">{localStorage.getItem("type")}</h6>
+                    <div className="col-7">
+                      <h5
+                        className="text-dark text-center mt-4"
+                        style={{ lineHeight: "14px" }}
+                      >
+                        Sumit sharma
+                      </h5>
+                      <h5
+                        className="text-dark text-center "
+                        style={{ lineHeight: "0px" }}
+                      >
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                        <i class="bx bxs-star"></i>
+                      </h5>
+                      <p className="text-dark" style={{ lineHeight: "1" }}>
+                        A mechanic is responsible for inspecting and repairing
+                        vehicles, machinery, and light trucks.
+                      </p>
+                      <div className="row">
+                        <div className="col-9">
+                          <h6 className="text-dark text-center ">
+                            <strong>Experience</strong> 4yrs{" "}
+                          </h6>
                         </div>
-                      </div>
-                      <div className="col-4 pr-0 blankCol">
-                        <h6 className="text-dark changeCar">Change</h6>
+                        <div className="col-3 ">
+                          <h3 className="">
+                            <i
+                              class="bx bxs-plus-square text-dark"
+                              style={{ fontSize: "40px" }}
+                            ></i>
+                          </h3>
+                        </div>
                       </div>
                     </div>
                   </div>
-                   )}
-                   )
-                                       }
-                </div>
-              </div>
-                                       
 
-              {/* Mechanoc List start */}
-              <div className="mechanicBox border p-2 ">
-                <div className="container-fluid">
-                  <div className="pt-1 pb-2">
-                    <h4 className="text-dark text-center">Mechanics</h4>
-                  </div>
-                  <div className="row">
-                   
-
+                  {/* <div className="row">
                     {MechanicData.map((item, index) => {
                       if (item.user != undefined && item.service != undefined) {
-                        if (
-                          item.service.service_type._id ==
-                          ServiceTypeId
-                        ) {
+                        if (item.service.service_type._id == ServiceTypeId) {
                           return (
-                            <div className="col-6 pl-0 blankCol" onClick={(e) => {getSingleMechanicdata(item.user._id);}}>
-                            <div class="card  mechlistCard">
-                              <div className="co-12 blankCol">
-                                <img
-                                  src={require("./Images/profileMech.jpg").default}
-                                  className=""
-                                  style={{ height: "100px", width: "100%" }}
-                                  alt="logo icon"
-                                />
-                              </div>
-                              <hr />
-                              <div className="col-12 pl-0 pr-0 blankCol">
-                                <h5 className="text-center">{item.user.fullname}</h5>
-                              </div>
-                              <div className="col-12 blankCol">
-                                <h5 className="text-center">{item.user.mobile}</h5>
+                            <div
+                              className="pl-0 blankCol"
+                              onClick={(e) => {
+                                getSingleMechanicdata(item.user._id);
+                              }}
+                            >
+                              <div class="card  mechlistCard">
+                                <div className="col-6 blankCol">
+                                  <img
+                                    src={
+                                      require("./Images/profileMech.jpg")
+                                        .default
+                                    }
+                                    className=""
+                                    style={{ height: "100px", width: "100%" }}
+                                    alt="logo icon"
+                                  />
+                                </div>
+                                <hr />
+                                <div className="col-6 pl-0 pr-0 blankCol">
+                                  <h5 className="text-center">
+                                    {item.user.fullname}
+                                  </h5>
+                                </div>
+                                <div className="col-12 blankCol">
+                                  <h5 className="text-center">
+                                    {item.user.mobile}
+                                  </h5>
+                                </div>
                               </div>
                             </div>
-                          </div>
                           );
                         }
                       }
                     })}
-                   
-                   
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </div>
           </div>
         </div>
       </section>
-
+      <section className="pt-5 pb-3" style={{ backgroundColor: "#fff" }}>
+        <div className="container-fluid" style={{ width: "95%" }}>
+          <h3 className="text-dark">Related Service</h3>
+          <h3 className="text-dark pt-5 pb-3">Review & Rating</h3>
+        </div>
+      </section>
       <Footer />
     </>
   );
 }
 export default ServiceDetail;
-
-// old side card Code below
-//  <div className="row p-2">
-//                     <div className="col-12">
-//                     <h2
-//                             class=" get-bonus mt-2 mb-2 p-2 text-center"
-//                             style={{ color: "#bdbdbd" }}
-//                           >
-//                             {" "}
-//                             <span
-//                               class="text-white"
-//                               style={{
-//                                 fontFamily: "TransRobotics",
-//                                 fontSize: "40px",
-//                               }}
-//                             >
-//                               Greaser
-//                             </span>{" "}
-//                             Anytime Anywhere
-//                           </h2>
-//                     </div>
-//                   </div>
-//                   <select
-//                     className="form-control text-dark"
-//                     placeholder="Select Mechanic"
-//                     onChange={(e) => {
-//                       getSingleMechanicdata(e.target.value);
-//                     }}
-//                   >
-//                     <option value="">Choose Mechanic...</option>
-//                     {MechanicData.map((item, index) => {
-//                       if (item.user != undefined && item.service != undefined) {
-//                         if (
-//                           item.service.service_type._id ==
-//                           ServiceTypeId
-//                         ) {
-//                           return (
-//                             <option value={item.user._id}>
-//                               {item.user.fullname}
-//                             </option>
-//                           );
-//                         }
-//                       }
-//                     })}
-//                   </select>
-//                   <h4 className="text-dark">{item.user.shop_name}</h4>
-//                   <h4>{item.user.fullname}</h4>
-//                   <h6 className="text-dark">{item.user.mobile}</h6>
-//                   <span>
-//                   <h6 className="text-dark">${item.price}  - {item.time} Hours</h6>
-
-//                   <button className="btn btn-primary mt-3" onClick={()=>{Addtocart(item._id,item.user._id)}}>ADD TO CART</button>
-//                   </span>
-//                   <div className="row p-2 mt-2">
-//                     <div className="col-6 blankCol">
-//                       <h4 className="">
-//                         <i class="bx bxs-star"></i> 4.8/5
-//                       </h4>
-//                       <p className="">Based on 2000+ Reviews</p>
-//                     </div>
-//                     <div class="vl"></div>
-//                     <div className="col-5">
-//                       <h4 className=" text-center">25,000+</h4>
-//                       <p className=" text-center">Happy customers</p>
-//                     </div>
-//                   </div>
-
-{
-  /* <section className="first_servicesCarousel">
-        <header class="header-design">
-          <div class="footer-wave"></div>
-        </header>
-        <div className="row ">
-          <div className="col-12 text-center p-3">
-            <h2 className="servicesHeading_in_service_feature">
-              Simmilar Services
-            </h2>
-            <h4 className="text-dark">Trending services around you</h4>
-          </div>
-          <div className="col-12 pb-5">
-           
-          </div>
-        </div>
-      </section> */
-}
-// End old code (:

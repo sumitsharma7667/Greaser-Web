@@ -153,11 +153,6 @@ function Cart(props) {
                   <div className="col-6 blankCol">
                     <h5 className="text-dark">SCHEDULE YOUR BOOKINGS</h5>
                   </div>
-                  <div className="col-6 blankCol">
-                    <h5 className="text-dark text-right">
-                      *This is an Accordian
-                    </h5>
-                  </div>
                 </div>
                 <div className="row mb-2 mt-2 p-3">
                   <div className="col-12 blankCol">
@@ -189,14 +184,6 @@ function Cart(props) {
                   </div>
                 </div>
               </div>
-              {/* <hr /> */}
-              {/* <div className="row mt-3 mb-3 p-2">
-                <div className="col-12 text-right">
-                  <button className="btn btn-primary CartPageBtn">
-                    Confirm
-                  </button>
-                </div>
-              </div> */}
             </div>
             <div className="col-1 blankCol alignmentCol pr-0 pl-0">
               <div className="vl"></div>
@@ -230,11 +217,7 @@ function Cart(props) {
                   </div>
                 </div>
                 <div className="col-12 mt-3 mb-3">
-                  {/* <button className="btn btn-primary w-100 applyCouponBtn">
-                    Apply Coupon
-                  </button> */}
                   <div class="applyCouponBtn d-flex">
-                    
                       <input
                         type="text"
                         placeholder="Appy Coupn"
@@ -243,7 +226,6 @@ function Cart(props) {
                       <button style={{border:"none", width:"60px", background: "#583692"}} >
                         <i class="bx bxl-telegram text-white" style={{fontSize:"22px"}}></i>
                       </button>
-                    
                   </div>
                 </div>
               </div>
