@@ -576,7 +576,7 @@ function ServiceDetail() {
                       borderRadius: "2px",
                     }}
                   >
-                    <div className="col-5 pl-0 pr-0">
+                    <div className="col-5 pl-0 pr-0 blankCol">
                       <img
                         src={require("./Images/profileMech.jpg").default}
                         className=""
@@ -584,7 +584,7 @@ function ServiceDetail() {
                         alt="logo icon"
                       />
                     </div>
-                    <div className="col-7">
+                    <div className="col-7 blankCol">
                       <h5
                         className="text-dark text-center mt-4"
                         style={{ lineHeight: "14px" }}
@@ -606,12 +606,12 @@ function ServiceDetail() {
                         vehicles, machinery, and light trucks.
                       </p>
                       <div className="row">
-                        <div className="col-9">
+                        <div className="col-9 blankCol">
                           <h6 className="text-dark text-center ">
                             <strong>Experience</strong> 4yrs{" "}
                           </h6>
                         </div>
-                        <div className="col-3 ">
+                        <div className="col-3 blankCol">
                           <h3 className="">
                             <i
                               class="bx bxs-plus-square text-dark"
@@ -671,9 +671,59 @@ function ServiceDetail() {
         </div>
       </section>
       <section className="pt-5 pb-3" style={{ backgroundColor: "#fff" }}>
-        <div className="container-fluid" style={{ width: "95%" }}>
+        <div className="container">
           <h3 className="text-dark">Related Service</h3>
+
+          {/* Carousel  */}
           <h3 className="text-dark pt-5 pb-3">Review & Rating</h3>
+
+          <div className="row ">
+            <div className="col-8 blankCol" style={{ background: "#F6F6F6" }}>
+              <div className="row p-1">
+                <div className="col-2 blankCol">
+                  <div class="circle">
+                    <h2 className="text-center alignmentCol">S</h2>
+                  </div>
+                </div>
+                <div className="col-10 blankCol">
+                  <h4 className="text-dark mt-3">Sumit sharma</h4>
+                  <div className="row">
+                    <div className="col-6 blankCol">
+                      <h5 className="">
+                        <i class="bx bxs-star" style={{ color: "#F7A14A" }}></i>
+                        <i class="bx bxs-star" style={{ color: "#F7A14A" }}></i>
+                        <i class="bx bxs-star" style={{ color: "#F7A14A" }}></i>
+                        <i class="bx bxs-star" style={{ color: "#F7A14A" }}></i>
+                        <i class="bx bxs-star" style={{ color: "#F7A14A" }}></i>
+                      </h5>
+                    </div>
+                    <div className="col-6 blankCol">
+                      <p className="text-dark text-right">
+                        Publish 1 month ago
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="row mt-1 p-1">
+                <div className="col-12 blankCol">
+                  <h6 className="text-dark" style={{ fontSize: "14px" }}>
+                    I always keep my car’s brake safety ahead of everything. I
+                    ordered an extra pair of brake pads from GoMechanic. Pads
+                    were original and genuine.
+                  </h6>
+                </div>
+              </div>
+            </div>
+            <div className="col-4"></div>
+          </div>
+          {/* more button */}
+          <div className="mt-3 text-center">
+            <button className="text-dark MoreBTn">
+              <i class="bx bx-down-arrow-alt"></i>
+              More
+            </button>
+          </div>
         </div>
       </section>
       <Footer />
