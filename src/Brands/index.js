@@ -65,8 +65,8 @@ const CreateBrands =()=>{
            alert('Brand updated successfully !');
            GetBrand()
             })            
-            .then(err=>console.log(err))
-        //   }
+          .then(err=>console.log(err))
+    //   }
   }
     // data table
     const data =[];

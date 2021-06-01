@@ -36,7 +36,7 @@ function ContactUs(props) {
 
         
       </section> */}
-      <section className="ContactUsSec">
+      {/* <section className="ContactUsSec">
         <div className="contactUsCOnt">
           <div className="row contactUsCOnt">
             <div className="col-6 blankCol">
@@ -82,9 +82,7 @@ function ContactUs(props) {
                         </h5>
                       </div>
                     </div>
-                    {/* <button className="btn btn-primary" id="formButton">
-                      Contact us
-                    </button> */}
+                  
                   </div>
                 </div>
               </div>
@@ -121,6 +119,54 @@ function ContactUs(props) {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section> */}
+      <section>
+        <div className="row">
+          <div className="col-12 text-center contactus-heading">
+            <h2><span>Get in touch with us</span></h2>
+            <span></span>
+          </div>
+          <div style={{margin:"auto"}} className="pt-5">
+            <div className="contact-card">
+              <div className="row">
+                <div className="col-12 text-center">
+                  <h3 className="p-5">Say Hii !</h3>
+                </div>
+                <div className="col-6">
+                  <div className="contact-sub-card contact-firstchild text-center">
+                  <h5 className="p-4" ><span  className="pr-4"><i class="fab fa-whatsapp-square"></i></span>7500925742</h5>
+                  </div>
+                </div>
+                <div className="col-6">
+                  <div className="contact-sub-card contact-secondchild text-center">
+                  <div className="row">
+                    
+                  <div className="col-12">
+                    <h5 className="p-4" ><span  className="pr-4"><i class="fas fa-envelope"></i></span>info@giksindia.com</h5>
+                  </div>
+                  </div>
+                  </div>
+                </div>
+                
+                <div className="third-sub-contact-card">
+                  <div className="contact-sub-card">
+                    <h5 className="p-4" ><span  className="pr-4"><i class="fas fa-map-marker-alt"></i></span>222 Ghanshala Dental<br/> Care Ballupur Dehradun<br/> Uttrakhand</h5>
+                  </div>
+                </div>
+                <div className="row" className="contactus-socialLink-section">
+                <div className="col-12 ">
+                <h5 className="p-3 contact-sub-card" style={{fontSize:"20px"}} ><span  className="pr-2"><i class="fab fa-facebook-f"></i><br/><i class="fab fa-twitter pt-2"></i><br/><i class="fab fa-instagram pt-2"></i></span></h5>
+                </div>
+                </div>
+              </div>                    
+            </div>
+          </div>
+          <div className="col-10">
+            
+          <img src={require('./Images/road.png').default} className="contactus-road-img" />
+          <img src={require('./Images/contactusMechanic.png').default} className="contactusMechanic-img" />
           </div>
         </div>
       </section>

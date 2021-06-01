@@ -4,15 +4,29 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
+
+
 let SubTotal = 0;
-let GradndTotal = 0;
+let GrandTotal = 0;
+
 function Cart(props) {
-  const [data, setdata] = useState([]);
+const [data, setdata] = useState([])
+  const [firstname, setFirstName] = useState([])
+  const [lastname, setLastName] = useState([])
+  const [address, setAddress] = useState([])
+  const [city, setCity] = useState([])
+  const [state, setState] = useState([])
+  const [pincode, setPincode] = useState([])
+  const [mobile, setMobile] = useState([])
+  const [email, setEmail] = useState([]) 
+
+  // const [data, setdata] = useState([]);
   useEffect(() => {
-    GradndTotal = 0;
+    GrandTotal = 0;
     SubTotal = 0;
     getdata();
   }, []);
+  
   const getdata = async (_id) => {
     var userid = await localStorage.getItem("userid");
     fetch("http://144.91.110.221:3032/cartbyid", {
@@ -46,9 +60,61 @@ function Cart(props) {
         // contexdata.getcounts()
       });
   };
+  const StoreBillDetails = () => {
+    const data = new FormData()
+    var PushData =[]
   
+    data.map((item,index)=>{
+    PushData.push({'service':item.service.service.name,"price":item.service.price,"MechanicServiceID":item.service._id,"ServiceId":item.service.service._id})
+    })
+    data.append('fullname', firstname+" "+lastname)
+    data.append('address',address)
+    data.append('mobile',mobile)
+    data.append('email',email)
+    data.append('pincode',pincode)
+    data.append('city',city)
+    data.append('state',state)
+    data.append('SubTotal',SubTotal)
+    data.append('GrandTotal',GrandTotal)
+    data.append('data',JSON.stringify(PushData))
+    const url = "http://144.91.110.221:3032/StoreBillDetails"
+    fetch(url, {
+            method: 'post',
+            body: data
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("Thankyou for choosing us :)") 
+            // GetServiceType()               
+        })
+        .then(() => {
+          data.map((item,index)=>{
+          const apiUrl = 'http://144.91.110.221:3032/Deletefromcart';
+          fetch(apiUrl, {
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              method: 'delete',
+              body: JSON.stringify({ _id: item._id })
+          })
+        })
+  
+        })
+        .then(() => {
+          setFirstName('')
+          setLastName('')
+          setMobile('')
+          setPincode('')
+          setAddress('')
+          setCity('')
+          setState('')
+          setEmail('')
+          getdata()
+        })
+  }
   SubTotal = 0;
-  GradndTotal = 0;
+  GrandTotal = 0;
   return (
     <>
       <Header />
@@ -196,6 +262,10 @@ function Cart(props) {
                 <div className="col-12 p-2">
                   <h5 className="text-dark">SERVICE SUMMARY</h5>
                 </div>
+                {data.map((item,index)=>{
+                  return(
+                    
+                  
                 <div className=" row mt-4 mb-2 ">
                   <div className="col-4">
                     <img
@@ -206,16 +276,20 @@ function Cart(props) {
                     />
                   </div>
                   <div className="col-8">
-                    <h6 className="text-dark font-weight-bold">Disc Turning</h6>
+                    <h6 className="text-dark font-weight-bold">{item.service.service.name}</h6>
                     <h6 className="text-dark">
                       <i class="bx bx-rupee"></i>
-                      500
+                      {item.service.price}
                     </h6>
-                    <h4 className="text-dark" style={{ marginTop: "2rem" }}>
+                    <button onClick={()=>{Deletefromcart(item._id)}} className="btn vtn-info">
+                    <h4 className="text-dark" >
                       <i class="bx bxs-trash"></i>
                     </h4>
+                    </button>
                   </div>
                 </div>
+                )
+              })}
                 <div className="col-12 mt-3 mb-3">
                   <div class="applyCouponBtn d-flex">
                       <input
@@ -248,7 +322,14 @@ function Cart(props) {
                   <div className="col-6">
                     <h6 className="text-dark text-right">
                       <i class="bx bx-rupee"></i>
-                      500
+                      {data.map((item,index)=>{
+                  
+                            SubTotal=SubTotal+parseInt(item.service.price)
+                            GrandTotal=GrandTotal+parseInt(item.service.price)
+                           
+                        })
+                      }
+                      {SubTotal}
                     </h6>
                   </div>
                 </div>
@@ -259,7 +340,7 @@ function Cart(props) {
                   <div className="col-6">
                     <h6 className="text-dark text-right">
                       <i class="bx bx-rupee"></i>
-                      500
+                      0
                     </h6>
                   </div>
                 </div>
@@ -271,12 +352,12 @@ function Cart(props) {
                   <div className="col-6">
                     <h6 className="text-dark text-right">
                       <i class="bx bx-rupee"></i>
-                      100
+                      {GrandTotal}
                     </h6>
                   </div>
                 </div>
                 <div className="col-12 mt-3 mb-3">
-                  <button className="btn btn-primary w-100 applyCouponBtn">
+                  <button className="btn btn-primary w-100 applyCouponBtn" onClick={()=>{StoreBillDetails()}}>
                     Proceed to Pay
                   </button>
                 </div>

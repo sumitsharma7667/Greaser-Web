@@ -569,12 +569,17 @@ function ServiceDetail() {
                     <h4 className="text-white text-center">Mechanics</h4>
                   </div>
 
+                  {MechanicData.map((item, index) => {
+                      if (item.user != undefined && item.service != undefined) {
+                        if (item.service.service_type._id == ServiceTypeId) {
+                          return (
                   <div
                     className="row border mt-4"
                     style={{
                       boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
                       borderRadius: "2px",
                     }}
+                    
                   >
                     <div className="col-5 pl-0 pr-0">
                       <img
@@ -589,7 +594,7 @@ function ServiceDetail() {
                         className="text-dark text-center mt-4"
                         style={{ lineHeight: "14px" }}
                       >
-                        Sumit sharma
+                        {item.user.fullname}
                       </h5>
                       <h5
                         className="text-dark text-center "
@@ -608,21 +613,25 @@ function ServiceDetail() {
                       <div className="row">
                         <div className="col-9">
                           <h6 className="text-dark text-center ">
-                            <strong>Experience</strong> 4yrs{" "}
+                            <strong>Contact</strong> {item.user.mobile}{" "}
                           </h6>
                         </div>
                         <div className="col-3 ">
-                          <h3 className="">
-                            <i
-                              class="bx bxs-plus-square text-dark"
+                            <button className="btn btn-sm "  onClick={(e) => {
+                                getSingleMechanicdata(item.user._id);
+                              }}><i
+                              class="bx bxs-plus-square"
                               style={{ fontSize: "40px" }}
                             ></i>
-                          </h3>
+                            </button>
                         </div>
                       </div>
                     </div>
                   </div>
-
+ );
+}
+}
+})}
                   {/* <div className="row">
                     {MechanicData.map((item, index) => {
                       if (item.user != undefined && item.service != undefined) {
