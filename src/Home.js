@@ -117,7 +117,7 @@ function Home(props) {
     await fetch("http://144.91.110.221:3032/GetBrand")
       .then((res) => res.json())
       .then((data) => {
-        console.log("Brands " + data);
+        console.log("Brands " + JSON.stringify(data));
         SetAllBrand(data);
       })
       .then((err) => console.log(err));
