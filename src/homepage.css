@@ -658,10 +658,10 @@ background-color: #f4f4f4;
      , rgb(227 1 212) -120%, rgb(50 33 112) 64%);
      transition: all .4s ease-in-out;
 }
-.carouselcardService:hover{
+/* .carouselcardService:hover{
   transform: scale(1.1);
   box-shadow: 5px 6px 22px -6px;
-}
+} */
 
 .carouselcardService p{
   border-bottom-left-radius:2%;
@@ -1980,10 +1980,14 @@ header .footer-wave {
   background-color: #555;
   border-radius: 50%;
 }
+.AddMechanicBtn{
+  padding: 0px 0px !important;
+  box-shadow: none !important;
+}
 .MoreBTn{
   background: #fff !important;
     border: none;
-    font-size: 30px;
+    font-size: 20px;
 }
 input:focus + label, input:valid + label{
   color: rgb(253, 253, 253);

@@ -373,7 +373,7 @@ const setRedirection =(id,name)=>{
           <div class="listar-map-button">
             <div
               class="listar-map-button-text"
-              style={{ display: "inline-block", opacity: 1 }}
+              style={{ display: "inline-block", opacity: 1, position:"relative", top:"80px" }}
             >
               <span class="icon-map2">How it Works? </span>
             </div>

@@ -10,7 +10,7 @@ import SingleService from "./SingleService";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
+    items: 3,
     slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
@@ -161,7 +161,7 @@ function ServiceDetail() {
       </section>
       {/* Card Section */}
       <section className="pt-5 pb-5" style={{ backgroundColor: "#fff" }}>
-        <div class="container-fluid" style={{ width: "95%" }}>
+        <div class="container-fluid" style={{ width: "90%" }}>
           <div class="row">
             <div className="col-8  p-2 blankCol ">
               <div className="row ">
@@ -509,12 +509,6 @@ function ServiceDetail() {
                     )
                       return (
                         <div className="row mb-2 p-2">
-                          {/* Change car column */}
-                          {/* <div className="col-12">
-                      <h5 className="text-dark">
-                        <i class="bx bx-arrow-back text-dark"></i>Change
-                      </h5>
-                    </div> */}
                           {/* Car image Column */}
                           <div className="col-12 blankCol">
                             <img
@@ -570,109 +564,76 @@ function ServiceDetail() {
                   </div>
 
                   {MechanicData.map((item, index) => {
-                      if (item.user != undefined && item.service != undefined) {
-                        if (item.service.service_type._id == ServiceTypeId) {
-                          return (
-                  <div
-                    className="row border mt-4"
-                    style={{
-                      boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
-                      borderRadius: "2px",
-                    }}
-                    
-                  >
-                    <div className="col-5 pl-0 pr-0 blankCol">
-                      <img
-                        src={require("./Images/profileMech.jpg").default}
-                        className=""
-                        style={{ height: "200px", width: "100%" }}
-                        alt="logo icon"
-                      />
-                    </div>
-                    <div className="col-7 blankCol">
-                      <h5
-                        className="text-dark text-center mt-4"
-                        style={{ lineHeight: "14px" }}
-                      >
-                        {item.user.fullname}
-                      </h5>
-                      <h5
-                        className="text-dark text-center "
-                        style={{ lineHeight: "0px" }}
-                      >
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                        <i class="bx bxs-star"></i>
-                      </h5>
-                      <p className="text-dark" style={{ lineHeight: "1" }}>
-                        A mechanic is responsible for inspecting and repairing
-                        vehicles, machinery, and light trucks.
-                      </p>
-                      <div className="row">
-                        <div className="col-9 blankCol">
-                          <h6 className="text-dark text-center ">
-                            <strong>Contact</strong> {item.user.mobile}{" "}
-                          </h6>
-                        </div>
-                        <div className="col-3 blankCol">
-                            <button className="btn btn-sm "  onClick={(e) => {
-                                getSingleMechanicdata(item.user._id);
-                              }}><i
-                              class="bx bxs-plus-square"
-                              style={{ fontSize: "40px" }}
-                            ></i>
-                            </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
- );
-}
-}
-})}
-                  {/* <div className="row">
-                    {MechanicData.map((item, index) => {
-                      if (item.user != undefined && item.service != undefined) {
-                        if (item.service.service_type._id == ServiceTypeId) {
-                          return (
-                            <div
-                              className="pl-0 blankCol"
-                              onClick={(e) => {
-                                getSingleMechanicdata(item.user._id);
-                              }}
-                            >
-                              <div class="card  mechlistCard">
-                                <div className="col-6 blankCol">
-                                  <img
-                                    src={
-                                      require("./Images/profileMech.jpg")
-                                        .default
-                                    }
-                                    className=""
-                                    style={{ height: "100px", width: "100%" }}
-                                    alt="logo icon"
-                                  />
+                    if (item.user != undefined && item.service != undefined) {
+                      if (item.service.service_type._id == ServiceTypeId) {
+                        return (
+                          <div
+                            className="row border mt-4"
+                            style={{
+                              boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
+                              borderRadius: "2px",
+                            }}
+                          >
+                            <div className="col-5 pl-0 pr-0 blankCol">
+                              <img
+                                src={
+                                  require("./Images/profileMech.jpg").default
+                                }
+                                className=""
+                                style={{ height: "200px", width: "100%" }}
+                                alt="logo icon"
+                              />
+                            </div>
+                            <div className="col-7 blankCol">
+                              <h5
+                                className="text-dark text-center mt-4"
+                                style={{ lineHeight: "14px" }}
+                              >
+                                {item.user.fullname}
+                              </h5>
+                              <h5
+                                className="text-dark text-center "
+                                style={{ lineHeight: "0px" }}
+                              >
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                                <i class="bx bxs-star"></i>
+                              </h5>
+                              <p
+                                className="text-dark"
+                                style={{ lineHeight: "1" }}
+                              >
+                                A mechanic is responsible for inspecting and
+                                repairing vehicles, machinery, and light trucks.
+                              </p>
+                              <div className="row">
+                                <div className="col-9 blankCol">
+                                  <h6 className="text-dark text-center ">
+                                    <strong>Contact</strong> {item.user.mobile}{" "}
+                                  </h6>
                                 </div>
-                                <hr />
-                                <div className="col-6 pl-0 pr-0 blankCol">
-                                  <h5 className="text-center">
-                                    {item.user.fullname}
-                                  </h5>
-                                </div>
-                                <div className="col-12 blankCol">
-                                  <h5 className="text-center">
-                                    {item.user.mobile}
-                                  </h5>
+                                <div className="col-3 blankCol">
+                                  <button
+                                    className="btn btn-sm AddMechanicBtn"
+                                    onClick={(e) => {
+                                      getSingleMechanicdata(item.user._id);
+                                    }}
+                                  >
+                                    <i
+                                      class="bx bxs-plus-square"
+                                      style={{ fontSize: "40px" }}
+                                    ></i>
+                                  </button>
                                 </div>
                               </div>
                             </div>
-                          );
-                        }
+                          </div>
+                        );
                       }
-                    })}
-                  </div> */}
+                    }
+                  })}
                 </div>
               </div>
             </div>
@@ -680,11 +641,62 @@ function ServiceDetail() {
         </div>
       </section>
       <section className="pt-5 pb-3" style={{ backgroundColor: "#fff" }}>
-        <div className="container">
-          <h3 className="text-dark">Related Service</h3>
+        <div class="container-fluid" style={{ width: "90%" }}>
+          <h3 className="text-dark pb-3">Related Service</h3>
 
           {/* Carousel  */}
-          <h3 className="text-dark pt-5 pb-3">Review & Rating</h3>
+
+          <div className="row">
+            <div className="col-8 pb-3 pr-0 pl-0">
+              <Carousel
+                swipeable={true}
+                draggable={false}
+                // showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={true}
+                autoPlaySpeed={3000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                // deviceType={this.props.deviceType}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+              >
+                {AllServices.map((item, index) => {
+                  return (
+                    <div>
+                      <div className="row ">
+                        <div className="col-1"></div>
+                        <div className="col-10 carouselcardService">
+                          <div className="row ">
+                            <div className="col-12 text-center">
+                              <img
+                                src={"http://144.91.110.221:3032/" + item.image}
+                                style={{
+                                  height: "150px",
+                                  width: "100%",
+                                }}
+                              />
+                            </div>
+                            <div className="col-12 text-center pt-4">
+                              <h6 className="text-white">{item.name}</h6>
+                            </div>
+                          </div>
+                        </div>
+                        <div className="col-1"></div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </Carousel>
+            </div>
+          </div>
+
+          <h3 className="text-dark pt-3 pb-3">Review & Rating</h3>
 
           <div className="row ">
             <div className="col-8 blankCol" style={{ background: "#F6F6F6" }}>
@@ -727,11 +739,15 @@ function ServiceDetail() {
             <div className="col-4"></div>
           </div>
           {/* more button */}
-          <div className="mt-3 text-center">
-            <button className="text-dark MoreBTn">
-              <i class="bx bx-down-arrow-alt"></i>
-              More
-            </button>
+          <div className="row">
+            <div className="col-8">
+              <div className="mt-3 text-center">
+                <button className="text-dark MoreBTn">
+                  <i class="bx bx-down-arrow-alt"></i>
+                  More
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
