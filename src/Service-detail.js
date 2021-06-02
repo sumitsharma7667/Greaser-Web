@@ -562,7 +562,6 @@ function ServiceDetail() {
                   <div className="pt-1 pb-2" style={{ background: "#3e288c" }}>
                     <h4 className="text-white text-center">Mechanics</h4>
                   </div>
-
                   {MechanicData.map((item, index) => {
                     if (item.user != undefined && item.service != undefined) {
                       if (item.service.service_type._id == ServiceTypeId) {
@@ -642,10 +641,8 @@ function ServiceDetail() {
       </section>
       <section className="pt-5 pb-3" style={{ backgroundColor: "#fff" }}>
         <div class="container-fluid" style={{ width: "90%" }}>
-          <h3 className="text-dark pb-3">Related Service</h3>
-
+          <h3 className="text-dark pb-3">Related Services</h3>
           {/* Carousel  */}
-
           <div className="row">
             <div className="col-8 pb-3 pr-0 pl-0">
               <Carousel
@@ -747,6 +744,75 @@ function ServiceDetail() {
                   More
                 </button>
               </div>
+            </div>
+          </div>
+        </div>
+        <div className="conatiner-fluid">
+          <div className="row">
+            <div className="col-12  pb-5">
+              <Carousel
+                swipeable={false}
+                draggable={false}
+                // showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={false}
+                autoPlaySpeed={3000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                // deviceType={this.props.deviceType}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+              >
+                {AllServices.map((item, index) => {
+                  return (
+                    <div>
+                      <Link to={"/SingleService/" + item._id}>
+                        <div className="row ">
+                          <div className="col-1"></div>
+                          <div
+                            className="col-10 carouselcardService"
+                            style={{ height: "420px" }}
+                          >
+                            <div className="row ">
+                              <div className="col-12 text-center">
+                                <img
+                                  src={
+                                    "http://144.91.110.221:3032/" + item.image
+                                  }
+                                  style={{
+                                    height: "200px",
+                                    width: "100%",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              </div>
+                              <div className="col-12 text-center pt-4">
+                                <h3>{item.name}</h3>
+                                <p>
+                                  <div
+                                    className="blogDescrption"
+                                    dangerouslySetInnerHTML={{
+                                      __html:
+                                        item.features.slice(0, 100) +
+                                        " See more...",
+                                    }}
+                                  />
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-1"></div>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </Carousel>
             </div>
           </div>
         </div>
