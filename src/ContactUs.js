@@ -157,7 +157,7 @@ function ContactUs(props) {
                 </div>
                 <div className="row" className="contactus-socialLink-section">
                 <div className="col-12 ">
-                <h5 className="p-3 contact-sub-card" style={{fontSize:"20px"}} ><span  className="pr-2"><i class="fab fa-facebook-f"></i><br/><i class="fab fa-twitter pt-2"></i><br/><i class="fab fa-instagram pt-2"></i></span></h5>
+                <h5 className="p-3 contact-sub-card" style={{fontSize:"20px"}} ><span ><i class="fab fa-facebook-f"></i><br/><i class="fab fa-twitter pt-2"></i><br/><i class="fab fa-instagram pt-2"></i></span></h5>
                 </div>
                 </div>
               </div>                    

@@ -10,7 +10,7 @@ import SingleService from "./SingleService";
 const responsive = {
   desktop: {
     breakpoint: { max: 3000, min: 1024 },
-    items: 1,
+    items: 4,
     slidesToSlide: 1, // optional, default to 1.
   },
   tablet: {
@@ -732,6 +732,75 @@ function ServiceDetail() {
               <i class="bx bx-down-arrow-alt"></i>
               More
             </button>
+          </div>
+        </div>
+        <div className="conatiner-fluid">
+          <div className="row">
+            <div className="col-12  pb-5">
+              <Carousel
+                swipeable={false}
+                draggable={false}
+                // showDots={true}
+                responsive={responsive}
+                ssr={true} // means to render carousel on server-side.
+                infinite={true}
+                autoPlay={false}
+                autoPlaySpeed={3000}
+                keyBoardControl={true}
+                customTransition="all .5"
+                transitionDuration={500}
+                containerClass="carousel-container"
+                removeArrowOnDeviceType={["tablet", "mobile"]}
+                // deviceType={this.props.deviceType}
+                dotListClass="custom-dot-list-style"
+                itemClass="carousel-item-padding-40-px"
+              >
+                {AllServices.map((item, index) => {
+                  return (
+                    <div>
+                      <Link to={"/SingleService/" + item._id}>
+                        <div className="row ">
+                          <div className="col-1"></div>
+                          <div
+                            className="col-10 carouselcardService"
+                            style={{ height: "420px" }}
+                          >
+                            <div className="row ">
+                              <div className="col-12 text-center">
+                                <img
+                                  src={
+                                    "http://144.91.110.221:3032/" + item.image
+                                  }
+                                  style={{
+                                    height: "200px",
+                                    width: "100%",
+                                    objectFit: "cover",
+                                  }}
+                                />
+                              </div>
+                              <div className="col-12 text-center pt-4">
+                                <h3>{item.name}</h3>
+                                <p>
+                                  <div
+                                    className="blogDescrption"
+                                    dangerouslySetInnerHTML={{
+                                      __html:
+                                        item.features.slice(0, 100) +
+                                        " See more...",
+                                    }}
+                                  />
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="col-1"></div>
+                        </div>
+                      </Link>
+                    </div>
+                  );
+                })}
+              </Carousel>
+            </div>
           </div>
         </div>
       </section>
