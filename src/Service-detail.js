@@ -184,30 +184,15 @@ function ServiceDetail() {
                                 />
                               </div>
                               <div className="col-9 blankCol">
-                                <div className="row">
+                                <div className="row pt-1">
                                   <div className="col-9 ">
                                     <h4 className="text-dark font-weight-bold text-center">
                                       {item.name}
                                     </h4>
                                   </div>
-                                  <div className="col-6 blankCol">
-                                    <ul>
-                                      <li className="text-dark">
-                                        {" "}
-                                        1000 Kms or 1 Month Warranty
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div className="col-6 blankCol">
-                                    <ul>
-                                      <li className="text-dark">
-                                        1000 Kms or 1 Month Warranty
-                                      </li>
-                                    </ul>
-                                  </div>
                                 </div>
                                 <div className="container">
-                                  <div className="row">
+                                  <div className="row pt-2">
                                     <div className="col-6 blankCol">
                                       <h5 className="text-dark">
                                         <div
@@ -269,7 +254,7 @@ function ServiceDetail() {
                               />
                             </div>
                             <div className="col-9 blankCol">
-                              <div className="row">
+                              <div className="row pt-1">
                                 <div className="col-9">
                                   <h4 className="text-dark font-weight-bold text-center">
                                     {item.service.name}
@@ -282,21 +267,6 @@ function ServiceDetail() {
                                       Taken
                                     </h6>
                                   </div>
-                                </div>
-                                <div className="col-6 blankCol">
-                                  <ul>
-                                    <li className="text-dark">
-                                      {" "}
-                                      1000 Kms or 1 Month Warranty
-                                    </li>
-                                  </ul>
-                                </div>
-                                <div className="col-6 blankCol">
-                                  <ul>
-                                    <li className="text-dark">
-                                      1000 Kms or 1 Month Warranty
-                                    </li>
-                                  </ul>
                                 </div>
                               </div>
                               <div className="container">
@@ -396,7 +366,7 @@ function ServiceDetail() {
                                 />
                               </div>
                               <div className="col-9 blankCol">
-                                <div className="row">
+                                <div className="row pt-1">
                                   <div className="col-9 ">
                                     <h4 className="text-dark font-weight-bold  text-center">
                                       {item.name}
@@ -408,20 +378,6 @@ function ServiceDetail() {
                                         <i class="bx bx-time"></i> hrs Taken
                                       </h6>
                                     </div>
-                                  </div>
-                                  <div className="col-6 blankCol">
-                                    <ul>
-                                      <li className="text-dark">
-                                        1000 Kms or 1 Month Warranty
-                                      </li>
-                                    </ul>
-                                  </div>
-                                  <div className="col-6 blankCol">
-                                    <ul>
-                                      <li className="text-dark">
-                                        1000 Kms or 1 Month Warranty
-                                      </li>
-                                    </ul>
                                   </div>
                                 </div>
                                 <div className="">
@@ -560,14 +516,14 @@ function ServiceDetail() {
               <div className="mechanicBox border p-2 ">
                 <div className="container-fluid">
                   <div className="pt-1 pb-2" style={{ background: "#3e288c" }}>
-                    <h4 className="text-white text-center">Mechanics</h4>
+                    <h4 className="text-white text-center pt-2">Mechanics</h4>
                   </div>
                   {MechanicData.map((item, index) => {
                     if (item.user != undefined && item.service != undefined) {
                       if (item.service.service_type._id == ServiceTypeId) {
                         return (
                           <div
-                            className="row border mt-4"
+                            className="row border mt-3"
                             style={{
                               boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
                               borderRadius: "2px",
@@ -579,17 +535,17 @@ function ServiceDetail() {
                                   require("./Images/profileMech.jpg").default
                                 }
                                 className=""
-                                style={{ height: "200px", width: "100%" }}
+                                style={{ height: "182px", width: "100%" }}
                                 alt="logo icon"
                               />
                             </div>
                             <div className="col-7 blankCol">
-                              <h5
-                                className="text-dark text-center mt-4"
+                              <h6
+                                className="text-dark text-center mt-3 font-weight-bold"
                                 style={{ lineHeight: "14px" }}
                               >
                                 {item.user.fullname}
-                              </h5>
+                              </h6>
                               <h5
                                 className="text-dark text-center "
                                 style={{ lineHeight: "0px" }}
@@ -601,15 +557,15 @@ function ServiceDetail() {
                                 <i class="bx bxs-star"></i>
                               </h5>
                               <p
-                                className="text-dark"
+                                className="text-dark text-justify"
                                 style={{ lineHeight: "1" }}
                               >
                                 A mechanic is responsible for inspecting and
-                                repairing vehicles, machinery, and light trucks.
+                                repairing vehicles, machinery.
                               </p>
                               <div className="row">
                                 <div className="col-9 blankCol">
-                                  <h6 className="text-dark text-center ">
+                                  <h6 className="text-dark">
                                     <strong>Contact</strong> {item.user.mobile}{" "}
                                   </h6>
                                 </div>
@@ -693,18 +649,18 @@ function ServiceDetail() {
             </div>
           </div>
 
-          <h3 className="text-dark pt-3 pb-3">Review & Rating</h3>
+          <h3 className="text-dark pt-2 pb-3">Review & Rating</h3>
 
           <div className="row ">
             <div className="col-8 blankCol" style={{ background: "#F6F6F6" }}>
-              <div className="row p-1">
-                <div className="col-2 blankCol">
+              <div className="row pt-3">
+                <div className="col-2 blankCol alignmentCol">
                   <div class="circle">
                     <h2 className="text-center alignmentCol">S</h2>
                   </div>
                 </div>
                 <div className="col-10 blankCol">
-                  <h4 className="text-dark mt-3">Sumit sharma</h4>
+                  <h4 className="text-dark mt-2">Sumit sharma</h4>
                   <div className="row">
                     <div className="col-6 blankCol">
                       <h5 className="">
@@ -723,7 +679,7 @@ function ServiceDetail() {
                   </div>
                 </div>
               </div>
-              <div className="row mt-1 p-1">
+              <div className="row pt-2 pb-3">
                 <div className="col-12 blankCol">
                   <h6 className="text-dark" style={{ fontSize: "14px" }}>
                     I always keep my car’s brake safety ahead of everything. I
@@ -744,75 +700,6 @@ function ServiceDetail() {
                   More
                 </button>
               </div>
-            </div>
-          </div>
-        </div>
-        <div className="conatiner-fluid">
-          <div className="row">
-            <div className="col-12  pb-5">
-              <Carousel
-                swipeable={false}
-                draggable={false}
-                // showDots={true}
-                responsive={responsive}
-                ssr={true} // means to render carousel on server-side.
-                infinite={true}
-                autoPlay={false}
-                autoPlaySpeed={3000}
-                keyBoardControl={true}
-                customTransition="all .5"
-                transitionDuration={500}
-                containerClass="carousel-container"
-                removeArrowOnDeviceType={["tablet", "mobile"]}
-                // deviceType={this.props.deviceType}
-                dotListClass="custom-dot-list-style"
-                itemClass="carousel-item-padding-40-px"
-              >
-                {AllServices.map((item, index) => {
-                  return (
-                    <div>
-                      <Link to={"/SingleService/" + item._id}>
-                        <div className="row ">
-                          <div className="col-1"></div>
-                          <div
-                            className="col-10 carouselcardService"
-                            style={{ height: "420px" }}
-                          >
-                            <div className="row ">
-                              <div className="col-12 text-center">
-                                <img
-                                  src={
-                                    "http://144.91.110.221:3032/" + item.image
-                                  }
-                                  style={{
-                                    height: "200px",
-                                    width: "100%",
-                                    objectFit: "cover",
-                                  }}
-                                />
-                              </div>
-                              <div className="col-12 text-center pt-4">
-                                <h3>{item.name}</h3>
-                                <p>
-                                  <div
-                                    className="blogDescrption"
-                                    dangerouslySetInnerHTML={{
-                                      __html:
-                                        item.features.slice(0, 100) +
-                                        " See more...",
-                                    }}
-                                  />
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                          <div className="col-1"></div>
-                        </div>
-                      </Link>
-                    </div>
-                  );
-                })}
-              </Carousel>
             </div>
           </div>
         </div>
