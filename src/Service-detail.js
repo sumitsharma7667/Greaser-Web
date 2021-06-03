@@ -277,7 +277,7 @@ function ServiceDetail() {
       <section className="pt-5 pb-5" style={{ backgroundColor: "#fff" }}>
         <div class="container-fluid" style={{ width: "90%" }}>
           <div class="row">
-            <div className="col-8  p-2 blankCol ">
+            <div className="col-7  p-2 blankCol ">
               <div className="row ">
                 {SingleMechanicdata == ""
                   ? AllServices.map((item, index) => {
@@ -288,7 +288,10 @@ function ServiceDetail() {
                             style={{ background: "#fff" }}
                           >
                             <div className="row pt-1 ">
-                              <div className="col-3 blankCol">
+                              <div
+                                className="col-3 blankCol"
+                                style={{ paddingLeft: "0.25rem" }}
+                              >
                                 <img
                                   class="service_itemImg"
                                   src={
@@ -298,7 +301,10 @@ function ServiceDetail() {
                                 />
                               </div>
                               <div className="col-9 blankCol">
-                                <div className="row pt-1">
+                                <div
+                                  className="row"
+                                  style={{ paddingTop: "10px" }}
+                                >
                                   <div className="col-9 ">
                                     <h4 className="text-dark font-weight-bold text-center">
                                       {item.name}
@@ -336,7 +342,10 @@ function ServiceDetail() {
                               </div>
                             </div>
                             <div className="row pb-1">
-                              <div className="col-3">
+                              <div
+                                className="col-3"
+                                style={{ paddingLeft: "0.25rem" }}
+                              >
                                 <h5
                                   className="text-white text-center font-weight-bold servicePrice"
                                   style={{
@@ -357,7 +366,10 @@ function ServiceDetail() {
                       return (
                         <div className="col-12 card ">
                           <div className="row  pt-1 ">
-                            <div className="col-3 blankCol">
+                            <div
+                              className="col-3 blankCol"
+                              style={{ paddingLeft: "0.25rem" }}
+                            >
                               <img
                                 class="service_itemImg"
                                 src={
@@ -368,7 +380,10 @@ function ServiceDetail() {
                               />
                             </div>
                             <div className="col-9 blankCol">
-                              <div className="row pt-1">
+                              <div
+                                className="row "
+                                style={{ paddingTop: "10px" }}
+                              >
                                 <div className="col-9">
                                   <h4 className="text-dark font-weight-bold text-center">
                                     {item.service.name}
@@ -418,7 +433,10 @@ function ServiceDetail() {
                             </div>
                           </div>
                           <div className="row pb-1">
-                            <div className="col-3 blankCol">
+                            <div
+                              className="col-3 blankCol"
+                              style={{ paddingLeft: "0.25rem" }}
+                            >
                               <h5
                                 className="text-white text-center servicePrice"
                                 style={{
@@ -431,7 +449,10 @@ function ServiceDetail() {
                               </h5>
                             </div>
                             {/* add cart button */}
-                            <div className="col-9  blankCol pr-0">
+                            <div
+                              className="col-9  blankCol pr-0"
+                              style={{ paddingBottom: "10px" }}
+                            >
                               {localStorage.getItem("userid") == "" ? (
                                 <div className="text-right">
                                   <button
@@ -480,7 +501,7 @@ function ServiceDetail() {
                                 />
                               </div>
                               <div className="col-9 blankCol">
-                                <div className="row pt-1">
+                                <div className="row" style={{paddingTop:"10px"}}>
                                   <div className="col-9 ">
                                     <h4 className="text-dark font-weight-bold  text-center">
                                       {item.name}
@@ -522,10 +543,10 @@ function ServiceDetail() {
                                   <div className="row mb-1">
                                     <div className="col-4"></div>
                                     <div className="col-8  text-danger pr-0">
-                                      <h5 className="  text-white TimeBg timing">
+                                      <p className="  text-white TimeBg timing">
                                         This service is not available for this
                                         mechanic
-                                      </h5>
+                                      </p>
                                     </div>
                                   </div>
                                 </div>
@@ -538,6 +559,7 @@ function ServiceDetail() {
                   : null}
               </div>
             </div>
+            <div className="col-1 pr-0 pl-0 "></div>
             {/*Customer vichel info card */}
             <div className="col-4 blankCol MainMech">
               <div className="card mechanicCard ">
@@ -735,17 +757,17 @@ function ServiceDetail() {
               </div>
 
               {/* Mechanoc List start */}
-              <div className="mechanicBox border p-2 ">
-                <div className="container-fluid">
-                  <div className="pt-1 pb-2" style={{ background: "#3e288c" }}>
-                    <h4 className="text-white text-center pt-2">Mechanics</h4>
-                  </div>
+              <div className="mechanicBox border  ">
+                <div className="pt-1 pb-2" style={{ background: "#3e288c" }}>
+                  <h4 className="text-white text-center pt-2">Mechanics</h4>
+                </div>
+                <div className="container">
                   {MechanicData.map((item, index) => {
                     if (item.user != undefined && item.service != undefined) {
                       if (item.service.service_type._id == ServiceTypeId) {
                         return (
                           <div
-                            className="row border mt-3"
+                            className="row border mt-3 "
                             style={{
                               boxShadow: "0 2px 10px rgb(0 0 0 / 10%)",
                               borderRadius: "2px",
@@ -799,7 +821,7 @@ function ServiceDetail() {
                                     }}
                                   >
                                     <i
-                                      class="bx bxs-plus-square"
+                                      class="bx bxs-plus-square text-dark"
                                       style={{ fontSize: "40px" }}
                                     ></i>
                                   </button>
