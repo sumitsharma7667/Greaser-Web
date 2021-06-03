@@ -137,6 +137,7 @@ function ServiceDetail() {
   };
   const setRedirection =(id,name)=>{
     // alert(id)
+    $(".ChooseCarSection").hide()
     localStorage.setItem("manufacturer",Brand)
     localStorage.setItem("modal",Modal)
     localStorage.setItem("type",Type)
@@ -144,7 +145,7 @@ function ServiceDetail() {
   
     localStorage.setItem("ServiceTypeId",id)
     localStorage.setItem("ServiceTypeName",name)
-    history.push('/Services-detail')
+    // history.push('/Services-detail')
   }
   const GetBrand = async () => {
     await fetch("http://144.91.110.221:3032/GetBrand")
@@ -220,6 +221,16 @@ function ServiceDetail() {
         setdata(res);
       });
   };
+  const ShowChoseCarSection=()=>{
+    $(".ChooseCarSection").show()
+    $("#HideChoseBTN").show()
+    $("#ShowChoseBTN").hide()
+  }
+  const HideChoseCarSection=()=>{
+    $(".ChooseCarSection").hide()
+    $("#HideChoseBTN").hide()
+    $("#ShowChoseBTN").show()
+  }
 
   const getSingleMechanicdata = (_id) => {
     if (_id == "") {
@@ -557,14 +568,18 @@ function ServiceDetail() {
                       >
                         Anytime Anywhere
                       </p>
-                      <button className="btn btn-sm" style={{float:"right"}}><i
+                      <button className="btn btn-sm" style={{float:"right"}} id="ShowChoseBTN" onClick={()=>{ShowChoseCarSection()}}><i
                                       class="bx bxs-plus-square"
+                                      style={{ fontSize: "40px" }}
+                                    ></i></button>
+                                     <button className="btn btn-sm" style={{float:"right"}} id="HideChoseBTN" onClick={()=>{HideChoseCarSection()}}><i
+                                      class="bx bxs-minus-square"
                                       style={{ fontSize: "40px" }}
                                     ></i></button>
                     </div>
                   </div>
-              <div class="row d-flex justify-content-center align-items-center h-100 ChooseCarSection">
-              <div class="col-12 col-md-11 col-lg-10 col-xl-9">
+              <div class="row d-flex justify-content-center align-items-center h-100 ">
+              <div class="col-12 col-md-11 col-lg-10 col-xl-9 ChooseCarSection">
                 <div class="card card0 border-0">
                   <div class="row">
                     <div class="col-12">
@@ -591,7 +606,6 @@ function ServiceDetail() {
                                       );
                                     })}
                                   </select>
-                                  {/* <label class="ml-3 form-control-placeholder" for="email" >Email</label>  */}
                                 </div>
                                 <div class="next-button text-center ml-2">
                                   {" "}
@@ -655,22 +669,6 @@ function ServiceDetail() {
                                   {" "}
                                   <span class="fa fa-arrow-right" ></span>{" "}
                                 </div>
-                              </div>
-                            </div>
-                            <div class="card2 ml-2">
-                              <div class="row px-3 mt-2 text-center">
-                                <h2 class="col-12 text-danger">
-                                  <strong>Success !</strong>
-                                </h2>
-                                <div class="col-12 text-center">
-                                  <img
-                                    class="tick"
-                                    src="https://i.imgur.com/WDI0da4.gif"
-                                  />
-                                </div>
-                                <h6 class="col-12 mt-2">
-                                  <i>...we will notify you...</i>
-                                </h6>
                               </div>
                             </div>
                           </div>

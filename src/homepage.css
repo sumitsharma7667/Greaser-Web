@@ -2724,27 +2724,30 @@ MapSection {
 }
 .contactus-heading span{  
   border-bottom: 1px solid #6809AA;
+  font-weight: 600;
+
 }
 .contact-card{
 background-color: #6809AA;
-height: 460px;
-width: 1100px;
+height: 500px;
+width: 1013px;
 border-radius: 20px;
 
 }
 .contact-sub-card{
-background-color: #4c067e;
+background-color: #522885;
 border-radius: 20px;
 padding: 4px;
+box-shadow: 0 2px 5px 1px rgb(64 60 67 / 16%);
 }
 .contact-firstchild{
-  margin-left: 90px;
+  margin-left: 95px;
   margin-right: 10px;
   
   }
   .contact-secondchild{
     margin-left: 10px;
-    margin-right: 90px;
+    margin-right: 95px;
     }
   .third-sub-contact-card{
     margin: auto;
@@ -2752,21 +2755,24 @@ padding: 4px;
 
   }
   .contactus-road-img{
-    margin-top: -10px;
-    height: 350px;
-    width: 100%;
+    margin-top: -36px;
+    height: 271px;
+    width: 90%;
     object-fit: contain;
   }
   .contactusMechanic-img{
-    margin-left: -284px;
-    margin-top: -540px;
-    height: 540px;
+    margin-left: -304px;
+    margin-top: -494px;
+    height: 494px;
     width: 100%;
     object-fit: contain;
   }
   .contact-sub-card h5{
     display: inline-flex;
     align-items: center;
+    /* font-weight: bold; */
+    color: #f4f4f4;
+    font-size: 19px;
   }
   .contact-sub-card h5 span{
     font-size: 40px;
@@ -2775,9 +2781,15 @@ padding: 4px;
     display: flex;
     align-items: flex-end;
     position: relative;
-    right: 30;
-    bottom: -30;
+    right: 16px;
+    bottom: -72px;
     margin-left: -80px;
 
   }
+  .ContactUsMainSection h3{
+    font-weight: bold;
+    color: #f4f4f4;
+
+  }
+  
 /* end contact us page css by vineet */

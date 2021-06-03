@@ -122,7 +122,7 @@ function ContactUs(props) {
           </div>
         </div>
       </section> */}
-      <section>
+      <section className="ContactUsMainSection">
         <div className="row">
           <div className="col-12 text-center contactus-heading">
             <h2><span>Get in touch with us</span></h2>
@@ -157,16 +157,18 @@ function ContactUs(props) {
                 </div>
                 <div className="row" className="contactus-socialLink-section">
                 <div className="col-12 ">
-                <h5 className="p-3 contact-sub-card" style={{fontSize:"20px"}} ><span ><i class="fab fa-facebook-f"></i><br/><i class="fab fa-twitter pt-2"></i><br/><i class="fab fa-instagram pt-2"></i></span></h5>
+                <h5 className="p-3 contact-sub-card" style={{fontSize:"20px"}} ><span ><i class="fab fa-facebook-f"></i><br/><i class="fab fa-twitter pt-3"></i><br/><i class="fab fa-instagram pt-3"></i></span></h5>
                 </div>
                 </div>
               </div>                    
             </div>
           </div>
-          <div className="col-10">
-            
+          <div className="col-10" style={{zIndex:"-1"}}>
           <img src={require('./Images/road.png').default} className="contactus-road-img" />
-          <img src={require('./Images/contactusMechanic.png').default} className="contactusMechanic-img" />
+          </div>
+          <div className="col-10">
+          <img src={require('./Images/contactusMechanic.png').default} 
+          className="contactusMechanic-img" />
           </div>
         </div>
       </section>
