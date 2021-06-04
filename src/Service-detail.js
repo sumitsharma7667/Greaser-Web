@@ -2,10 +2,11 @@ import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import logo from "./logo.svg";
-import { Link } from "react-router-dom";
+import { Link ,useHistory} from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import SingleService from "./SingleService";
+import $, { contains, timers } from 'jquery';
 
 const responsive = {
   desktop: {
@@ -38,7 +39,89 @@ function ServiceDetail() {
   const ServiceTypeId = localStorage.getItem("ServiceTypeId");
   const ServiceTypeName = localStorage.getItem("ServiceTypeName");
 
+  const [AllBrand, SetAllBrand] = useState([]);
+  const [Brand, SetBrand] = useState([]);
+  const [Modal, SetModal] = useState([]);
+  const [Type, SetType] = useState([]);
+
+  const history = useHistory()
   useEffect(() => {
+    $(document).ready(function () {
+      $(".ChooseCarSection").hide()
+      var current_fs, next_fs, previous_fs;
+
+      // No BACK button on first screen
+      if ($(".show").hasClass("first-screen")) {
+        $(".prev").css({ display: "none" });
+      }
+
+      // Next button
+      $(".next-button").click(function () {
+        current_fs = $(this).parent().parent();
+        next_fs = $(this).parent().parent().next();
+
+        $(".prev").css({ display: "block" });
+
+        $(current_fs).removeClass("show");
+        $(next_fs).addClass("show");
+
+        $("#progressbar li").eq($(".card2").index(next_fs)).addClass("active");
+
+        current_fs.animate(
+          {},
+          {
+            step: function () {
+              current_fs.css({
+                display: "none",
+                position: "relative",
+              });
+
+              next_fs.css({
+                display: "block",
+              });
+            },
+          }
+        );
+      });
+
+      // Previous button
+      $(".prev").click(function () {
+        current_fs = $(".show");
+        previous_fs = $(".show").prev();
+
+        $(current_fs).removeClass("show");
+        $(previous_fs).addClass("show");
+
+        $(".prev").css({ display: "block" });
+
+        if ($(".show").hasClass("first-screen")) {
+          $(".prev").css({ display: "none" });
+        }
+
+        $("#progressbar li")
+          .eq($(".card2").index(current_fs))
+          .removeClass("active");
+
+        current_fs.animate(
+          {},
+          {
+            step: function () {
+              current_fs.css({
+                display: "none",
+                position: "relative",
+              });
+
+              previous_fs.css({
+                display: "block",
+              });
+            },
+          }
+        );
+      });
+    });
+
+
+    GetBrand()
     GetServices();
     getdata();
     GetVehicle();
@@ -51,6 +134,27 @@ function ServiceDetail() {
     setMechanicServiceId(id);
     setMechanicUserId(user_id);
     setRealServiceId(RealServiceId);
+  };
+  const setRedirection =(id,name)=>{
+    // alert(id)
+    $(".ChooseCarSection").hide()
+    localStorage.setItem("manufacturer",Brand)
+    localStorage.setItem("modal",Modal)
+    localStorage.setItem("type",Type)
+    
+  
+    localStorage.setItem("ServiceTypeId",id)
+    localStorage.setItem("ServiceTypeName",name)
+    // history.push('/Services-detail')
+  }
+  const GetBrand = async () => {
+    await fetch("http://144.91.110.221:3032/GetBrand")
+      .then((res) => res.json())
+      .then((data) => {
+        console.log("Brands " + data);
+        SetAllBrand(data);
+      })
+      .then((err) => console.log(err));
   };
   const GetVehicle = async () => {
     // brandid=await AsyncStorage.getItem('vehiclebrand')
@@ -117,6 +221,16 @@ function ServiceDetail() {
         setdata(res);
       });
   };
+  const ShowChoseCarSection=()=>{
+    $(".ChooseCarSection").show()
+    $("#HideChoseBTN").show()
+    $("#ShowChoseBTN").hide()
+  }
+  const HideChoseCarSection=()=>{
+    $(".ChooseCarSection").hide()
+    $("#HideChoseBTN").hide()
+    $("#ShowChoseBTN").show()
+  }
 
   const getSingleMechanicdata = (_id) => {
     if (_id == "") {
@@ -466,7 +580,6 @@ function ServiceDetail() {
                           fontSize: "55px",
                         }}
                       >
-                        {" "}
                         Greaser
                       </h2>
                       <p
@@ -477,8 +590,117 @@ function ServiceDetail() {
                       >
                         Anytime Anywhere
                       </p>
+                      <button className="btn btn-sm" style={{float:"right"}} id="ShowChoseBTN" onClick={()=>{ShowChoseCarSection()}}><i
+                                      class="bx bxs-plus-square"
+                                      style={{ fontSize: "40px" }}
+                                    ></i></button>
+                                     <button className="btn btn-sm" style={{float:"right"}} id="HideChoseBTN" onClick={()=>{HideChoseCarSection()}}><i
+                                      class="bx bxs-minus-square"
+                                      style={{ fontSize: "40px" }}
+                                    ></i></button>
                     </div>
                   </div>
+              <div class="row d-flex justify-content-center align-items-center h-100 ">
+              <div class="col-12 col-md-11 col-lg-10 col-xl-9 ChooseCarSection">
+                <div class="card card0 border-0">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="card card00 m-2 border-0">
+                        <div class=" px-3 mt-4 flex-column-reverse">
+                          <div class="col-md-12">
+                            <div class="card2 first-screen show ml-2">
+                              <div class="row px-3 ">
+                                <div class="form-group ">
+                                  {/* <input type="text" id="email" class="form-control" required />  */}
+                                  <select
+                                    className="form-control text-dark"
+                                    onChange={(e) => {
+                                      SetBrand(e.target.value);
+                                    }}
+                                  >
+                                    <option value="">Manufacturer...</option>
+                                    {AllBrand.map((item, index) => {
+                                      if(item.status==0)
+                                      return (
+                                        <option className="" value={item.name}>
+                                          {item.name}
+                                        </option>
+                                      );
+                                    })}
+                                  </select>
+                                </div>
+                                <div class="next-button text-center ml-2">
+                                  {" "}
+                                  <span class="fa fa-arrow-right"></span>{" "}
+                                </div>
+                              </div>
+                            </div>
+                            <div class="card2 ml-2">
+                              <div class="row px-3 mt-3">
+                                <div class="form-group mt-1 mb-1">
+                                  {/* <input type="password" id="pwd" class="form-control" required />  */}
+                                  <select
+                                    className="form-control text-dark"
+                                    onChange={(e) => {
+                                      SetModal(e.target.value);
+                                    }}
+                                  >
+                                    <option className="text-light" value="">
+                                      Choose Model..
+                                    </option>
+                                    {AllModal.map((item, index) => {
+                                      if (item.manufacturer.name == Brand)
+                                        return (
+                                          <option value={item.name}>
+                                            {item.name}
+                                          </option>
+                                        );
+                                    })}
+                                  </select>
+                                  {/* <label class="ml-3 form-control-placeholder" for="pwd" >Password</label> */}
+                                </div>
+                                <div class="next-button text-center mt-1 ml-2">
+                                  {" "}
+                                  <span class="fa fa-arrow-right"></span>{" "}
+                                </div>
+                                <div class="col-12">
+                                </div>
+                              </div>
+                              <div class="row mt-3 mb-5"></div>
+                            </div>
+                            <div class="card2 ml-2">
+                              <div class="row px-3 mt-3">
+                                {/* <p class="mb-0 w-100">Select your Country</p> */}
+                                <div class="form-group mt-3 ">
+                                  <select
+                                    className="form-control text-dark"
+                                    onChange={(e) => {
+                                      SetType(e.target.value);
+                                    }}
+                                  >
+                                    <option className="text-light" value="">
+                                      Choose Type..
+                                    </option>
+                                    <option value="Petrol">Petrol</option>
+                                    <option value="Deisel">Deisel</option>
+                                    <option value="CNG">CNG</option>
+                                    <option value="Electric">Electric</option>
+                                  </select>
+                                </div>
+                                <div class="next-button text-center mt-3 ml-2" onClick={()=>{setRedirection("6094d5427362100a2387c7c2","Periodic Service")}}>
+                                  {" "}
+                                  <span class="fa fa-arrow-right" ></span>{" "}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
                   {AllModal.map((item, index) => {
                     if (
                       item.manufacturer.name ==
