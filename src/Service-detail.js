@@ -557,7 +557,7 @@ function ServiceDetail() {
                                   require("./Images/profileMech.jpg").default
                                 }
                                 className=""
-                                style={{ height: "182px", width: "100%" }}
+                                style={{ height: "160px", width: "100%" }}
                                 alt="logo icon"
                               />
                             </div>
