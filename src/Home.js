@@ -216,7 +216,7 @@ const setRedirection =(id,name)=>{
                                 </div>
                                 <div class="next-button text-center ml-2">
                                   {" "}
-                                  <span class="fa fa-arrow-right"></span>{" "}
+                                  <span class="fa fa-arrow-right" style={{top:"7px", position:"relative"}}></span>{" "}
                                 </div>
                               </div>
                             </div>
