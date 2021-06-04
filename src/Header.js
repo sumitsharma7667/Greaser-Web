@@ -49,6 +49,9 @@ function Header(props) {
   const closeNav = () => {
     document.getElementById("myNav").style.width = "0%";
   };
+
+  const [show, setRegisterShow] = useState(true);
+
   return (
     <>
       <nav className="w-100 NavBg">
@@ -117,6 +120,138 @@ function Header(props) {
       </nav>
 
       {/* Modal  */}
+      
+        <div id="myModal" className="modal fade text-dark" role="dialog">
+          <div className="modal-dialog">
+            {/* Modal content */}
+            <div className="modal-content model-sm login_form">
+              <div className=" pt-3 pr-4">
+                <button type="button" className="close" data-dismiss="modal">
+                  &times;
+              </button>
+              </div>
+              <div className="modal-body">
+                <div className="card-body">
+                  <div className="card-content">
+                    <ul className="nav nav-tabs" id="myTab" role="tablist">
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="nav-link active"
+                          id="home-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#home"
+                          type="button"
+                          role="tab"
+                          aria-controls="home"
+                          aria-selected="true"
+                        >
+                          Login
+                      </button>
+                      </li>
+                      <li className="nav-item" role="presentation">
+                        <button
+                          className="nav-link"
+                          id="profile-tab"
+                          data-bs-toggle="tab"
+                          data-bs-target="#profile"
+                          type="button"
+                          role="tab"
+                          aria-controls="profile"
+                          aria-selected="false"
+                          onClick={() => {
+                            setRegisterShow(true)
+                          }}
+                        >
+                          Sign Up
+                      </button>
+                      </li>
+                    </ul>
+                    <div className="text-center ">
+                      <img
+                        src={require("./Images/Glogo.png").default}
+                        style={{ height: "150px", objectFit: "contain" }}
+                        alt="logo icon"
+                        className=""
+                      />
+                  </div>
+                  
+                  <div className="card-title text-uppercase text-center">
+                    Sign In
+                      </div>
+
+                    <div className="form-group w-100">
+                      <label for="exampleInputUsername" className="sr-only">
+                        Username
+                        </label>
+                      <div className="position-relative has-icon-right text-dark">
+                        <input
+                          type="text"
+                          id="exampleInputUsername"
+                          className="form-control input-shadow inputBG"
+                          placeholder="Enter Mobile No"
+                          onChange={(e) => {
+                            setmobile(e.target.value);
+                          }}
+                        />
+                        <div className="form-control-position">
+                          <i className="icon-user"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="form-group w-100">
+                      <label for="exampleInputPassword" className="sr-only">
+                        Password
+                        </label>
+                      <div className="position-relative has-icon-right text-dark">
+                        <input
+                          type="password"
+                          id="exampleInputPassword"
+                          className="form-control input-shadow inputBG"
+                          placeholder="Enter Password"
+                          onChange={(e) => {
+                            setpassword(e.target.value);
+                          }}
+                        />
+                        <div className="form-control-position">
+                          <i className="icon-lock"></i>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="form-row">
+                      <div className="form-group col-6">
+                        <div className="icheck-material-white">
+                          <input
+                            type="checkbox"
+                            className="check_box"
+                            id="user-checkbox"
+                            checked=""
+                          />
+                        </div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="btn btn-light btn-block"
+                      style={{ background: "#531a82" }}
+                      onClick={() => {
+                        Loginuser();
+                      }}
+                    >
+                      Sign In
+                      </button>
+                    <div className="card-footer text-center py-3">
+                      <p className="text-warning mb-0">
+                        Do not have an account?{" "}
+                        <Link href="#"> Sign Up here</Link>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      {/* Registration Form */}
       <div id="myModal" className="modal fade text-dark" role="dialog">
         <div className="modal-dialog">
           {/* Modal content */}
@@ -129,36 +264,6 @@ function Header(props) {
             <div className="modal-body  ">
               <div className="card-body">
                 <div className="card-content">
-                  <ul className="nav nav-tabs" id="myTab" role="tablist">
-                    <li className="nav-item" role="presentation">
-                      <button
-                        className="nav-link active"
-                        id="home-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#home"
-                        type="button"
-                        role="tab"
-                        aria-controls="home"
-                        aria-selected="true"
-                      >
-                        Login
-                      </button>
-                    </li>
-                    <li className="nav-item" role="presentation">
-                      <button
-                        className="nav-link"
-                        id="profile-tab"
-                        data-bs-toggle="tab"
-                        data-bs-target="#profile"
-                        type="button"
-                        role="tab"
-                        aria-controls="profile"
-                        aria-selected="false"
-                      >
-                        Sign Up
-                      </button>
-                    </li>
-                  </ul>
                   <div className="tab-content" id="myTabContent">
                     <div
                       className="tab-pane fade show active"
@@ -174,84 +279,58 @@ function Header(props) {
                           className=""
                         />
                       </div>
-                      <div className="card-title text-uppercase text-center">
-                        Sign In
+                      <div class="card-title text-uppercase text-center">
+                        Sign Up
                       </div>
 
-                      <div className="form-group w-100">
-                        <label for="exampleInputUsername" className="sr-only">
-                          Username
+                      <div class="form-group w-100">
+                        <label for="exampleInputUsername" class="sr-only">
+                          Full Name
                         </label>
-                        <div className="position-relative has-icon-right text-dark">
+                        <div class="position-relative has-icon-right text-dark">
                           <input
                             type="text"
                             id="exampleInputUsername"
-                            className="form-control input-shadow inputBG"
-                            placeholder="Enter Mobile No"
-                            onChange={(e) => {
-                              setmobile(e.target.value);
-                            }}
+                            class="form-control input-shadow inputBG"
+                            placeholder="Full Name"
                           />
-                          <div className="form-control-position">
-                            <i className="icon-user"></i>
+                          <div class="form-control-position">
+                            <i class="icon-user"></i>
                           </div>
                         </div>
                       </div>
-                      <div className="form-group w-100">
-                        <label for="exampleInputPassword" className="sr-only">
-                          Password
+                      <div class="form-group w-100">
+                        <label for="exampleInputUsername" class="sr-only">
+                          Email
                         </label>
-                        <div className="position-relative has-icon-right text-dark">
+                        <div class="position-relative has-icon-right text-dark">
                           <input
-                            type="password"
-                            id="exampleInputPassword"
-                            className="form-control input-shadow inputBG"
-                            placeholder="Enter Password"
-                            onChange={(e) => {
-                              setpassword(e.target.value);
-                            }}
+                            type="text"
+                            id="exampleInputUsername"
+                            class="form-control input-shadow inputBG"
+                            placeholder="Email"
                           />
-                          <div className="form-control-position">
-                            <i className="icon-lock"></i>
+                          <div class="form-control-position">
+                            <i class="icon-user"></i>
                           </div>
                         </div>
                       </div>
-                      <div className="form-row">
-                        <div className="form-group col-6">
-                          <div className="icheck-material-white">
-                            <input
-                              type="checkbox"
-                              className="check_box"
-                              id="user-checkbox"
-                              checked=""
-                            />
+                      <div class="form-group w-100">
+                        <label for="exampleInputUsername" class="sr-only">
+                          Mobile
+                        </label>
+                        <div class="position-relative has-icon-right text-dark">
+                          <input
+                            type="text"
+                            id="exampleInputUsername"
+                            class="form-control input-shadow inputBG"
+                            placeholder="Enter Mobile Number"
+                          />
+                          <div class="form-control-position">
+                            <i class="icon-user"></i>
                           </div>
                         </div>
                       </div>
-                      <button
-                        type="button"
-                        className="btn btn-light btn-block"
-                        style={{ background: "#531a82" }}
-                        onClick={() => {
-                          Loginuser();
-                        }}
-                      >
-                        Sign In
-                      </button>
-                      <div className="card-footer text-center py-3">
-                        <p className="text-warning mb-0">
-                          Do not have an account?{" "}
-                          <Link href="#"> Sign Up here</Link>
-                        </p>
-                      </div>
-                    </div>
-                    <div
-                      className="tab-pane fade"
-                      id="profile"
-                      role="tabpanel"
-                      aria-labelledby="profile-tab"
-                    >
-                      kshjkfsdgkjdgjdsjkjksdhfhjsd
                     </div>
                   </div>
                 </div>

@@ -259,6 +259,7 @@ function ServiceDetail() {
         SetAllService(data);
       });
   };
+  const [show, setHideAdd] = useState(true);
 
   return (
     <>
@@ -594,24 +595,31 @@ function ServiceDetail() {
                     </div>
                   </div>
                   {/* add car buttons */}
-                  <div className="row mt-2 mb-2">
-                    <div className="col-12 text-center">
-                      <h5 className="text-dark text-uppercase">
-                        Add your Car{" "}
-                      </h5>
-                      <button
-                        className="btn btn-sm AddMechanicBtn"
-                        id="ShowChoseBTN"
-                        onClick={() => {
-                          ShowChoseCarSection();
-                        }}
-                      >
-                        <i
-                          class="bx bxs-plus-square"
-                          style={{ fontSize: "40px" }}
-                        ></i>
-                      </button>
-                      <button
+                  {show ? (
+                    <div
+                      className="row mt-2 mb-2"
+                      style={{ background: "#3e288c" }}
+                    >
+                      <div className="col-6 text-center blankCol">
+                        <h5 className=" text-uppercase alignmentCol">
+                          Add your Car
+                        </h5>
+                      </div>
+                      <div className="col-6">
+                        <button
+                          className="btn btn-sm AddMechanicBtn float-right"
+                          id="ShowChoseBTN"
+                          onClick={() => {
+                            ShowChoseCarSection();
+                          }}
+                        >
+                          <i
+                            class="bx bxs-plus-square text-white "
+                            style={{ fontSize: "40px" }}
+                          ></i>
+                        </button>
+                      </div>
+                      {/* <button
                         className="btn btn-sm AddMechanicBtn"
                         id="HideChoseBTN"
                         onClick={() => {
@@ -622,17 +630,17 @@ function ServiceDetail() {
                           class="bx bxs-minus-square"
                           style={{ fontSize: "40px" }}
                         ></i>
-                      </button>
+                      </button> */}
                     </div>
-                  </div>
+                  ) : null}
                   <div class="row d-flex justify-content-center align-items-center h-100 ">
-                    <div class="col-12 col-md-11 col-lg-10 col-xl-9 ChooseCarSection">
+                    <div class="col-12 col-md-11 col-lg-10 col-xl-9 ChooseCarSection blankCol">
                       <div class=" border-0">
                         <div class="row">
-                          <div class="col-12">
+                          <div class="col-12 blankCol">
                             <div class=" border-0">
                               <div class="  flex-column-reverse">
-                                <div class="col-md-12">
+                                <div class="col-md-12 blankCol">
                                   <div class=" first-screen show ">
                                     <div class="row  ">
                                       <div class="form-group ">
@@ -660,7 +668,7 @@ function ServiceDetail() {
                                         </select>
                                       </div>
                                       <div
-                                        class="next-button text-center ml-2"
+                                        class="next-button text-center ml-2 blankCol"
                                         style={{ height: "38px" }}
                                       >
                                         {" "}
@@ -696,17 +704,17 @@ function ServiceDetail() {
                                         {/* <label class="ml-3 form-control-placeholder" for="pwd" >Password</label> */}
                                       </div>
                                       <div
-                                        class="next-button text-center  ml-2"
+                                        class="next-button text-center  ml-2 blankCol"
                                         style={{ height: "38px" }}
                                       >
                                         {" "}
                                         <span class="fa fa-arrow-right"></span>{" "}
                                       </div>
-                                      <div class="col-12"></div>
+                                      <div class="col-12 blankCol"></div>
                                     </div>
                                     <div class="row "></div>
                                   </div>
-                                  <div class="card2 ml-2">
+                                  <div class="card2 ">
                                     <div class="row ">
                                       {/* <p class="mb-0 w-100">Select your Country</p> */}
                                       <div class="form-group  ">
@@ -738,6 +746,7 @@ function ServiceDetail() {
                                             "6094d5427362100a2387c7c2",
                                             "Periodic Service"
                                           );
+                                          setHideAdd(false);
                                         }}
                                       >
                                         {" "}
@@ -799,7 +808,14 @@ function ServiceDetail() {
                               </h6>
                             </div>
                             <div className="col-3  blankCol">
-                              <h6 className="text-dark ">Change</h6>
+                              <Link
+                                onClick={() => {
+                                  setHideAdd(true);
+                                }}
+                                className="text-dark "
+                              >
+                                Change
+                              </Link>
                             </div>
                           </div>
                         </div>
